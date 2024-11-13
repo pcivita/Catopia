@@ -34,18 +34,11 @@ public class GameManager : MonoBehaviour
 
     void ConstructCat(CatSO c)
     {
-        Cat newCat = Instantiate(catPrefab, Vector2.left, quaternion.identity).GetComponent<Cat>();
+        //TODO randomize position of spawn.
+        Vector2 pos = Vector2.left* UnityEngine.Random.Range(-2f,2f)+ Vector2.right* UnityEngine.Random.Range(-2f, 2f); 
+        Cat newCat = Instantiate(catPrefab, pos, quaternion.identity).GetComponent<Cat>();
         newCat.Init(c);
         catInstances.Add(newCat);
     }
     
-
-    /*
-    void CreateDefaultCats()
-    {
-        Instantiate(catPrefab, Vector2.left, quaternion.identity).Init(defaultCatData[0]);
-        Instantiate(catPrefab, Vector2.right, quaternion.identity).Init(defaultCatData[1]);
-        Instantiate(catPrefab, Vector2.left * 2, quaternion.identity).Init(defaultCatData[0]);
-        Instantiate(catPrefab, Vector2.right * 2, quaternion.identity).Init(defaultCatData[1]);
-    }*/
 }
