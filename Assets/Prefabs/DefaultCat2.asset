@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bf5b7dc693ddb44ca1fdb898aad37e6, type: 3}
   m_Name: DefaultCat2
   m_EditorClassIdentifier: 
-  CatName: 
-  Attack: 0
-  Health: 0
-  Hunting: 0
-  Sprite: {fileID: 0}
+  CatName: Caleb Cuddlebug
+  Attack: 3
+  Health: 2
+  Hunting: 1
+  Sprite: {fileID: 21300000, guid: 50d9489600932d745a0168d08a93d36c, type: 3}
