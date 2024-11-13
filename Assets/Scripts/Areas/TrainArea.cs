@@ -4,7 +4,13 @@ using UnityEngine;
 
 public class TrainArea : AreaController
 {
-   
+    [SerializeField] int _catCapacity;
+    private Transform[] catSlots; // This can be assigned in the Unity Editor
 
-    protected override int catCapacity { get; }
+    public override Transform[] CatSlots => catSlots;
+    
+    SpriteRenderer spriteRenderer;
+    
+    
+    protected override int catCapacity => _catCapacity;
 }

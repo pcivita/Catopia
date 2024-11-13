@@ -3,11 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// TODO: Investigate bug where a cat seems to be locked in the slot. 
 public class Cat : MonoBehaviour
 {
     private CatSO _catSO;
     [SerializeField] float clickRadius;
     private Vector2 offset;
+    public bool inArea = false;
+    private SpriteRenderer spriteRenderer;
+    private AreaController area;
     [SerializeField] LayerMask areaMask;
     
     public void Init(CatSO catSO)
@@ -20,6 +24,9 @@ public class Cat : MonoBehaviour
     {
         // For visual purposes
         gameObject.AddComponent<SpriteRenderer>().sprite = _catSO.Sprite;
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer.sortingOrder = 10;
+        
     }
 
     private void Update()
@@ -31,6 +38,10 @@ public class Cat : MonoBehaviour
     private void OnMouseDown()
     { 
         offset = (Vector2)transform.position - GetMouseWorldPos();
+        if (inArea)
+        {
+            area.RemoveCat(this);
+        }
         // get OG pos
     }
     
@@ -51,14 +62,12 @@ public class Cat : MonoBehaviour
 
     private void OnMouseUp()
     {
-        Debug.Log("Mouse Up");
         var hits = Physics2D.OverlapCircleAll(GetMouseWorldPos(), clickRadius, areaMask);
         if (hits.Length <= 0) return;
-        Debug.Log(hits.Length);
         
         foreach (var hit in hits)
         {
-            AreaController area = hit.transform.root.GetComponent<AreaController>();
+            area = hit.transform.root.GetComponent<AreaController>();
             if (area == null) continue;
             if (!area.TryReceiveCat(this))
             {

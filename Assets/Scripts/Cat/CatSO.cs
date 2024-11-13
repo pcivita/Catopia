@@ -7,4 +7,5 @@ public class CatSO : ScriptableObject
     public int Health;
     public int Hunting;
     public Sprite Sprite;
+    
 }

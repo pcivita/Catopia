@@ -22,5 +22,7 @@ public class GameManager : MonoBehaviour
         
         Instantiate(catPrefab, Vector2.left, quaternion.identity).Init(defaultCat1Data);
         Instantiate(catPrefab, Vector2.right, quaternion.identity).Init(defaultCat2Data);
+        Instantiate(catPrefab, Vector2.left * 2, quaternion.identity).Init(defaultCat1Data);
+        Instantiate(catPrefab, Vector2.right * 2, quaternion.identity).Init(defaultCat2Data);
     }
 }

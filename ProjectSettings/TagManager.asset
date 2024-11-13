@@ -41,3 +41,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Cat
+    uniqueID: 3693048179
+    locked: 0
+  - name: Area
+    uniqueID: 554211005
+    locked: 0
