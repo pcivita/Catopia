@@ -43,6 +43,7 @@ public class HuntArea : AreaController
         GameManager.instance.gameState.AddFood(totalHunting);
         totalHunting = 0;
         _cats.Clear();
+        Debug.Log( GameManager.instance.gameState.GetFood());
         catTextMesh.text = "Cat: " + _cats.Count;
         huntTextMesh.text = "Hunt: " + totalHunting;
     }

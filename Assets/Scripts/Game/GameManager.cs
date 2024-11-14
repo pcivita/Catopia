@@ -57,15 +57,15 @@ public class GameManager : MonoBehaviour
     //kill cats accordingly?
     void NewDay()
     {
-        foreach (var area in areas)
-        {
-            area.NewDay();
-        }
+       
         foreach (var c in catInstances)
         {
             c.ResetPosition();
         }
-        Debug.Log("New day.");
-        Debug.Log(gameState.GetFood());
+        foreach (var area in areas)
+        {
+            area.NewDay();
+        }
+      
     }
 }

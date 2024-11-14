@@ -41,12 +41,12 @@ public class Cat : MonoBehaviour
     
     // Doesn't deal with overlapping Cats
     private void OnMouseDown()
-    { 
+    {
+        Debug.Log(_catSO.CatName);
         offset = (Vector2)transform.position - GetMouseWorldPos();
         // Remove Cat
         if (inArea)
         {
-            
             area.RemoveCat(this);
         }
     }
