@@ -10,7 +10,12 @@ public class Cat : MonoBehaviour
     [SerializeField] float clickRadius;
     private Vector2 offset;
     public bool inArea = false;
-    private SpriteRenderer spriteRenderer;
+
+    public SpriteRenderer bodySR;
+    public SpriteRenderer lineSR;
+    public SpriteRenderer patternSR;
+    public SpriteRenderer accessorySR;
+
     private AreaController area;
     [SerializeField] LayerMask areaMask;
     
@@ -23,10 +28,10 @@ public class Cat : MonoBehaviour
     private void Start()
     {
         // For visual purposes
-        gameObject.AddComponent<SpriteRenderer>().sprite = _catSO.Sprite;
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        spriteRenderer.sortingOrder = 10;
-        
+        patternSR.sprite = _catSO.Pattern;
+        accessorySR.sprite = _catSO.Accessory;
+        patternSR.color = _catSO.patternColor;
+        bodySR.color = _catSO.bodyColor;
     }
 
     private void Update()
@@ -91,6 +96,4 @@ public class Cat : MonoBehaviour
     }
 }
 
-// Data of cats in a separate class in the shop.
 
-// Buying one of those translates into an initializer for the cat!
