@@ -67,6 +67,6 @@ public abstract class AreaController : MonoBehaviour
         OnCatReceived(cat);
         return true;
     }
-    
+    // Todo: Abstract Deal with New Day
 
 }

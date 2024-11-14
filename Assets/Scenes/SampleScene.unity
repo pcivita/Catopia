@@ -151,9 +151,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7143709269412dd43b20c127f449843a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultCat1Data: {fileID: 11400000, guid: 71ef3d7ad775ec9498bbdf55cc1d216a, type: 2}
-  defaultCat2Data: {fileID: 11400000, guid: 50a3a99c5cc5ade4391f41b32c82f24a, type: 2}
-  catPrefab: {fileID: 4741114108622070383, guid: 2154f31664f0f8940a8dbb3dd0aaf97d, type: 3}
+  defaultCats:
+  - {fileID: 11400000, guid: 71ef3d7ad775ec9498bbdf55cc1d216a, type: 2}
+  - {fileID: 11400000, guid: 50a3a99c5cc5ade4391f41b32c82f24a, type: 2}
+  catPrefab: {fileID: 6675817489452377155, guid: 2154f31664f0f8940a8dbb3dd0aaf97d, type: 3}
 --- !u!4 &316486528
 Transform:
   m_ObjectHideFlags: 0

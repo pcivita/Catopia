@@ -83,6 +83,12 @@ public class Cat : MonoBehaviour
     {
         transform.position = position;
     }
+
+    //TODO: implement. this will be used at the start of a new day.
+    public void ResetPosition()
+    {
+        inArea = false;
+    }
 }
 
 // Data of cats in a separate class in the shop.

@@ -22,8 +22,17 @@ public class GameManager : MonoBehaviour
         gameState = GameState.NewGame();
 
         //construct all cats
-        foreach(var c in gameState.GetCats()){
+        foreach (var c in gameState.GetCats())
+        {
             ConstructCat(c);
+        }
+    }
+
+    public void Update()
+    {
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            NewDay();
         }
     }
 
@@ -35,10 +44,23 @@ public class GameManager : MonoBehaviour
     void ConstructCat(CatSO c)
     {
         //TODO randomize position of spawn.
-        Vector2 pos = Vector2.left* UnityEngine.Random.Range(-2f,2f)+ Vector2.right* UnityEngine.Random.Range(-2f, 2f); 
+        Vector2 pos = Vector2.left * UnityEngine.Random.Range(-2f, 2f) + Vector2.right * UnityEngine.Random.Range(-2f, 2f);
         Cat newCat = Instantiate(catPrefab, pos, quaternion.identity).GetComponent<Cat>();
         newCat.Init(c);
         catInstances.Add(newCat);
     }
-    
+
+    //TODO stub
+    //do whatever happens at the end of a turn
+    //notify the areas
+    //consume food....
+    //kill cats accordingly?
+    void NewDay()
+    {
+        Debug.Log("New day.");
+        foreach (var c in catInstances)
+        {
+            c.ResetPosition();
+        }
+    }
 }
