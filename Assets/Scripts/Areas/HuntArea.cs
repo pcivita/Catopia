@@ -4,13 +4,25 @@ using UnityEngine;
 
 public class HuntArea : AreaController
 {
-    [SerializeField] int _catCapacity;
-    public Transform[] catSlots; // This can be assigned in the Unity Editor
+    public int totalHunting;
 
-    public override Transform[] CatSlots => catSlots;
-    
-    SpriteRenderer spriteRenderer;
-    
-    
-    protected override int catCapacity => _catCapacity;
+
+    public override void UpdateAreaState(Cat cat, bool addingCat)
+    {
+        if (addingCat)
+        {
+            totalHunting += cat._catSO.Hunting;  
+        }
+        else
+        {
+            totalHunting -= cat._catSO.Hunting;
+        }
+    }
+
+    public override void NewDay()
+    {
+        GameManager.instance.gameState.AddFood(totalHunting);
+        totalHunting = 0;
+        _cats.Clear();
+    }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 //All data that needs to be stored about our game. Do not use for visualization purposes.
-public class GameState{
+public class GameState {
 
     protected List<CatSO> colonyMembers;
     protected int foodCount;
