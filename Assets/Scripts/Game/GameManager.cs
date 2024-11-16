@@ -7,10 +7,10 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    GameState gameState;
+    public GameState gameState;
     [SerializeField] CatSO[] defaultCats;
     [SerializeField] GameObject catPrefab;
-
+    [SerializeField] AreaController[] areas;
     List<Cat> catInstances;
 
     private void Start()
@@ -57,10 +57,15 @@ public class GameManager : MonoBehaviour
     //kill cats accordingly?
     void NewDay()
     {
-        Debug.Log("New day.");
+       
         foreach (var c in catInstances)
         {
             c.ResetPosition();
         }
+        foreach (var area in areas)
+        {
+            area.NewDay();
+        }
+      
     }
 }

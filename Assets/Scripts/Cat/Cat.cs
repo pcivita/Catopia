@@ -7,7 +7,7 @@ using TMPro;
 // TODO: Investigate bug where a cat seems to be locked in the slot. 
 public class Cat : MonoBehaviour
 {
-    private CatSO _catSO;
+    public CatSO _catSO;
     [SerializeField] float clickRadius;
     private Vector2 offset;
     public bool inArea = false;
@@ -66,17 +66,17 @@ public class Cat : MonoBehaviour
     // Doesn't deal with overlapping Cats
     private void OnMouseDown()
     {
+        Debug.Log(_catSO.CatName);
         offset = (Vector2)transform.position - GetMouseWorldPos();
+        // Remove Cat
         if (inArea)
         {
             area.RemoveCat(this);
         }
-        // get OG pos
     }
     
     void OnMouseDrag()
     {
-        // Update the object's position to follow the mouse, keeping the offset
         transform.position = GetMouseWorldPos() + offset;
     }
     
@@ -98,11 +98,7 @@ public class Cat : MonoBehaviour
         {
             area = hit.transform.root.GetComponent<AreaController>();
             if (area == null) continue;
-            if (!area.TryReceiveCat(this))
-            {
-                // Todo: Return Cat
-                SetPosition(Vector2.zero);
-            }
+            area.AddCat(this);
             break;
         }
     }
@@ -116,6 +112,7 @@ public class Cat : MonoBehaviour
     //TODO: implement. this will be used at the start of a new day.
     public void ResetPosition()
     {
+        transform.position = Vector2.zero;
         inArea = false;
     }
 }
