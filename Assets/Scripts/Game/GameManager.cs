@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] CatSO[] defaultCats;
     [SerializeField] GameObject catPrefab;
     [SerializeField] AreaController[] areas;
+    [SerializeField] TMP_Text foodText;
+
     List<Cat> catInstances;
 
     private void Start()
@@ -28,12 +31,9 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void Update()
+    public void UpdateFoodText()
     {
-        if (Input.GetKeyUp(KeyCode.Space))
-        {
-            NewDay();
-        }
+        foodText.text = "Food: " + gameState.GetFood();
     }
 
     public CatSO[] GetDefaultCats()
@@ -55,7 +55,7 @@ public class GameManager : MonoBehaviour
     //notify the areas
     //consume food....
     //kill cats accordingly?
-    void NewDay()
+    public void NewDay()
     {
        
         foreach (var c in catInstances)
