@@ -20,6 +20,10 @@ public class HuntArea : AreaController
             catTextMesh = textMeshes[0];
             huntTextMesh = textMeshes[1];
         }
+    }
+
+    public void UpdateTexts()
+    {
         catTextMesh.text = "Cat: " + _cats.Count;
         huntTextMesh.text = "Hunt: " + totalHunting;
     }
@@ -34,8 +38,8 @@ public class HuntArea : AreaController
         {
             totalHunting -= cat._catSO.Hunting;
         }
-        catTextMesh.text = "Cat: " + _cats.Count;
-        huntTextMesh.text = "Hunt: " + totalHunting;
+
+        UpdateTexts();
     }
 
     public override void NewDay()
@@ -44,7 +48,7 @@ public class HuntArea : AreaController
         totalHunting = 0;
         _cats.Clear();
         Debug.Log( GameManager.instance.gameState.GetFood());
-        catTextMesh.text = "Cat: " + _cats.Count;
-        huntTextMesh.text = "Hunt: " + totalHunting;
+
+        UpdateTexts();
     }
 }
