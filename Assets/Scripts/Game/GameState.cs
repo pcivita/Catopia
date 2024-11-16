@@ -59,12 +59,14 @@ public class GameState {
         else
         {
             foodCount -= amount;
+            GameManager.instance.UpdateFoodText();
             return true;
         }
     }
 
     public void AddFood(int amount)
     {
+        GameManager.instance.UpdateFoodText();
         foodCount += amount;
     }
 
