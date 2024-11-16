@@ -16,4 +16,11 @@ MonoBehaviour:
   Attack: 3
   Health: 2
   Hunting: 1
-  Sprite: {fileID: 21300000, guid: 50d9489600932d745a0168d08a93d36c, type: 3}
+  Accessory: {fileID: 21300000, guid: feaa1575616b3446890675e1125d3b6f, type: 3}
+  Pattern: {fileID: 21300000, guid: d7ee451a9c13f4a79b3616e94122c523, type: 3}
+  patternColor:
+    serializedVersion: 2
+    rgba: 4278274977
+  bodyColor:
+    serializedVersion: 2
+    rgba: 4282426623

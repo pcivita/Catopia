@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 // TODO: Investigate bug where a cat seems to be locked in the slot. 
 public class Cat : MonoBehaviour
@@ -15,6 +16,9 @@ public class Cat : MonoBehaviour
     public SpriteRenderer lineSR;
     public SpriteRenderer patternSR;
     public SpriteRenderer accessorySR;
+    public TMP_Text catText;
+    public Canvas uiCanvas;
+
 
     private AreaController area;
     [SerializeField] LayerMask areaMask;
@@ -28,6 +32,8 @@ public class Cat : MonoBehaviour
     private void Start()
     {
         // For visual purposes
+        uiCanvas.worldCamera = Camera.main;
+        uiCanvas.gameObject.SetActive(false);
         patternSR.sprite = _catSO.Pattern;
         accessorySR.sprite = _catSO.Accessory;
         patternSR.color = _catSO.patternColor;
@@ -38,10 +44,28 @@ public class Cat : MonoBehaviour
     {
        
     }
-    
+
+    private void OnMouseOver()
+    {
+        DisplayStats();
+    }
+
+    private void OnMouseExit()
+    {
+        uiCanvas.gameObject.SetActive(false);
+    }
+
+
+    private void DisplayStats(){
+        uiCanvas.gameObject.SetActive(true);
+        catText.text = "Name:" + _catSO.CatName +
+            "\nHealth: " + _catSO.Health +
+            "\nHunting: " + _catSO.Hunting;
+    }
+
     // Doesn't deal with overlapping Cats
     private void OnMouseDown()
-    { 
+    {
         offset = (Vector2)transform.position - GetMouseWorldPos();
         if (inArea)
         {
