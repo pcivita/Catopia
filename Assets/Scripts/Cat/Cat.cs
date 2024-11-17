@@ -11,7 +11,8 @@ public class Cat : MonoBehaviour
     [SerializeField] float clickRadius;
     private Vector2 offset;
     public bool inArea = false;
-
+    private bool dragging = false;
+    
     public SpriteRenderer bodySR;
     public SpriteRenderer lineSR;
     public SpriteRenderer patternSR;
@@ -45,9 +46,9 @@ public class Cat : MonoBehaviour
        
     }
 
-    private void OnMouseOver()
+    private void OnMouseEnter()
     {
-        DisplayStats();
+        if (!dragging) DisplayStats();
     }
 
     private void OnMouseExit()
@@ -66,6 +67,8 @@ public class Cat : MonoBehaviour
     // Doesn't deal with overlapping Cats
     private void OnMouseDown()
     {
+        dragging = true;
+        uiCanvas.gameObject.SetActive(false);
         Debug.Log(_catSO.CatName);
         offset = (Vector2)transform.position - GetMouseWorldPos();
         // Remove Cat
@@ -91,6 +94,7 @@ public class Cat : MonoBehaviour
 
     private void OnMouseUp()
     {
+        dragging = false;
         var hits = Physics2D.OverlapCircleAll(GetMouseWorldPos(), clickRadius, areaMask);
         if (hits.Length <= 0) return;
         
