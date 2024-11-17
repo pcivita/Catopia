@@ -36,6 +36,7 @@ public class TrainArea : AreaController
     public override void UpdateAreaState(Cat cat, bool addingCat)
     {
         UpdateTexts();
+        GameManager.instance.UpdateConsumptionText();
     }
 
     public override void NewDay()

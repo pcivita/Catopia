@@ -18,6 +18,9 @@ public class GameState {
         List<CatSO> l = new List<CatSO>();
         l.Add(GameManager.instance.GetDefaultCats()[0]);
         l.Add(GameManager.instance.GetDefaultCats()[1]);
+        // TODO: Remove These
+        l.Add(GameManager.instance.GetDefaultCats()[1]);
+        l.Add(GameManager.instance.GetDefaultCats()[1]);
         return l;
     }
 

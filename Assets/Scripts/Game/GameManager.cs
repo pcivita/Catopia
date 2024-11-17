@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject catPrefab;
     [SerializeField] AreaController[] areas;
     [SerializeField] TMP_Text foodText;
+    [SerializeField] TMP_Text consumptionText;
     [SerializeField] SpriteRenderer background;
 
 
@@ -32,11 +33,17 @@ public class GameManager : MonoBehaviour
             ConstructCat(c);
         }
         UpdateFoodText();
+        UpdateConsumptionText();
     }
 
     public void UpdateFoodText()
     {
         foodText.text = "Food: " + gameState.GetFood();
+    }
+    
+    public void UpdateConsumptionText()
+    {
+        consumptionText.text = "Consumption: " + (catInstances.Count + areas[1]._cats.Count);
     }
 
     public CatSO[] GetDefaultCats()
