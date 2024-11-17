@@ -8,6 +8,7 @@ public class GameState {
     protected List<CatSO> colonyMembers;
     protected int foodCount;
     protected int dayCount = 1;
+    public int mapNode = 0;
 
     //NOT FINAL!
     //TODO how do we want to seed the colony? could randomize

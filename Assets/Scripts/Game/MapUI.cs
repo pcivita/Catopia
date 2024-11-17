@@ -1,18 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MapUI : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject mapObj;
+    public Transform[] nodes;
+    public void Open()
     {
-        
+        mapObj.SetActive(true);
     }
-
-    // Update is called once per frame
-    void Update()
+    public void Close()
     {
-        
+        mapObj.SetActive(false);
+    }
+    private void Update(){
+        //do a lil animation for the current node
+        nodes[GameManager.instance.gameState.mapNode].localScale = Vector3.one * (Mathf.Sin(Time.timeSinceLevelLoad) + 1.5f);
     }
 }
