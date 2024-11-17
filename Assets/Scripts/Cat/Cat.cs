@@ -10,8 +10,10 @@ public class Cat : MonoBehaviour
     public CatSO _catSO;
     [SerializeField] float clickRadius;
     private Vector2 offset;
+    
     public bool inArea = false;
     private bool dragging = false;
+    public bool inConquer = false;
     
     public SpriteRenderer bodySR;
     public SpriteRenderer lineSR;
@@ -65,6 +67,10 @@ public class Cat : MonoBehaviour
     private void Update()
     {
         //Vector3 dir = Vector3.Normalize(wanderTarget - transform.position) * Time.deltaTime;
+        if (!inConquer)
+        {
+            
+        
         Vector3 dir = (wanderTarget - transform.position) * Time.deltaTime;
         transform.position += dir;
         bool flip = dir.x > 0;
@@ -72,6 +78,7 @@ public class Cat : MonoBehaviour
         lineSR.flipX = flip;
         patternSR.flipX = flip;
         accessorySR.flipX = flip;
+        }
      }
         
 

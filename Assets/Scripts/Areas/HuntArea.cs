@@ -19,6 +19,8 @@ public class HuntArea : AreaController
             catTextMesh = textMeshes[0];
             huntTextMesh = textMeshes[1];
         }
+
+        UpdateTexts();
     }
 
     public void UpdateTexts()

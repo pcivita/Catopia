@@ -12,7 +12,7 @@ public abstract class AreaController : MonoBehaviour
     public abstract void UpdateAreaState(Cat cat, bool addingCat);
 
     public abstract void NewDay();
-    public void AddCat(Cat cat)
+    public virtual void AddCat(Cat cat)
     { 
         _cats.Add(cat);
         cat.inArea = true;
@@ -20,7 +20,7 @@ public abstract class AreaController : MonoBehaviour
         cat.SetWanderBounds(bgSprite.bounds.min, bgSprite.bounds.max);
     }
 
-    public void RemoveCat(Cat cat)
+    public virtual void RemoveCat(Cat cat)
     {
         _cats.Remove(cat);
         cat.inArea = false;
