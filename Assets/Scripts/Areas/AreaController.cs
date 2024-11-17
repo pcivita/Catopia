@@ -7,7 +7,7 @@ public abstract class AreaController : MonoBehaviour
 {
     public SpriteRenderer bgSprite;
 
-    protected List<Cat> _cats = new();
+    public List<Cat> _cats = new();
 
     public abstract void UpdateAreaState(Cat cat, bool addingCat);
 
