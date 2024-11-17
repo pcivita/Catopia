@@ -13,7 +13,6 @@ public class HuntArea : AreaController
     private void Start()
     {
         TMP_Text[] textMeshes = gameObject.GetComponentsInChildren<TMP_Text>();
-        Debug.Log(textMeshes.Length);
         
         if (textMeshes.Length >= 2)
         {
@@ -47,7 +46,6 @@ public class HuntArea : AreaController
         GameManager.instance.gameState.AddFood(totalHunting);
         totalHunting = 0;
         _cats.Clear();
-        Debug.Log( GameManager.instance.gameState.GetFood());
 
         UpdateTexts();
     }

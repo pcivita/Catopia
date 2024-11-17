@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
         {
             ConstructCat(c);
         }
+        UpdateFoodText();
     }
 
     public void UpdateFoodText()
@@ -66,16 +67,16 @@ public class GameManager : MonoBehaviour
     //kill cats accordingly?
     public void NewDay()
     {
+        gameState.NewDay();
        
         foreach (var c in catInstances)
         {
-            c.ResetPosition();
+            c.NewDay();
         }
         foreach (var area in areas)
         {
             area.NewDay();
         }
 
-        gameState.NewDay();
     }
 }

@@ -58,7 +58,7 @@ public class Cat : MonoBehaviour
         while (true)
         {
             wanderTarget = new Vector3(UnityEngine.Random.RandomRange(wanderMin.x, wanderMax.x), UnityEngine.Random.Range(wanderMin.y, wanderMax.y), 0);
-            yield return new WaitForSeconds(UnityEngine.Random.RandomRange(2f, 5f));
+            yield return new WaitForSeconds(UnityEngine.Random.RandomRange(3f, 6f));
         }
     }
 
@@ -141,7 +141,40 @@ public class Cat : MonoBehaviour
     {
         transform.position = position;
     }
-
+    public void Train(string trainType, int trainAmount) 
+    {
+     
+        if (trainType == "Health")
+        {
+            _catSO.Health += trainAmount;
+        } else if (trainType == "Hunting")
+        {
+            _catSO.Hunting += trainAmount;
+        }
+        else if (trainType == "Strength")
+        {
+            _catSO.Attack += trainAmount;
+        }
+    }
+    
+    public void ConsumeFood()
+    {
+        if (GameManager.instance.gameState.TryConsumeFood(1))
+        {
+            Debug.Log(_catSO.CatName + " consumed food");
+        }
+        else
+        {
+            Debug.Log(_catSO.CatName + " didn't eat");
+            // TODO: Should Cat die?
+        }
+    }
+    public void NewDay()
+    {
+        this.ResetPosition();
+        this.ConsumeFood();
+        GameManager.instance.CatDefaultWander(this);
+    }
     //TODO: implement. this will be used at the start of a new day.
     public void ResetPosition()
     {

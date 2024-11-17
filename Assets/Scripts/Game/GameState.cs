@@ -72,8 +72,8 @@ public class GameState {
 
     public void AddFood(int amount)
     {
-        GameManager.instance.UpdateFoodText();
         foodCount += amount;
+        GameManager.instance.UpdateFoodText();
     }
 
     public void NewDay()
