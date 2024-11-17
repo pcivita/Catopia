@@ -69,7 +69,6 @@ public class Cat : MonoBehaviour
     {
         dragging = true;
         uiCanvas.gameObject.SetActive(false);
-        Debug.Log(_catSO.CatName);
         offset = (Vector2)transform.position - GetMouseWorldPos();
         // Remove Cat
         if (inArea)
@@ -113,11 +112,46 @@ public class Cat : MonoBehaviour
         transform.position = position;
     }
 
+    public void Train(string trainType, int trainAmount) 
+    {
+     
+        if (trainType == "Health")
+        {
+            _catSO.Health += trainAmount;
+        } else if (trainType == "Hunting")
+        {
+            _catSO.Hunting += trainAmount;
+        }
+        else if (trainType == "Strength")
+        {
+            _catSO.Attack += trainAmount;
+        }
+    }
     //TODO: implement. this will be used at the start of a new day.
     public void ResetPosition()
     {
         transform.position = Vector2.zero;
         inArea = false;
+    }
+
+    public void ConsumeFood()
+    {
+        if (GameManager.instance.gameState.TryConsumeFood(1))
+        {
+            Debug.Log(_catSO.CatName + " consumed food");
+        }
+        else
+        {
+            Debug.Log(_catSO.CatName + " didn't eat");
+            // TODO: Should Cat die?
+        }
+        
+    }
+
+    public void NewDay()
+    {
+        this.ResetPosition();
+        this.ConsumeFood();
     }
 }
 

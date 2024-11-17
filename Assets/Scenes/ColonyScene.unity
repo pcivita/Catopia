@@ -168,6 +168,7 @@ MonoBehaviour:
   catPrefab: {fileID: 6675817489452377155, guid: 2154f31664f0f8940a8dbb3dd0aaf97d, type: 3}
   areas:
   - {fileID: 297624830}
+  - {fileID: 1248243350}
   foodText: {fileID: 1364102321}
 --- !u!4 &316486528
 Transform:
@@ -708,6 +709,17 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1248243350 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 584972705816347220, guid: e5a2925cb3d0704469911bd5b3bf3993, type: 3}
+  m_PrefabInstance: {fileID: 5588621792388185516}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33890a66cce1eb247b88fb16308e9d1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1364102319
 GameObject:
   m_ObjectHideFlags: 0
@@ -1098,7 +1110,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7242877724564651851, guid: e5a2925cb3d0704469911bd5b3bf3993, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7242877724564651851, guid: e5a2925cb3d0704469911bd5b3bf3993, type: 3}
       propertyPath: m_LocalRotation.w

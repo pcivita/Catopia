@@ -20,9 +20,10 @@ public class GameManager : MonoBehaviour
     {
         instance = this;
         catInstances = new List<Cat>();
-
+        
         //create new game state
         gameState = GameState.NewGame();
+        UpdateFoodText();
 
         //construct all cats
         foreach (var c in gameState.GetCats())
@@ -57,16 +58,20 @@ public class GameManager : MonoBehaviour
     //kill cats accordingly?
     public void NewDay()
     {
+        // First we Create a new Day
+        gameState.NewDay();
        
+        // Then, we reset the position of each Cat
         foreach (var c in catInstances)
         {
-            c.ResetPosition();
+            c.NewDay();
         }
+        // Finally We Deal with the areas
         foreach (var area in areas)
         {
             area.NewDay();
         }
 
-        gameState.NewDay();
+      
     }
 }
