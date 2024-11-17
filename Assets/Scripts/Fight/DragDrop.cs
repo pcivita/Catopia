@@ -9,6 +9,8 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
     private Vector3 offset; // Offset to maintain the correct dragging position
     private Camera mainCamera; // Reference to the main camera
 
+    
+
     private void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
