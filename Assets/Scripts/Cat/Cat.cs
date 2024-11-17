@@ -23,6 +23,10 @@ public class Cat : MonoBehaviour
 
     private AreaController area;
     [SerializeField] LayerMask areaMask;
+
+    Vector3 wanderTarget;
+    Vector3 wanderMin;
+    Vector3 wanderMax;
     
     public void Init(CatSO catSO)
     {
@@ -41,10 +45,35 @@ public class Cat : MonoBehaviour
         bodySR.color = _catSO.bodyColor;
     }
 
+    public void SetWanderBounds(Vector3 boundMin, Vector3 boundMax)
+    {
+        StopAllCoroutines();
+        wanderMin = boundMin;
+        wanderMax = boundMax;
+        StartCoroutine(Wander());
+    }
+
+    IEnumerator Wander()
+    {
+        while (true)
+        {
+            wanderTarget = new Vector3(UnityEngine.Random.RandomRange(wanderMin.x, wanderMax.x), UnityEngine.Random.Range(wanderMin.y, wanderMax.y), 0);
+            yield return new WaitForSeconds(UnityEngine.Random.RandomRange(2f, 5f));
+        }
+    }
+
     private void Update()
     {
-       
-    }
+        //Vector3 dir = Vector3.Normalize(wanderTarget - transform.position) * Time.deltaTime;
+        Vector3 dir = (wanderTarget - transform.position) * Time.deltaTime;
+        transform.position += dir;
+        bool flip = dir.x > 0;
+        bodySR.flipX = flip;
+        lineSR.flipX = flip;
+        patternSR.flipX = flip;
+        accessorySR.flipX = flip;
+     }
+        
 
     private void OnMouseEnter()
     {

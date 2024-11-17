@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject catPrefab;
     [SerializeField] AreaController[] areas;
     [SerializeField] TMP_Text foodText;
+    [SerializeField] SpriteRenderer background;
+
 
     List<Cat> catInstances;
 
@@ -41,6 +43,12 @@ public class GameManager : MonoBehaviour
         return defaultCats;
     }
 
+    public void CatDefaultWander(Cat cat)
+    {
+        cat.SetWanderBounds(background.bounds.min, background.bounds.max);
+    }
+
+
     void ConstructCat(CatSO c)
     {
         //TODO randomize position of spawn.
@@ -48,6 +56,7 @@ public class GameManager : MonoBehaviour
         Cat newCat = Instantiate(catPrefab, pos, quaternion.identity).GetComponent<Cat>();
         newCat.Init(c);
         catInstances.Add(newCat);
+        CatDefaultWander(newCat);
     }
 
     //TODO stub

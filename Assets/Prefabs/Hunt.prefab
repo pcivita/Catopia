@@ -177,6 +177,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4e2412685d854b48b7a0ee962ee32ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bgSprite: {fileID: 6449071515526016893}
   totalHunting: 0
 --- !u!61 &6613882594653964398
 BoxCollider2D:
