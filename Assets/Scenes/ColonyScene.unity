@@ -168,6 +168,7 @@ MonoBehaviour:
   catPrefab: {fileID: 6675817489452377155, guid: 2154f31664f0f8940a8dbb3dd0aaf97d, type: 3}
   areas:
   - {fileID: 297624830}
+  foodText: {fileID: 1364102321}
 --- !u!4 &316486528
 Transform:
   m_ObjectHideFlags: 0
