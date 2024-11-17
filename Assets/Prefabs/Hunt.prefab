@@ -89,6 +89,7 @@ GameObject:
   - component: {fileID: 6449071515526016893}
   - component: {fileID: 8581625419414943176}
   - component: {fileID: 6613882594653964398}
+  - component: {fileID: 7947987034232614449}
   m_Layer: 6
   m_Name: Hunt
   m_TagString: Untagged
@@ -222,6 +223,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &7947987034232614449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 739939555174143185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 000d729ed7fd54615bedeefd74a64d39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kX: 100
+  kY: 60
+  damp: 2
+  clickImpulse: 2
 --- !u!1 &3062455209689401441
 GameObject:
   m_ObjectHideFlags: 0
@@ -487,7 +504,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &8862936217487370518

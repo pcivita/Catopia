@@ -416,6 +416,7 @@ GameObject:
   - component: {fileID: 3388943134086725688}
   - component: {fileID: 4741114108622070383}
   - component: {fileID: 7421171340723224714}
+  - component: {fileID: 942110364130623006}
   m_Layer: 3
   m_Name: Cat
   m_TagString: Untagged
@@ -518,6 +519,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &942110364130623006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6675817489452377155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 000d729ed7fd54615bedeefd74a64d39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kX: 100
+  kY: 60
+  damp: 2
 --- !u!1 &6730793335250904976
 GameObject:
   m_ObjectHideFlags: 0
