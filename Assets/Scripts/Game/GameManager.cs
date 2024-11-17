@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
 
     List<Cat> catInstances;
 
-    private void Start()
+    private void Awake()
     {
         instance = this;
         catInstances = new List<Cat>();
@@ -66,6 +66,7 @@ public class GameManager : MonoBehaviour
         {
             area.NewDay();
         }
-      
+
+        gameState.NewDay();
     }
 }

@@ -7,6 +7,7 @@ public class GameState {
 
     protected List<CatSO> colonyMembers;
     protected int foodCount;
+    protected int dayCount = 1;
 
     //NOT FINAL!
     //TODO how do we want to seed the colony? could randomize
@@ -50,6 +51,10 @@ public class GameState {
         return foodCount;
     }
 
+    public int GetDay()
+    {
+        return dayCount;
+    }
     public bool TryConsumeFood(int amount)
     {
         if (amount > foodCount)
@@ -70,5 +75,8 @@ public class GameState {
         foodCount += amount;
     }
 
-
+    public void NewDay()
+    {
+        dayCount++;
+    }
 }
