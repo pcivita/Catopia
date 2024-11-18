@@ -57,7 +57,7 @@ public class GameManager : MonoBehaviour
     }
 
 
-    void ConstructCat(CatSO c)
+    public void ConstructCat(CatSO c)
     {
         //TODO randomize position of spawn.
         Vector2 pos = Vector2.left * UnityEngine.Random.Range(-2f, 2f) + Vector2.right * UnityEngine.Random.Range(-2f, 2f);
@@ -65,6 +65,11 @@ public class GameManager : MonoBehaviour
         newCat.Init(c);
         catInstances.Add(newCat);
         CatDefaultWander(newCat);
+    }
+
+    public static CatSO GetRandomDefaultCat()
+    {
+        return instance.defaultCats[UnityEngine.Random.RandomRange(0, instance.defaultCats.Length)].Clone();
     }
 
     //TODO stub
