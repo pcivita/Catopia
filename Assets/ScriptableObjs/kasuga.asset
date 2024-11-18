@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: kasuga
   m_EditorClassIdentifier: 
   CatName: Ayumu Kasuga
-  Strength: 0
-  Health: 2
+  Strength: 1
+  Health: 10
   Hunting: 5
   Ability: {fileID: 11400000, guid: 9da36609b59fb5b41b752587aac32183, type: 2}
   Accessory: {fileID: 0}

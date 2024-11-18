@@ -173,6 +173,7 @@ MonoBehaviour:
   areas:
   - {fileID: 297624830}
   - {fileID: 496220831}
+  - {fileID: 697321645}
   foodText: {fileID: 1149680912}
   consumptionText: {fileID: 1149680911}
   background: {fileID: 668825635}
@@ -579,6 +580,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &697321645 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2782268131118852171, guid: b63d3eb98383c7346b93a00ad6f0820f, type: 3}
+  m_PrefabInstance: {fileID: 598018626182748328}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c220d273dc1e7d4d9883e974b931fc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1149680910
 PrefabInstance:
   m_ObjectHideFlags: 0
