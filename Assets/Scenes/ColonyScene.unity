@@ -172,7 +172,7 @@ MonoBehaviour:
   catPrefab: {fileID: 6675817489452377155, guid: 2154f31664f0f8940a8dbb3dd0aaf97d, type: 3}
   areas:
   - {fileID: 297624830}
-  - {fileID: 496220831}
+  - {fileID: 1881140594}
   - {fileID: 697321645}
   foodText: {fileID: 1149680912}
   consumptionText: {fileID: 1149680911}
@@ -193,17 +193,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &496220831 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 584972705816347220, guid: e5a2925cb3d0704469911bd5b3bf3993, type: 3}
-  m_PrefabInstance: {fileID: 5588621792388185516}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33890a66cce1eb247b88fb16308e9d1d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &496220833 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 3651367761540453915, guid: e5a2925cb3d0704469911bd5b3bf3993, type: 3}
@@ -734,6 +723,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1881140594 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2025121373921685541, guid: e5a2925cb3d0704469911bd5b3bf3993, type: 3}
+  m_PrefabInstance: {fileID: 5588621792388185516}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33890a66cce1eb247b88fb16308e9d1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &598018626182748328
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -887,6 +887,10 @@ PrefabInstance:
       propertyPath: m_AdditionalShaderChannelsFlag
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 8581625419414943176, guid: a1e1c566d2508a047b44300d687d7a03, type: 3}
+      propertyPath: trainArea
+      value: 
+      objectReference: {fileID: 1881140594}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -920,6 +924,14 @@ PrefabInstance:
       propertyPath: trainingList.Array.data[2]
       value: Health
       objectReference: {fileID: 0}
+    - target: {fileID: 2025121373921685541, guid: e5a2925cb3d0704469911bd5b3bf3993, type: 3}
+      propertyPath: bgSprite
+      value: 
+      objectReference: {fileID: 496220833}
+    - target: {fileID: 2025121373921685541, guid: e5a2925cb3d0704469911bd5b3bf3993, type: 3}
+      propertyPath: huntArea
+      value: 
+      objectReference: {fileID: 297624830}
     - target: {fileID: 2086668100242631021, guid: e5a2925cb3d0704469911bd5b3bf3993, type: 3}
       propertyPath: m_Name
       value: Train
@@ -968,7 +980,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 584972705816347220, guid: e5a2925cb3d0704469911bd5b3bf3993, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

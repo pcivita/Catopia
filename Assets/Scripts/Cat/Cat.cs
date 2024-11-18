@@ -216,6 +216,7 @@ public class Cat : MonoBehaviour
         {
             _catSO.Strength += trainAmount;
         }
+        GameManager.instance.gameState.TryConsumeFood(1);
     }
     
     public void ConsumeFood()

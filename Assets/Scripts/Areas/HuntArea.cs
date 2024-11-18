@@ -66,6 +66,8 @@ public class HuntArea : AreaController
         totalHunting = 0;
         _cats.Clear();
 
+        Debug.Log("Hunt Cleared");
+
         UpdateTexts();
     }
 }

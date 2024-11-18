@@ -67,6 +67,10 @@ public class TrainArea : AreaController
             cat.Train(currentTraining, 1);
         }
         
+        _cats.Clear();
+        
+        Debug.Log("Train Cleared");
+
         currentTraining = trainingList[(GameManager.instance.gameState.GetDay() - 1) % trainingList.Length];
         UpdateTexts();
     }

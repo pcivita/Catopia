@@ -85,14 +85,17 @@ public class GameManager : MonoBehaviour
             //all other logic happens once event is over. When event window is closed, this code executes.
             gameState.NewDay();
 
-            foreach (var c in catInstances)
-            {
-                c.NewDay();
-            }
+            // 
             foreach (var area in areas)
             {
                 Debug.Log(area.areaName);
                 area.NewDay();
+            }
+
+            Debug.Log("AREAS Have Restarted, Total Food: " + gameState.GetFood());
+            foreach (var c in catInstances)
+            {
+                c.NewDay();
             }
 
         });
