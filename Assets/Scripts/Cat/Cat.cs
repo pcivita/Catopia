@@ -106,45 +106,24 @@ public class Cat : MonoBehaviour
 
         catText.fontSize = 36;
         catText.enableWordWrapping = true;
-        // catText.alignment = TMPro.TextAlignmentOptions.TopLeft;
 
         string firstLine = "Name:" + _catSO.CatName;
         string fullText = firstLine + 
-            "\n\nStrength: " + GetStrength() +
-            "\nHealth: " + GetHealth() +
-            "\nHunting: " + _catSO.Hunting;
-            // "\nAbility: " + _catSO.Ability.abilityName + " - " + _catSO.Ability.description;
+            "\n\nStrength: " + GetStrengthPlusBuffs() +
+            "\nHealth: " + GetHealthPlusBuffs() +
+            "\nHunting: " + _catSO.Hunting + 
+            "\n\nAbility: " + "\n" + _catSO.Ability.abilityName + "\n\n" + _catSO.Ability.description;
         
-        // catText.text = firstLine;
-        // float newWidth = catText.preferredWidth;
-
         catText.text = fullText; 
-
-        // float maxWrapWidth = newWidth * 0.8f;
-        // catText.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, maxWrapWidth);
-
-        // float newHeight = catText.preferredHeight;
-
-        // GameObject panel = uiCanvas.transform.Find("Panel").gameObject;
-        // RectTransform panelRect = panel.GetComponent<RectTransform>();
-        // panelRect.sizeDelta = new Vector2(newWidth, newHeight);
-        // panelRect.anchorMin = new Vector2(0f, 1f);
-        // panelRect.anchorMax = new Vector2(0f, 1f);
-        // panelRect.pivot = new Vector2(0f, 1f);
-
-        // catText.rectTransform.anchorMin = new Vector2(0f, 1f);
-        // catText.rectTransform.anchorMax = new Vector2(0f, 1f);
-
-        // catText.rectTransform.anchoredPosition = new Vector2(newWidth * 0.1f, newWidth * 0.1f);
     }
 
-    private int GetStrength() {
+    private int GetStrengthPlusBuffs() {
         int baseStrength = _catSO.Strength;
         Debug.Log($"Strength Buff For {_catSO.CatName} Is {_catSO.Ability.GetStrengthBuff(this)}");
         return baseStrength + _catSO.Ability.GetStrengthBuff(this);
     }
 
-    private int GetHealth() {
+    private int GetHealthPlusBuffs() {
         int baseHealth = _catSO.Health;
         Debug.Log($"Health Buff For {_catSO.CatName} Is {_catSO.Ability.GetHealthBuff(this)}");
         return baseHealth + _catSO.Ability.GetHealthBuff(this);
