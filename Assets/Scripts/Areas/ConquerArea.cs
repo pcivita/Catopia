@@ -93,7 +93,24 @@ public class ConquerArea : AreaController
 
     public override void NewDay()
     {
-        Debug.Log("NEW DAY CONQUER");
+        int strSum = 0;
+        int healthSum = 0;
+        foreach(var cat in _cats){
+            strSum += cat._catSO.Strength;
+            healthSum += cat._catSO.Health;
+        }
+        bool win = strSum >= 5 && healthSum >= 5;
+        if (win)
+        {
+            GameManager.instance.gameState.AddCat(GameManager.GetRandomDefaultCat());
+        }
+        else
+        {
+            //TODO: game over.
+            Debug.Log("GAME OVER");
+        }
+
+        Debug.Log("NEW DAY CONQUER win: "+win);
         _cats.Clear();
         UpdateTexts();
     }
