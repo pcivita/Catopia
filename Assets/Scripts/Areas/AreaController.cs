@@ -5,6 +5,7 @@ using UnityEngine;
 
 public abstract class AreaController : MonoBehaviour
 {
+    public string areaName = "None";
     public SpriteRenderer bgSprite;
 
     public List<Cat> _cats = new();
@@ -16,6 +17,7 @@ public abstract class AreaController : MonoBehaviour
     { 
         _cats.Add(cat);
         cat.inArea = true;
+        cat.currArea = areaName;
         UpdateAreaState(cat, cat.inArea);
         cat.SetWanderBounds(bgSprite.bounds.min, bgSprite.bounds.max);
     }
@@ -24,8 +26,14 @@ public abstract class AreaController : MonoBehaviour
     {
         _cats.Remove(cat);
         cat.inArea = false;
+        cat.currArea = "None";
         UpdateAreaState(cat, cat.inArea);
         GameManager.instance.CatDefaultWander(cat);
+    }
+
+    public List<Cat> GetCats()
+    {
+        return _cats;
     }
     
     // Todo: Abstract Deal with New Day
