@@ -16,7 +16,7 @@ MonoBehaviour:
   Attack: 2
   Health: 2
   Hunting: 2
-  Accessory: {fileID: 21300000, guid: bcb744809ce68934c8eebbb3b266e65e, type: 3}
+  Accessory: {fileID: 0}
   Pattern: {fileID: 0}
   patternColor:
     serializedVersion: 2

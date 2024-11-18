@@ -59,7 +59,9 @@ public class Cat : MonoBehaviour
     {
         while (true)
         {
-            wanderTarget = new Vector3(UnityEngine.Random.RandomRange(wanderMin.x, wanderMax.x), UnityEngine.Random.Range(wanderMin.y, wanderMax.y), 0);
+            wanderTarget = transform.position + new Vector3(UnityEngine.Random.RandomRange(-2, 2), UnityEngine.Random.Range(-2, 2), 0);
+            wanderTarget.x = Mathf.Clamp(wanderTarget.x, wanderMin.x, wanderMax.x);
+            wanderTarget.y = Mathf.Clamp(wanderTarget.y, wanderMin.y, wanderMax.y);
             yield return new WaitForSeconds(UnityEngine.Random.RandomRange(3f, 6f));
         }
     }
@@ -141,6 +143,7 @@ public class Cat : MonoBehaviour
             area.AddCat(this);
             break;
         }
+        wanderTarget = transform.position;
     }
 
     // Todo: Animation Triggers etc. 
