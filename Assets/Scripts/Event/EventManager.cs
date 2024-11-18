@@ -93,6 +93,7 @@ public class EventManager : MonoBehaviour
             eventText.text = "Nobody was at home to protect the food! You lost 1 food.";
             GameManager.instance.gameState.TryConsumeFood(1);
             AllowExitEvent();
+            return;
         }
 
         eventText.text = cat._catSO.CatName + " bumped into a bee hive, oh no! It seems like you would need a lot of HEALTH to run away from bees...";
