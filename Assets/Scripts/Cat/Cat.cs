@@ -113,8 +113,7 @@ public class Cat : MonoBehaviour
             "\nHealth: " + GetHealthPlusBuffs() +
             "\nHunting: " + _catSO.Hunting + 
             "\n\nAbility: " + "\n" + _catSO.Ability.abilityName + "\n\n" + _catSO.Ability.description;
-        
-        
+
         catText.text = fullText; 
     }
 
