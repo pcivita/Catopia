@@ -26,6 +26,15 @@ public class EventManager : MonoBehaviour
         possibleEvents.Add(LostHousecat);
         possibleEvents.Add(RiskyFood);
         possibleEvents.Add(FoodTheif);*/
+        EventDone();
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            PlayEvent();
+        }
     }
 
     public void PlayEvent()
@@ -62,7 +71,8 @@ public class EventManager : MonoBehaviour
         button.gameObject.SetActive(true);
         button.GetComponentInChildren<TMP_Text>().text = buttonText;
         button.onClick.AddListener(()=> {
-            button.gameObject.SetActive(false);
+            eventChoice1.gameObject.SetActive(false);
+            eventChoice2.gameObject.SetActive(false);
             onClick();
         }
         );
