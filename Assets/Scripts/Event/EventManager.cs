@@ -26,22 +26,22 @@ public class EventManager : MonoBehaviour
         possibleEvents.Add(LostHousecat);
         possibleEvents.Add(RiskyFood);
         possibleEvents.Add(FoodTheif);*/
-        EventDone();
+        eventCanvas.SetActive(false);
     }
 
-    private void Update()
+    public void PlayEvent(Action onEnd)
     {
-        if (Input.GetKeyUp(KeyCode.Space))
-        {
-            PlayEvent();
-        }
-    }
-
-    public void PlayEvent()
-    {
+        Debug.Log("PlayEvent");
         eventChoice1.gameObject.SetActive(false);
         eventChoice2.gameObject.SetActive(false);
         eventDoneButton.gameObject.SetActive(false);
+
+        eventDoneButton.onClick.RemoveAllListeners();
+        eventDoneButton.onClick.AddListener(()=>
+        {
+            onEnd();
+            eventCanvas.SetActive(false);
+        });
 
         catsPresent.Clear();
         foreach(var cat in GameManager.instance.catInstances)
@@ -55,13 +55,11 @@ public class EventManager : MonoBehaviour
     }
 
     //event done button calls this, youprobs dont have to call this in the script.
-    public void EventDone()
-    {
-        eventCanvas.SetActive(false);
-    }
+
 
     Cat GetRandomPresentCat()
     {
+        if (catsPresent.Count == 0) return null;
         return catsPresent[UnityEngine.Random.RandomRange(0, catsPresent.Count)];
     }
 
@@ -90,6 +88,12 @@ public class EventManager : MonoBehaviour
 
     void Bees(){
         Cat cat = GetRandomPresentCat();
+        if(cat == null)
+        {
+            eventText.text = "Nobody was at home to protect the food! You lost 1 food.";
+            GameManager.instance.gameState.TryConsumeFood(1);
+            AllowExitEvent();
+        }
 
         eventText.text = cat._catSO.CatName + " bumped into a bee hive, oh no! It seems like you would need a lot of HEALTH to run away from bees...";
 
@@ -117,6 +121,13 @@ public class EventManager : MonoBehaviour
     void RougeCat()
     {
         Cat cat = GetRandomPresentCat();
+        if (cat == null)
+        {
+            eventText.text = "Nobody was at home to protect the food! You lost 1 food.";
+            GameManager.instance.gameState.TryConsumeFood(1);
+            AllowExitEvent();
+            return;
+        }
 
         eventText.text = cat._catSO.CatName + " crossed paths with a rouge cat! It looks dangerous...";
 
