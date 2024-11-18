@@ -19,7 +19,7 @@ public class GameState {
         CatSO[] defaultCats = GameManager.instance.GetDefaultCats();
         for(int i = 0; i < number; i++)
         {
-            l.Add(defaultCats[UnityEngine.Random.RandomRange(0, defaultCats.Length)]);
+            l.Add(defaultCats[UnityEngine.Random.RandomRange(0, defaultCats.Length)].Clone());
         }
         return l;
     }
@@ -47,7 +47,8 @@ public class GameState {
     public void AddCat(CatSO c)
     {
         Debug.Log("Add cat " + c.CatName);
-        colonyMembers.Remove(c);
+        colonyMembers.Add(c);
+        GameManager.instance.ConstructCat(c);
     }
 
     public int GetFood()
