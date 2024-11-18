@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: bluestar
   m_EditorClassIdentifier: 
   CatName: Bluestar
-  Strength: 0
+  Strength: 1
   Health: 10
   Hunting: 3
   Ability: {fileID: 11400000, guid: 84c92b2141984034abbed9e1e76f074a, type: 2}
