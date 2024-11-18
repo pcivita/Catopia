@@ -27,7 +27,20 @@ public class HuntArea : AreaController
     public void UpdateTexts()
     {
         catTextMesh.text = "Cat: " + _cats.Count;
-        huntTextMesh.text = "Hunt: " + totalHunting;
+        huntTextMesh.text = "Hunt: " + GetTotalHuntingPlusBuffs();
+    }
+
+    public int GetTotalHuntingPlusBuffs()
+    {
+        int totalHuntingPlusBuffs = totalHunting;
+        foreach (var cat in _cats) 
+        {
+            if (cat._catSO.Ability.abilityName == "Three Musketeers" && _cats.Count >= 3)
+            {
+                totalHuntingPlusBuffs *= 2;
+            }
+        }
+        return totalHuntingPlusBuffs;
     }
 
     public override void UpdateAreaState(Cat cat, bool addingCat)
@@ -46,7 +59,7 @@ public class HuntArea : AreaController
 
     public override void NewDay()
     {
-        GameManager.instance.gameState.AddFood(totalHunting);
+        GameManager.instance.gameState.AddFood(GetTotalHuntingPlusBuffs());
         totalHunting = 0;
         _cats.Clear();
 

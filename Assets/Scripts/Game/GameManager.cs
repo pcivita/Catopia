@@ -86,6 +86,7 @@ public class GameManager : MonoBehaviour
             }
             foreach (var area in areas)
             {
+                Debug.Log(area.areaName);
                 area.NewDay();
             }
 

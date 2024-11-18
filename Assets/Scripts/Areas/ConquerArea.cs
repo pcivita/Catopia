@@ -94,5 +94,7 @@ public class ConquerArea : AreaController
     public override void NewDay()
     {
         Debug.Log("NEW DAY CONQUER");
+        _cats.Clear();
+        UpdateTexts();
     }
 }
