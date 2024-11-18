@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] SpriteRenderer background;
 
 
-    List<Cat> catInstances;
+    public List<Cat> catInstances;
 
     private void Awake()
     {
