@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: firestar
   m_EditorClassIdentifier: 
   CatName: Firestar
-  Strength: 0
+  Strength: 6
   Health: 3
   Hunting: 0
   Ability: {fileID: 11400000, guid: 9da36609b59fb5b41b752587aac32183, type: 2}
