@@ -6,13 +6,13 @@ using UnityEngine;
 
 public class TrainArea : AreaController
 {
-    
     public string[] trainingList = { "Hunting", "Strength", "Health" };
     public string currentTraining;
     private TMP_Text catTextMesh;
     private TMP_Text trainTextMesh;
     private void Start()
     {
+        areaName = "Train";
         currentTraining = trainingList[(GameManager.instance.gameState.GetDay() - 1) % trainingList.Length];
         Debug.Log(currentTraining);
 
@@ -51,4 +51,5 @@ public class TrainArea : AreaController
         currentTraining = trainingList[(GameManager.instance.gameState.GetDay() - 1) % trainingList.Length];
         UpdateTexts();
     }
+
 }

@@ -14,6 +14,7 @@ public class Cat : MonoBehaviour
     public bool inArea = false;
     private bool dragging = false;
     public bool inConquer = false;
+    public string currArea = "None";
     
     public SpriteRenderer bodySR;
     public SpriteRenderer lineSR;
@@ -102,10 +103,51 @@ public class Cat : MonoBehaviour
 
     private void DisplayStats(){
         uiCanvas.gameObject.SetActive(true);
-        catText.text = "Name:" + _catSO.CatName +
-            "\nHealth: " + _catSO.Health +
-            "\nHunting: " + _catSO.Hunting +
-            "\nAttack: " + _catSO.Attack;
+
+        catText.fontSize = 36;
+        catText.enableWordWrapping = true;
+        // catText.alignment = TMPro.TextAlignmentOptions.TopLeft;
+
+        string firstLine = "Name:" + _catSO.CatName;
+        string fullText = firstLine + 
+            "\n\nStrength: " + GetStrength() +
+            "\nHealth: " + GetHealth() +
+            "\nHunting: " + _catSO.Hunting;
+            // "\nAbility: " + _catSO.Ability.abilityName + " - " + _catSO.Ability.description;
+        
+        // catText.text = firstLine;
+        // float newWidth = catText.preferredWidth;
+
+        catText.text = fullText; 
+
+        // float maxWrapWidth = newWidth * 0.8f;
+        // catText.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, maxWrapWidth);
+
+        // float newHeight = catText.preferredHeight;
+
+        // GameObject panel = uiCanvas.transform.Find("Panel").gameObject;
+        // RectTransform panelRect = panel.GetComponent<RectTransform>();
+        // panelRect.sizeDelta = new Vector2(newWidth, newHeight);
+        // panelRect.anchorMin = new Vector2(0f, 1f);
+        // panelRect.anchorMax = new Vector2(0f, 1f);
+        // panelRect.pivot = new Vector2(0f, 1f);
+
+        // catText.rectTransform.anchorMin = new Vector2(0f, 1f);
+        // catText.rectTransform.anchorMax = new Vector2(0f, 1f);
+
+        // catText.rectTransform.anchoredPosition = new Vector2(newWidth * 0.1f, newWidth * 0.1f);
+    }
+
+    private int GetStrength() {
+        int baseStrength = _catSO.Strength;
+        Debug.Log($"Strength Buff For {_catSO.CatName} Is {_catSO.Ability.GetStrengthBuff(this)}");
+        return baseStrength + _catSO.Ability.GetStrengthBuff(this);
+    }
+
+    private int GetHealth() {
+        int baseHealth = _catSO.Health;
+        Debug.Log($"Health Buff For {_catSO.CatName} Is {_catSO.Ability.GetHealthBuff(this)}");
+        return baseHealth + _catSO.Ability.GetHealthBuff(this);
     }
 
     // Doesn't deal with overlapping Cats
@@ -172,7 +214,7 @@ public class Cat : MonoBehaviour
         }
         else if (trainType == "Strength")
         {
-            _catSO.Attack += trainAmount;
+            _catSO.Strength += trainAmount;
         }
     }
     
@@ -199,6 +241,8 @@ public class Cat : MonoBehaviour
     {
         transform.position = Vector2.zero;
         inArea = false;
+        inConquer = false;
+        currArea = "None";
     }
 }
 

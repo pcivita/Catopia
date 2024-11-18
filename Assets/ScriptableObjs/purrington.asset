@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: purrington
   m_EditorClassIdentifier: 
   CatName: Lady Purrington
-  Attack: 1
+  Strength: 1
   Health: 2
   Hunting: 3
+  Ability: {fileID: 11400000, guid: 9da36609b59fb5b41b752587aac32183, type: 2}
   Accessory: {fileID: 21300000, guid: 0cb26bc50ad414ee0a75b34a8789eb29, type: 3}
   Pattern: {fileID: 21300000, guid: 9527062ad3e3349168c97f310fd9e940, type: 3}
   patternColor:

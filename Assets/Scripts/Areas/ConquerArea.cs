@@ -13,6 +13,7 @@ public class ConquerArea : AreaController
 
     private void Start()
     {
+        areaName = "Conquer";
         TMP_Text[] textMeshes = gameObject.GetComponentsInChildren<TMP_Text>();
         
         if (textMeshes.Length >= 1)
@@ -48,6 +49,7 @@ public class ConquerArea : AreaController
             }
             cat.inArea = true;
             cat.inConquer = true;
+            cat.currArea = areaName;
             Debug.Log(availableSlot);
             cat.transform.position = catSlots[availableSlot].position;
         }
@@ -76,6 +78,7 @@ public class ConquerArea : AreaController
             _cats[index] = null; // Clear the slot
             cat.inArea = false;
             cat.inConquer = false;
+            cat.currArea = "None";
             Debug.Log($"Cat removed from slot {index}");
         }
         UpdateTexts();

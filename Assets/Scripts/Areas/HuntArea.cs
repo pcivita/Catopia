@@ -12,6 +12,7 @@ public class HuntArea : AreaController
 
     private void Start()
     {
+        areaName = "Hunt";
         TMP_Text[] textMeshes = gameObject.GetComponentsInChildren<TMP_Text>();
         
         if (textMeshes.Length >= 2)
