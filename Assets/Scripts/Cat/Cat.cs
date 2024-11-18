@@ -56,12 +56,19 @@ public class Cat : MonoBehaviour
         StartCoroutine(Wander());
     }
 
+    void WanderClamp()
+    {
+        wanderTarget.x = Mathf.Clamp(wanderTarget.x, wanderMin.x+0.5f, wanderMax.x-0.5f);
+        wanderTarget.y = Mathf.Clamp(wanderTarget.y, wanderMin.y+0.5f, wanderMax.y-0.5f);
+    }
+
     IEnumerator Wander()
     {
         while (true)
         {
-            wanderTarget = new Vector3(UnityEngine.Random.Range(wanderMin.x, wanderMax.x), UnityEngine.Random.Range(wanderMin.y, wanderMax.y), 0);
-            yield return new WaitForSeconds(UnityEngine.Random.Range(3f, 6f));
+            wanderTarget = transform.position + new Vector3(UnityEngine.Random.RandomRange(-2, 2), UnityEngine.Random.Range(-2, 2), 0);
+            WanderClamp();
+            yield return new WaitForSeconds(UnityEngine.Random.RandomRange(3f, 6f));
         }
     }
 
@@ -173,6 +180,9 @@ public class Cat : MonoBehaviour
 
     private void OnMouseUp()
     {
+        wanderTarget = transform.position;
+        WanderClamp();
+
         dragging = false;
         var hits = Physics2D.OverlapCircleAll(GetMouseWorldPos(), clickRadius, areaMask);
         if (hits.Length <= 0) return;
@@ -184,6 +194,7 @@ public class Cat : MonoBehaviour
             area.AddCat(this);
             break;
         }
+        WanderClamp();
     }
 
     // Todo: Animation Triggers etc. 

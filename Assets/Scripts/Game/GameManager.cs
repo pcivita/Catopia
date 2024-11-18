@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] SpriteRenderer background;
 
 
-    List<Cat> catInstances;
+    public List<Cat> catInstances;
 
     private void Awake()
     {
@@ -74,16 +74,23 @@ public class GameManager : MonoBehaviour
     //kill cats accordingly?
     public void NewDay()
     {
-        gameState.NewDay();
-       
-        foreach (var c in catInstances)
+        //triggers event
+        GameObject.FindFirstObjectByType<EventManager>().PlayEvent(() =>
         {
-            c.NewDay();
-        }
-        foreach (var area in areas)
-        {
-            area.NewDay();
-        }
+            //all other logic happens once event is over. When event window is closed, this code executes.
+            gameState.NewDay();
+
+            foreach (var c in catInstances)
+            {
+                c.NewDay();
+            }
+            foreach (var area in areas)
+            {
+                area.NewDay();
+            }
+
+        });
+        
 
     }
 }
