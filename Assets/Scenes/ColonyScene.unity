@@ -905,6 +905,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 496220833}
     - target: {fileID: 584972705816347220, guid: e5a2925cb3d0704469911bd5b3bf3993, type: 3}
+      propertyPath: huntArea
+      value: 
+      objectReference: {fileID: 297624830}
+    - target: {fileID: 584972705816347220, guid: e5a2925cb3d0704469911bd5b3bf3993, type: 3}
       propertyPath: trainingList.Array.data[0]
       value: Hunting
       objectReference: {fileID: 0}

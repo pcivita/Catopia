@@ -10,6 +10,14 @@ public class TrainArea : AreaController
     public string currentTraining;
     private TMP_Text catTextMesh;
     private TMP_Text trainTextMesh;
+
+    public HuntArea huntArea;
+    private int food;
+
+    private int numCats;
+
+    private int hunting;
+    private int catCapacity;
     private void Start()
     {
         areaName = "Train";
@@ -24,12 +32,23 @@ public class TrainArea : AreaController
             trainTextMesh = textMeshes[1];
         }
 
-        UpdateTexts();
+        SetCapacity();
     }
     
+    public void SetCapacity() {
+        food = GameManager.instance.gameState.GetFood();
+        numCats = GameManager.instance.gameState.GetCats().Count;
+        hunting = huntArea.totalHunting;
+        catCapacity = food + hunting - numCats;
+        UpdateTexts();
+    }
     public void UpdateTexts()
     {
-        catTextMesh.text = "Cat: " + _cats.Count;
+        if (_cats.Count > catCapacity) {
+            catTextMesh.text = "Warning you will Literally Die!";
+        } else {
+            catTextMesh.text = "Cat: " + _cats.Count + " / " + catCapacity;
+        }
         trainTextMesh.text = currentTraining;
     }
 

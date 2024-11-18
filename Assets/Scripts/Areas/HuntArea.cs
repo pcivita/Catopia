@@ -8,6 +8,8 @@ public class HuntArea : AreaController
 {
     public int totalHunting;
     private TMP_Text catTextMesh;
+
+    [SerializeField] TrainArea trainArea;
     private TMP_Text huntTextMesh;
 
     private void Start()
@@ -53,7 +55,8 @@ public class HuntArea : AreaController
         {
             totalHunting -= cat._catSO.Hunting;
         }
-
+        trainArea.SetCapacity();
+        trainArea.UpdateTexts();
         UpdateTexts();
     }
 
