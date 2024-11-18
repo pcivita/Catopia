@@ -667,6 +667,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4115218858341237018, guid: a8f8a77130a7349f1960618664366874, type: 3}
+      propertyPath: m_text
+      value: 'Concumption:'
+      objectReference: {fileID: 0}
+    - target: {fileID: 7256432557616894319, guid: a8f8a77130a7349f1960618664366874, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 203.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7256432557616894319, guid: a8f8a77130a7349f1960618664366874, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -20
+      objectReference: {fileID: 0}
     - target: {fileID: 7276125104057773427, guid: a8f8a77130a7349f1960618664366874, type: 3}
       propertyPath: m_Name
       value: MainCanvas
