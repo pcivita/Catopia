@@ -55,13 +55,18 @@ public class Cat : MonoBehaviour
         StartCoroutine(Wander());
     }
 
+    void WanderClamp()
+    {
+        wanderTarget.x = Mathf.Clamp(wanderTarget.x, wanderMin.x+0.5f, wanderMax.x-0.5f);
+        wanderTarget.y = Mathf.Clamp(wanderTarget.y, wanderMin.y+0.5f, wanderMax.y-0.5f);
+    }
+
     IEnumerator Wander()
     {
         while (true)
         {
             wanderTarget = transform.position + new Vector3(UnityEngine.Random.RandomRange(-2, 2), UnityEngine.Random.Range(-2, 2), 0);
-            wanderTarget.x = Mathf.Clamp(wanderTarget.x, wanderMin.x, wanderMax.x);
-            wanderTarget.y = Mathf.Clamp(wanderTarget.y, wanderMin.y, wanderMax.y);
+            WanderClamp();
             yield return new WaitForSeconds(UnityEngine.Random.RandomRange(3f, 6f));
         }
     }
@@ -99,7 +104,8 @@ public class Cat : MonoBehaviour
         uiCanvas.gameObject.SetActive(true);
         catText.text = "Name:" + _catSO.CatName +
             "\nHealth: " + _catSO.Health +
-            "\nHunting: " + _catSO.Hunting;
+            "\nHunting: " + _catSO.Hunting +
+            "\nAttack: " + _catSO.Attack;
     }
 
     // Doesn't deal with overlapping Cats
@@ -132,6 +138,9 @@ public class Cat : MonoBehaviour
 
     private void OnMouseUp()
     {
+        wanderTarget = transform.position;
+        WanderClamp();
+
         dragging = false;
         var hits = Physics2D.OverlapCircleAll(GetMouseWorldPos(), clickRadius, areaMask);
         if (hits.Length <= 0) return;
@@ -143,7 +152,7 @@ public class Cat : MonoBehaviour
             area.AddCat(this);
             break;
         }
-        wanderTarget = transform.position;
+        WanderClamp();
     }
 
     // Todo: Animation Triggers etc. 
