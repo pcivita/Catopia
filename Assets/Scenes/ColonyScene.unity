@@ -163,8 +163,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultCats:
-  - {fileID: 11400000, guid: 71ef3d7ad775ec9498bbdf55cc1d216a, type: 2}
+  - {fileID: 11400000, guid: 92de21b44728f47e5844fad14e0f5ab7, type: 2}
   - {fileID: 11400000, guid: 50a3a99c5cc5ade4391f41b32c82f24a, type: 2}
+  - {fileID: 11400000, guid: 8cef17697fadf4fc1b6ef8a26dedecb1, type: 2}
+  - {fileID: 11400000, guid: 3731226f6395547abada94cffbf100f6, type: 2}
+  - {fileID: 11400000, guid: 5da8db9c29dbb4fab8c934b1d0262fa4, type: 2}
+  - {fileID: 11400000, guid: 71ef3d7ad775ec9498bbdf55cc1d216a, type: 2}
   catPrefab: {fileID: 6675817489452377155, guid: 2154f31664f0f8940a8dbb3dd0aaf97d, type: 3}
   areas:
   - {fileID: 297624830}
@@ -669,7 +673,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4115218858341237018, guid: a8f8a77130a7349f1960618664366874, type: 3}
       propertyPath: m_text
-      value: 'Concumption:'
+      value: 'Consumption:'
       objectReference: {fileID: 0}
     - target: {fileID: 7256432557616894319, guid: a8f8a77130a7349f1960618664366874, type: 3}
       propertyPath: m_AnchoredPosition.x

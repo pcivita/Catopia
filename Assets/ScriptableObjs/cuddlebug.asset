@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bf5b7dc693ddb44ca1fdb898aad37e6, type: 3}
+  m_Name: cuddlebug
+  m_EditorClassIdentifier: 
+  CatName: Caleb Cuddlebug
+  Attack: 3
+  Health: 2
+  Hunting: 1
+  Accessory: {fileID: 21300000, guid: feaa1575616b3446890675e1125d3b6f, type: 3}
+  Pattern: {fileID: 21300000, guid: d7ee451a9c13f4a79b3616e94122c523, type: 3}
+  patternColor:
+    serializedVersion: 2
+    rgba: 4278274977
+  bodyColor:
+    serializedVersion: 2
+    rgba: 4282426623
