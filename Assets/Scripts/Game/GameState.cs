@@ -64,6 +64,7 @@ public class GameState {
     {
         if (amount > foodCount)
         {
+            Debug.Log("You HAVE LITERALLY LOST THE GAME");
             return false;
         }
         else
