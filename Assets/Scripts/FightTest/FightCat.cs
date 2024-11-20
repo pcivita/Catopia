@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class FightCat : MonoBehaviour
@@ -13,22 +14,45 @@ public class FightCat : MonoBehaviour
     [SerializeField] float clickRadius;
     private Vector2 offset;
     private bool inSlot;
-    public bool isFriend;
+    
     [SerializeField] LayerMask slotMask;
     private FightSlot slot;
     private Vector2 previousPosition;
     
-    // Mouse Behavior similar to Cat
+    // TODO: Grab Incoming Data
+    public int attack;
+    public int health;
+    private TMP_Text attackText;
+    private TMP_Text healthText;
     
-    // Slots are taken care of by BattleManager
+    // TODO: setup Friend Logic
+    public bool isFriend;
     
-    // Start is called before the first frame update
+    
+  
     void Start()
     {
         // Get Our Collider
         gameObject.AddComponent<CircleCollider2D>().radius = clickRadius;
+        
+        // Get our Texts:
+        TMP_Text[] textMeshes = gameObject.GetComponentsInChildren<TMP_Text>();
+        
+        if (textMeshes.Length >= 2)
+        {
+            attackText = textMeshes[0];
+            healthText = textMeshes[1];
+        }
+        UpdateTexts();
     }
-    
+
+    public void UpdateTexts()
+    {
+        attackText.text = "Attack: " + attack;
+        healthText.text = "Health: " + health;
+        
+    }
+
     void OnMouseDrag()
     {
         transform.position = GetMouseWorldPos() + offset;

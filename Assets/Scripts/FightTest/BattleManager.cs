@@ -6,7 +6,11 @@ public class BattleManager : MonoBehaviour
 {
     [SerializeField]
     private Transform[] enemySlots;
+    
+    // TODO: Get from Data
+    private FightCat[] enemyCats;
     // Start is called before the first frame update
+    
     void Start()
     {
         

@@ -25,7 +25,6 @@ public class ConquerArea : AreaController
 
     public void UpdateTexts()
     {
-        Debug.Log("UPDATING CAPACITY");
         int nonNullCatCount = _cats.Count(cat => cat != null);
         catTextMesh.text = "Cat: " + nonNullCatCount + "/" + catCapacity;
     }
