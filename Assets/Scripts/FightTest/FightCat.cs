@@ -116,6 +116,8 @@ public class FightCat : MonoBehaviour
                     break;
                 }
             }
+
+            BattleManager.instance.CheckButtonCondition();
         }
     }
     // Update is called once per frame
