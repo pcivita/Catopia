@@ -312,7 +312,7 @@ Transform:
   m_LocalScale: {x: 0.1199226, y: 0.2609858, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 1090266572}
+  m_Father: {fileID: 1257422028}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &430976771
 SpriteRenderer:
@@ -996,6 +996,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!4 &1257422028 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6734236097064429266, guid: b63d3eb98383c7346b93a00ad6f0820f, type: 3}
+  m_PrefabInstance: {fileID: 598018626182748328}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1542779762
 GameObject:
   m_ObjectHideFlags: 0
@@ -1026,7 +1031,7 @@ Transform:
   m_LocalScale: {x: 0.1261684, y: 0.26519734, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 1090266572}
+  m_Father: {fileID: 1257422028}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1542779764
 SpriteRenderer:
@@ -1687,6 +1692,10 @@ PrefabInstance:
       propertyPath: m_AdditionalShaderChannelsFlag
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 8581625419414943176, guid: a1e1c566d2508a047b44300d687d7a03, type: 3}
+      propertyPath: trainArea
+      value: 
+      objectReference: {fileID: 496220831}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -1710,6 +1719,10 @@ PrefabInstance:
       propertyPath: bgSprite
       value: 
       objectReference: {fileID: 496220833}
+    - target: {fileID: 584972705816347220, guid: e5a2925cb3d0704469911bd5b3bf3993, type: 3}
+      propertyPath: huntArea
+      value: 
+      objectReference: {fileID: 297624830}
     - target: {fileID: 584972705816347220, guid: e5a2925cb3d0704469911bd5b3bf3993, type: 3}
       propertyPath: trainingList.Array.data[0]
       value: Hunting
@@ -1786,10 +1799,7 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 2184743441939662560, guid: e5a2925cb3d0704469911bd5b3bf3993, type: 3}
-      insertIndex: 0
-      addedObject: {fileID: 889564140}
-    - targetCorrespondingSourceObject: {fileID: 2184743441939662560, guid: e5a2925cb3d0704469911bd5b3bf3993, type: 3}
-      insertIndex: 1
+      insertIndex: -1
       addedObject: {fileID: 1699882645}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5a2925cb3d0704469911bd5b3bf3993, type: 3}
@@ -1801,8 +1811,8 @@ SceneRoots:
   - {fileID: 619394802}
   - {fileID: 579542341}
   - {fileID: 316486528}
-  - {fileID: 2553724603755167309}
   - {fileID: 5588621792388185516}
+  - {fileID: 2553724603755167309}
   - {fileID: 668825636}
   - {fileID: 598018626182748328}
   - {fileID: 1149680910}

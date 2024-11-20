@@ -10,6 +10,14 @@ public class TrainArea : AreaController
     public string currentTraining;
     private TMP_Text catTextMesh;
     private TMP_Text trainTextMesh;
+
+    public HuntArea huntArea;
+    private int food;
+
+    private int numCats;
+
+    private int hunting;
+    private int catCapacity;
     private void Start()
     {
         areaName = "Train";
@@ -23,13 +31,35 @@ public class TrainArea : AreaController
             catTextMesh = textMeshes[0];
             trainTextMesh = textMeshes[1];
         }
+        
+        // Initialize huntArea before calling SetCapacity
+        if (huntArea == null)
+        {
+            huntArea = FindObjectOfType<HuntArea>(); // Or assign it appropriately
+            if (huntArea == null)
+            {
+                Debug.LogError("HuntArea is not found!");
+                return;
+            }
+        }
 
-        UpdateTexts();
+        SetCapacity();
     }
     
+    public void SetCapacity() {
+        food = GameManager.instance.gameState.GetFood();
+        numCats = GameManager.instance.gameState.GetCats().Count;
+        hunting = huntArea.totalHunting;
+        catCapacity = food + hunting - numCats;
+        UpdateTexts();
+    }
     public void UpdateTexts()
     {
-        catTextMesh.text = "Cat: " + _cats.Count;
+        if (_cats.Count > catCapacity) {
+            catTextMesh.text = "Warning you will Literally Die!";
+        } else {
+            catTextMesh.text = "Cat: " + _cats.Count + " / " + catCapacity;
+        }
         trainTextMesh.text = currentTraining;
     }
 
@@ -47,6 +77,8 @@ public class TrainArea : AreaController
             Debug.Log(cat._catSO.CatName);
             cat.Train(currentTraining, 1);
         }
+
+        _cats.Clear();
         
         currentTraining = trainingList[(GameManager.instance.gameState.GetDay() - 1) % trainingList.Length];
         UpdateTexts();
