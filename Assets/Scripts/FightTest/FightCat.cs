@@ -18,6 +18,7 @@ public class FightCat : MonoBehaviour
     [SerializeField] LayerMask slotMask;
     private FightSlot slot;
     private Vector2 previousPosition;
+    public CatSO _catSO;
     
     // TODO: Grab Incoming Data
     public int attack;
@@ -26,15 +27,19 @@ public class FightCat : MonoBehaviour
     private TMP_Text healthText;
     
     // TODO: setup Friend Logic
-    public bool isFriend;
+    public bool isFriend = true;
     
-    
+    public void InitEnemy(CatSO catSO)
+    {
+        _catSO = catSO;
+        attack = _catSO.Strength;
+        health = _catSO.Health;
+        isFriend = false;
+    }
   
     void Start()
     {
-        // Get Our Collider
         gameObject.AddComponent<CircleCollider2D>().radius = clickRadius;
-        
         // Get our Texts:
         TMP_Text[] textMeshes = gameObject.GetComponentsInChildren<TMP_Text>();
         
@@ -55,20 +60,26 @@ public class FightCat : MonoBehaviour
 
     void OnMouseDrag()
     {
+        if (isFriend)
+        {
         transform.position = GetMouseWorldPos() + offset;
+        }
     }
     
     private void OnMouseDown()
     {
-        previousPosition = transform.position;
-        offset = (Vector2)transform.position - GetMouseWorldPos();
-        // Remove Cat
-        if (inSlot)
+        if (isFriend)
         {
-            Debug.Log("REMOVE SLOT");
-            
-            slot.isOccupied = false;
-            inSlot = false;
+            previousPosition = transform.position;
+            offset = (Vector2)transform.position - GetMouseWorldPos();
+            // Remove Cat
+            if (inSlot)
+            {
+                Debug.Log("REMOVE SLOT");
+
+                slot.isOccupied = false;
+                inSlot = false;
+            }
         }
     }
     private Vector2 GetMouseWorldPos()
@@ -82,23 +93,28 @@ public class FightCat : MonoBehaviour
 
     private void OnMouseUp()
     {
-        var hits = Physics2D.OverlapCircleAll(GetMouseWorldPos(), clickRadius, slotMask);
-        if (hits.Length <= 0) return;
-        
-        foreach (var hit in hits)
+        if (isFriend)
         {
-            slot = hit.transform.root.GetComponent<FightSlot>();
-            if (slot == null) continue;
-            if (!slot.TryAddCat(this))
+
+            var hits = Physics2D.OverlapCircleAll(GetMouseWorldPos(), clickRadius, slotMask);
+            if (hits.Length <= 0) return;
+
+            foreach (var hit in hits)
             {
-                // Return Cat to OG Position
-                transform.position = previousPosition;
-                inSlot = false;
-                
-            }
-            else { 
-                inSlot = true;
-                break;
+                slot = hit.transform.root.GetComponent<FightSlot>();
+                if (slot == null) continue;
+                if (!slot.TryAddCat(this))
+                {
+                    // Return Cat to OG Position
+                    transform.position = previousPosition;
+                    inSlot = false;
+
+                }
+                else
+                {
+                    inSlot = true;
+                    break;
+                }
             }
         }
     }
