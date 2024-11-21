@@ -21,6 +21,7 @@ public abstract class AreaController : MonoBehaviour
         cat.currArea = areaName;
         UpdateAreaState(cat, cat.inArea);
         cat.SetWanderBounds(bgSprite.bounds.min, bgSprite.bounds.max);
+        GameManager.instance.UpdateAbilityIconsVisibility();
     }
 
     public virtual void RemoveCat(Cat cat)
@@ -30,6 +31,7 @@ public abstract class AreaController : MonoBehaviour
         cat.currArea = "None";
         UpdateAreaState(cat, cat.inArea);
         GameManager.instance.CatDefaultWander(cat);
+        GameManager.instance.UpdateAbilityIconsVisibility();
     }
 
     public List<Cat> GetCats()

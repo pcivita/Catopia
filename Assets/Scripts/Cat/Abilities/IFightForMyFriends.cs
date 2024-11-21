@@ -38,4 +38,26 @@ public class IFightForMyFriends : Ability
     {
         return GetHealthBuff(cat);
     }
+
+    public override bool IsActive(Cat cat)
+    {
+        GameObject conquerObject = GameObject.Find("Conquer");
+        if (conquerObject == null)
+        {
+            return false;
+        }
+
+        ConquerArea conquerArea = conquerObject.GetComponent<ConquerArea>();
+        if (conquerArea == null) 
+        { 
+            return false;
+        }
+
+        if (cat._catSO.Ability.abilityName == this.abilityName && cat.currArea.Equals("Conquer") && conquerArea.GetCats().Count >= 2)
+        {
+            return true;
+        }
+
+        return false;
+    }
 }

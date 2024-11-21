@@ -122,13 +122,13 @@ public class Cat : MonoBehaviour
 
     private int GetStrengthPlusBuffs() {
         int baseStrength = _catSO.Strength;
-        Debug.Log($"Strength Buff For {_catSO.CatName} Is {_catSO.Ability.GetStrengthBuff(this)}");
+        // Debug.Log($"Strength Buff For {_catSO.CatName} Is {_catSO.Ability.GetStrengthBuff(this)}");
         return baseStrength + _catSO.Ability.GetStrengthBuff(this);
     }
 
     private int GetHealthPlusBuffs() {
         int baseHealth = _catSO.Health;
-        Debug.Log($"Health Buff For {_catSO.CatName} Is {_catSO.Ability.GetHealthBuff(this)}");
+        // Debug.Log($"Health Buff For {_catSO.CatName} Is {_catSO.Ability.GetHealthBuff(this)}");
         return baseHealth + _catSO.Ability.GetHealthBuff(this);
     }
 
@@ -227,6 +227,16 @@ public class Cat : MonoBehaviour
         inArea = false;
         inConquer = false;
         currArea = "None";
+    }
+
+    public Ability GetAbility()
+    {
+        return _catSO.Ability;
+    }
+
+    public string GetName()
+    {
+        return _catSO.CatName;
     }
 }
 

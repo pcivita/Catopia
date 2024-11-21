@@ -38,4 +38,26 @@ public class ExcitedForDinner : Ability
     {
         return GetHealthBuff(cat);
     }
+
+    public override bool IsActive(Cat cat)
+    {
+        GameObject huntObject = GameObject.Find("Hunt");
+        if (huntObject == null) 
+        {
+            return false;
+        }
+
+        HuntArea huntArea = huntObject.GetComponent<HuntArea>();
+        if (huntArea == null) 
+        {
+            return false;
+        }
+
+        if (cat.currArea.Equals("Conquer") && cat._catSO.Ability.abilityName == abilityName && huntArea.GetCats().Count > 0)
+        {
+            return true;
+        }
+
+        return false;
+    }
 }

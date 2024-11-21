@@ -46,6 +46,7 @@ public class ConquerArea : AreaController
             cat.transform.position = catSlots[availableSlot].position;
         }
         UpdateTexts();
+        GameManager.instance.UpdateAbilityIconsVisibility();
 
         
     }
@@ -74,6 +75,7 @@ public class ConquerArea : AreaController
             Debug.Log($"Cat removed from slot {index}");
         }
         UpdateTexts();
+        GameManager.instance.UpdateAbilityIconsVisibility();
     }
     
     public override void UpdateAreaState(Cat cat, bool addingCat)

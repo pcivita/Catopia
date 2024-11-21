@@ -72,6 +72,21 @@ public class GameManager : MonoBehaviour
         return instance.defaultCats[UnityEngine.Random.RandomRange(0, instance.defaultCats.Length)].Clone();
     }
 
+    public void UpdateAbilityIconsVisibility()
+    {
+        foreach (Cat catInstance in catInstances)
+        {
+            Ability catAbility = catInstance.GetAbility();
+            bool abilityIsActive = catAbility.IsActive(catInstance);
+            if (abilityIsActive)
+            {
+                Debug.Log($"{catInstance.GetName()}'s ability \"{catAbility.abilityName}\" is active.");
+            } else {
+                Debug.Log($"{catInstance.GetName()}'s ability \"{catAbility.abilityName}\" is not active.");
+            }
+        }
+    }
+
     //TODO stub
     //do whatever happens at the end of a turn
     //notify the areas
