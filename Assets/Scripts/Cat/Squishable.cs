@@ -25,12 +25,12 @@ public class Squishable : MonoBehaviour
         t = transform;
     }
 
-    private void OnMouseEnter()
+    public void OnMouseEnter()
     {
-        impulse = 2;
+        impulse = 10;
     }
 
-    private void OnMouseDown()
+    public void OnMouseDown()
     {
         impulse = clickImpulse;
     }
