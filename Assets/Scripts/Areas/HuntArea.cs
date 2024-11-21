@@ -7,28 +7,17 @@ using UnityEngine;
 public class HuntArea : AreaController
 {
     public int totalHunting;
-    private TMP_Text catTextMesh;
-    private TMP_Text huntTextMesh;
     [SerializeField] TrainArea trainArea;
 
     private void Start()
     {
         areaName = "Hunt";
-        TMP_Text[] textMeshes = gameObject.GetComponentsInChildren<TMP_Text>();
-        
-        if (textMeshes.Length >= 2)
-        {
-            catTextMesh = textMeshes[0];
-            huntTextMesh = textMeshes[1];
-        }
-
         UpdateTexts();
     }
 
     public void UpdateTexts()
     {
-        catTextMesh.text = "Cat: " + _cats.Count;
-        huntTextMesh.text = "Hunt: " + GetTotalHuntingPlusBuffs();
+        statText.text = "Cat: " + _cats.Count +"\nHunt: " + GetTotalHuntingPlusBuffs();
     }
 
     public int GetTotalHuntingPlusBuffs()
