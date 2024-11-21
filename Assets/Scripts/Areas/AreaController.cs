@@ -7,6 +7,7 @@ public abstract class AreaController : MonoBehaviour
 {
     public string areaName = "None";
     public SpriteRenderer bgSprite;
+    public TMPro.TMP_Text statText;
 
     public List<Cat> _cats = new();
 

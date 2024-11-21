@@ -9,24 +9,17 @@ public class ConquerArea : AreaController
     private Transform[] catSlots; // Backing field
 
     private int catCapacity = 3;
-    private TMP_Text catTextMesh;
 
     private void Start()
     {
         areaName = "Conquer";
-        TMP_Text[] textMeshes = gameObject.GetComponentsInChildren<TMP_Text>();
-        
-        if (textMeshes.Length >= 1)
-        {
-            catTextMesh = textMeshes[0];
-        }
         UpdateTexts();
     }
 
     public void UpdateTexts()
     {
         int nonNullCatCount = _cats.Count(cat => cat != null);
-        catTextMesh.text = "Cat: " + nonNullCatCount + "/" + catCapacity;
+        statText.text = "Cat: " + nonNullCatCount + "/" + catCapacity;
     }
     public override void AddCat(Cat cat) // This tries first
     {
