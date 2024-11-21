@@ -758,22 +758,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1239606112144706183, guid: a8f8a77130a7349f1960618664366874, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4115218858341237018, guid: a8f8a77130a7349f1960618664366874, type: 3}
-      propertyPath: m_text
-      value: 'Consumption:'
-      objectReference: {fileID: 0}
-    - target: {fileID: 7256432557616894319, guid: a8f8a77130a7349f1960618664366874, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 203.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7256432557616894319, guid: a8f8a77130a7349f1960618664366874, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -20
-      objectReference: {fileID: 0}
     - target: {fileID: 7276125104057773427, guid: a8f8a77130a7349f1960618664366874, type: 3}
       propertyPath: m_Name
       value: MainCanvas
@@ -782,10 +766,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 316486527}
-    - target: {fileID: 8595992934415543617, guid: a8f8a77130a7349f1960618664366874, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: NewDay
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -793,7 +773,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: a8f8a77130a7349f1960618664366874, type: 3}
 --- !u!114 &1149680911 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4115218858341237018, guid: a8f8a77130a7349f1960618664366874, type: 3}
+  m_CorrespondingSourceObject: {fileID: 4250475064476837839, guid: a8f8a77130a7349f1960618664366874, type: 3}
   m_PrefabInstance: {fileID: 1149680910}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
