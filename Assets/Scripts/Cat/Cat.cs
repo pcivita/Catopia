@@ -20,6 +20,7 @@ public class Cat : MonoBehaviour
     public SpriteRenderer lineSR;
     public SpriteRenderer patternSR;
     public SpriteRenderer accessorySR;
+    Squishable squishable;
     public TMP_Text catText;
     public Canvas uiCanvas;
 
@@ -33,6 +34,7 @@ public class Cat : MonoBehaviour
     
     public void Init(CatSO catSO)
     {
+        squishable = GetComponentInChildren<Squishable>();
         _catSO = catSO;
         gameObject.AddComponent<CircleCollider2D>().radius = clickRadius;
     }
@@ -66,9 +68,9 @@ public class Cat : MonoBehaviour
     {
         while (true)
         {
-            wanderTarget = transform.position + new Vector3(UnityEngine.Random.RandomRange(-2, 2), UnityEngine.Random.Range(-2, 2), 0);
+            wanderTarget = transform.position + new Vector3(UnityEngine.Random.RandomRange(-2f, 2f), UnityEngine.Random.Range(-2f, 2f), 0);
             WanderClamp();
-            yield return new WaitForSeconds(UnityEngine.Random.RandomRange(3f, 6f));
+            yield return new WaitForSeconds(UnityEngine.Random.RandomRange(5f, 10f));
         }
     }
 
@@ -79,7 +81,7 @@ public class Cat : MonoBehaviour
         {
             
         
-        Vector3 dir = (wanderTarget - transform.position) * Time.deltaTime;
+        Vector3 dir = (wanderTarget - transform.position) * Time.deltaTime *0.5f;
         transform.position += dir;
         bool flip = dir.x > 0;
         bodySR.flipX = flip;
@@ -92,6 +94,7 @@ public class Cat : MonoBehaviour
 
     private void OnMouseEnter()
     {
+        squishable.OnMouseEnter();
         if (!dragging) DisplayStats();
     }
 
@@ -132,6 +135,7 @@ public class Cat : MonoBehaviour
     // Doesn't deal with overlapping Cats
     private void OnMouseDown()
     {
+        squishable.OnMouseDown();
         dragging = true;
         uiCanvas.gameObject.SetActive(false);
         Debug.Log(_catSO.CatName);
