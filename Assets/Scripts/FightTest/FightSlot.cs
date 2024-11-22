@@ -9,7 +9,8 @@ public class FightSlot : MonoBehaviour
     // Opposing Slot
 
     public bool isOccupied;
-    
+
+    public FightCat fightCat; 
     // is Friend
     
     
@@ -30,6 +31,7 @@ public class FightSlot : MonoBehaviour
         {
             return false;
         }
+        fightCat = cat;
         cat.transform.position = this.transform.position;
         isOccupied = true;
         return true;

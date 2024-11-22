@@ -96,6 +96,7 @@ public class Cat : MonoBehaviour
     {
         squishable.OnMouseEnter();
         if (!dragging) DisplayStats();
+        
     }
 
     private void OnMouseExit()

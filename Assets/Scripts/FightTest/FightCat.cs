@@ -60,7 +60,7 @@ public class FightCat : MonoBehaviour
 
     void OnMouseDrag()
     {
-        if (isFriend)
+        if (isFriend  && !BattleManager.instance.inBattle)
         {
         transform.position = GetMouseWorldPos() + offset;
         }
@@ -68,7 +68,7 @@ public class FightCat : MonoBehaviour
     
     private void OnMouseDown()
     {
-        if (isFriend)
+        if (isFriend  && !BattleManager.instance.inBattle)
         {
             previousPosition = transform.position;
             offset = (Vector2)transform.position - GetMouseWorldPos();
@@ -76,7 +76,7 @@ public class FightCat : MonoBehaviour
             if (inSlot)
             {
                 Debug.Log("REMOVE SLOT");
-
+                slot.fightCat = null;
                 slot.isOccupied = false;
                 inSlot = false;
             }
@@ -93,7 +93,7 @@ public class FightCat : MonoBehaviour
 
     private void OnMouseUp()
     {
-        if (isFriend)
+        if (isFriend && !BattleManager.instance.inBattle)
         {
 
             var hits = Physics2D.OverlapCircleAll(GetMouseWorldPos(), clickRadius, slotMask);
@@ -125,4 +125,25 @@ public class FightCat : MonoBehaviour
     {
         
     }
+    public IEnumerator Shake(Transform target, float duration = 0.5f, float magnitude = 0.1f, float randomness = 1f)
+    {
+        Vector3 originalPosition = target.localPosition;
+        float elapsed = 0f;
+
+        while (elapsed < duration)
+        {
+            // Generate offsets with Perlin noise using a unique seed (randomness) for smoother, different patterns
+            float xOffset = (Mathf.PerlinNoise(Time.time * 2f + randomness, 0f) - 0.5f) * 2f * magnitude;
+            float yOffset = (Mathf.PerlinNoise(0f, Time.time * 2f + randomness) - 0.5f) * 2f * magnitude;
+
+            target.localPosition = new Vector3(originalPosition.x + xOffset, originalPosition.y + yOffset, originalPosition.z);
+
+            elapsed += Time.deltaTime;
+
+            yield return null;
+        }
+
+        target.localPosition = originalPosition;
+    }
+
 }
