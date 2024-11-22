@@ -35,6 +35,7 @@ public class BattleManager : MonoBehaviour
     public GameObject WinPanel;
     public GameObject TiePanel;
     public GameObject LosePanel;
+    public TMP_Text foodCount;
 
 
     
@@ -57,7 +58,7 @@ public class BattleManager : MonoBehaviour
         Debug.Log(path);
         EnemySOs = Resources.LoadAll<CatSO>(path);
 
-
+        foodCount.text = ""+GameManager.gameState.GetFood();
 
         //instantiate enemies, populate win UI.
         for (int i = 0; i < 3; i++)
@@ -79,7 +80,11 @@ public class BattleManager : MonoBehaviour
 
             //cannot afford cat
             if (cat.Cost > GameManager.gameState.GetFood())
+            {
+                Debug.Log("Cannot afford " + cat.CatName);
                 recruitButtons[i].DisableClick();
+                continue;
+            }
 
             recruitButtons[i].SetOnClick(() =>
             {
