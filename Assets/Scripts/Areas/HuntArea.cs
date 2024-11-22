@@ -12,6 +12,7 @@ public class HuntArea : AreaController
     private void Start()
     {
         areaName = "Hunt";
+        DontDestroyOnLoad(gameObject);
         UpdateTexts();
     }
 
@@ -43,6 +44,8 @@ public class HuntArea : AreaController
         {
             totalHunting -= cat._catSO.Hunting;
         }
+
+        Debug.Log("RUNNING AFTER RESET");
         trainArea.SetCapacity();
         trainArea.UpdateTexts();
         UpdateTexts();

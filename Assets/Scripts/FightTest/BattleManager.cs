@@ -5,7 +5,8 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
-using TMPro; 
+using TMPro;
+using UnityEngine.SceneManagement;
 
 
 public class BattleManager : MonoBehaviour
@@ -169,7 +170,14 @@ public class BattleManager : MonoBehaviour
         }
     }
 
-    
-    
+    public void NewGame()
+    {
+        GameManager.instance.gameState = GameState.NewGame();
+    }
+
+    public void ReturnToColony()
+    {
+        SceneManager.LoadScene("ColonyScene");
+    }
    
 }

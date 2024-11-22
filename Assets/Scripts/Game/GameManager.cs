@@ -22,19 +22,27 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        instance = this;
-        catInstances = new List<Cat>();
-
-        //create new game state
-        gameState = GameState.NewGame();
-
-        //construct all cats
-        foreach (var c in gameState.GetCats())
+        if (instance == null)
         {
-            ConstructCat(c);
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+
+            // Initialize your game state here
+            catInstances = new List<Cat>();
+            gameState = GameState.NewGame();
+
+            // Construct all cats
+            foreach (var c in gameState.GetCats())
+            {
+                ConstructCat(c);
+            }
+            UpdateFoodText();
+            UpdateConsumptionText();
         }
-        UpdateFoodText();
-        UpdateConsumptionText();
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void UpdateFoodText()
@@ -81,9 +89,9 @@ public class GameManager : MonoBehaviour
             bool abilityIsActive = catAbility.IsActive(catInstance);
             if (abilityIsActive)
             {
-                Debug.Log($"{catInstance.GetName()}'s ability \"{catAbility.abilityName}\" is active.");
+                catInstance.abilityIcon.gameObject.SetActive(true);
             } else {
-                Debug.Log($"{catInstance.GetName()}'s ability \"{catAbility.abilityName}\" is not active.");
+                catInstance.abilityIcon.gameObject.SetActive(false);
             }
         }
     }

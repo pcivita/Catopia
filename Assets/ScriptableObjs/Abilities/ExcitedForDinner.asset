@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dc1c075a2a3ad14090e9ee978067c15, type: 3}
   m_Name: ExcitedForDinner
   m_EditorClassIdentifier: 
-  abilityName: 
-  description: 
+  abilityName: Excited For Dinner
+  description: Gains +X Strength/+X Health in battle, where X is the number of cats
+    in Hunt.
+  icon: {fileID: 21300000, guid: b7726871ada6f5a40a69822fd7c9225a, type: 3}

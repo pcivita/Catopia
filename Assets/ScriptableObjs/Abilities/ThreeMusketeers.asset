@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1eeb38648a5d6754aae8cab398611fd0, type: 3}
   m_Name: ThreeMusketeers
   m_EditorClassIdentifier: 
-  abilityName: 
-  description: 
+  abilityName: Three Musketeers
+  description: If this cat is in Hunt with at least two other cats, double the amount
+    of food gained when hunting.
+  icon: {fileID: 21300000, guid: d9d29ff2acf47a84da403c3f62c0fbfa, type: 3}

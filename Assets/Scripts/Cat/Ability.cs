@@ -5,6 +5,7 @@ public abstract class Ability : ScriptableObject
     
     public string abilityName;
     public string description;
+    public Sprite icon;
 
 
     public virtual int GetHealthBuff(Cat cat) { return 0; }

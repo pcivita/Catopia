@@ -11,6 +11,7 @@ public class CatSO : ScriptableObject
 
     public Sprite Accessory;
     public Sprite Pattern;
+    
     public Color32 patternColor;
     public Color32 bodyColor;
 

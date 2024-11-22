@@ -8,6 +8,7 @@ public class IFightForMyFriends : Ability
     {
         abilityName = "I Fight For My Friends";
         description = "This cat gains +3 Strength/+3 Health when in battle with at least one other cat.";
+        
     }
 
     public override int GetHealthBuff(Cat cat)
@@ -26,7 +27,7 @@ public class IFightForMyFriends : Ability
             return 0;
         }
 
-        if (cat.currArea.Equals("Conquer") && conquerArea.GetCats().Count >= 2)
+        if (cat.currArea.Equals("Conquer") && conquerArea.GetNumCats() >= 2)
         {
             return 3;
         }
@@ -53,7 +54,7 @@ public class IFightForMyFriends : Ability
             return false;
         }
 
-        if (cat._catSO.Ability.abilityName == this.abilityName && cat.currArea.Equals("Conquer") && conquerArea.GetCats().Count >= 2)
+        if (cat._catSO.Ability.abilityName == this.abilityName && cat.currArea.Equals("Conquer") && conquerArea.GetNumCats() >= 2)
         {
             return true;
         }

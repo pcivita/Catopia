@@ -34,7 +34,7 @@ public class TrainArea : AreaController
                 return;
             }
         }
-
+        DontDestroyOnLoad(gameObject);
         SetCapacity();
     }
     
@@ -60,7 +60,7 @@ public class TrainArea : AreaController
     public override void UpdateAreaState(Cat cat, bool addingCat)
     {
         UpdateTexts();
-        PlayerLog.instance.AddEvent("TESTING");
+        // PlayerLog.instance.AddEvent("TESTING");
         GameManager.instance.UpdateConsumptionText();
     }
 
@@ -76,7 +76,7 @@ public class TrainArea : AreaController
         _cats.Clear();
         
         currentTraining = trainingList[(GameManager.instance.gameState.GetDay() - 1) % trainingList.Length];
-        UpdateTexts();
+        SetCapacity();
         GameManager.instance.UpdateConsumptionText();
     }
 

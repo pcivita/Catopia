@@ -12,6 +12,7 @@ public class Cat : MonoBehaviour
     private Vector2 offset;
     
     public bool inArea = false;
+    private bool hovering = false;
     private bool dragging = false;
     public bool inConquer = false;
     public string currArea = "None";
@@ -20,6 +21,8 @@ public class Cat : MonoBehaviour
     public SpriteRenderer lineSR;
     public SpriteRenderer patternSR;
     public SpriteRenderer accessorySR;
+    
+    public GameObject abilityIcon;
     Squishable squishable;
     public TMP_Text catText;
     public Canvas uiCanvas;
@@ -48,6 +51,9 @@ public class Cat : MonoBehaviour
         accessorySR.sprite = _catSO.Accessory;
         patternSR.color = _catSO.patternColor;
         bodySR.color = _catSO.bodyColor;
+
+        abilityIcon.GetComponent<SpriteRenderer>().sprite = GetAbility().icon;
+        // DontDestroyOnLoad(gameObject);
     }
 
     public void SetWanderBounds(Vector3 boundMin, Vector3 boundMax)
@@ -77,7 +83,7 @@ public class Cat : MonoBehaviour
     private void Update()
     {
         //Vector3 dir = Vector3.Normalize(wanderTarget - transform.position) * Time.deltaTime;
-        if (!inConquer)
+        if (!inConquer && !hovering)
         {
             
         
@@ -94,6 +100,7 @@ public class Cat : MonoBehaviour
 
     private void OnMouseEnter()
     {
+        hovering = true;
         squishable.OnMouseEnter();
         if (!dragging) DisplayStats();
         
@@ -101,6 +108,7 @@ public class Cat : MonoBehaviour
 
     private void OnMouseExit()
     {
+        hovering = false;
         uiCanvas.gameObject.SetActive(false);
     }
 

@@ -8,6 +8,7 @@ public class ThreeMusketeers : Ability
     {
         abilityName = "Three Musketeers";
         description = "If this cat is in Hunt with at least two other cats, double the amount of food gained when hunting.";
+  
     }
 
     public override bool IsActive(Cat cat)
