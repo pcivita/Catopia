@@ -679,13 +679,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 748471601}
+  - component: {fileID: 748471602}
   m_Layer: 0
   m_Name: PlayerLog
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &748471601
 Transform:
   m_ObjectHideFlags: 0
@@ -701,6 +702,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &748471602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 748471600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29d4291b9bbf9654994761a8fde48843, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxLines: 10
+  textColor: {r: 1, g: 1, b: 1, a: 1}
+  customFont: {fileID: 12800000, guid: 585188cdc4600544eb408bee749e4b3a, type: 3}
+  fontSize: 30
+  position: {x: 100, y: 800}
+  size: {x: 200, y: 400}
+  opacity: 1
 --- !u!1001 &1149680910
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -787,6 +807,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 300147344613367400, guid: a8f8a77130a7349f1960618664366874, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 934650083260359177, guid: a8f8a77130a7349f1960618664366874, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7276125104057773427, guid: a8f8a77130a7349f1960618664366874, type: 3}
@@ -1004,6 +1028,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 6442726602313854392, guid: b63d3eb98383c7346b93a00ad6f0820f, type: 3}
+      propertyPath: m_text
+      value: Befriend
+      objectReference: {fileID: 0}
     - target: {fileID: 6734236097064429266, guid: b63d3eb98383c7346b93a00ad6f0820f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.0435
