@@ -105,7 +105,7 @@ public class BattleManager : MonoBehaviour
         inBattle = false; // Battle sequence finished
         if (score > 0)
         {
-            Debug.Log("YOU Wn");
+            // resultUI.Open("")
         } else if (score < 0)
         {
             Debug.Log("YOU  Lose");
