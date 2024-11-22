@@ -11,14 +11,17 @@ using UnityEngine.SceneManagement;
 
 public class BattleManager : MonoBehaviour
 {
-    public static List<CatSO> team = new List<CatSO>();
     public static BattleManager instance;
+    
+    
+    public static List<CatSO> team = new List<CatSO>();
+    public static int levelNumber;
     
     [SerializeField]
     private Transform[] enemySlots;
     public FightSlot[] fightSlots;
     
-    [SerializeField] CatSO[] EnemySOs;
+    public CatSO[] EnemySOs;
     [SerializeField] GameObject fightCatPrefab;
     
     // TODO: Get from Data
@@ -28,6 +31,12 @@ public class BattleManager : MonoBehaviour
     public List<GameObject> WinSlots = new List<GameObject>();
     public List<GameObject> TieSlots = new List<GameObject>();
     
+    
+    public GameObject WinPanel;
+    public GameObject TiePanel;
+    public GameObject LosePanel;
+
+
     
     public bool inBattle;
     
@@ -41,6 +50,12 @@ public class BattleManager : MonoBehaviour
     void Awake()
     {
         instance = this;
+        //TODO: Make this every three days
+        string path = $"Level {levelNumber - 1}";
+        Debug.Log(path);
+        EnemySOs = Resources.LoadAll<CatSO>(path);
+        
+        Debug.Log(EnemySOs.Length);
         for (int i = 0; i < EnemySOs.Length; i++)
         {
             Vector2 pos = enemySlots[i].transform.position;
@@ -84,8 +99,10 @@ public class BattleManager : MonoBehaviour
         Debug.Log("All Enemies have pairs");
         for (int i = 0; i < EnemySOs.Length; i++)
         {
+            Debug.Log("BEFORE" + i);
             if (!fightSlots[i].isOccupied)
-            {
+            { 
+                Debug.Log(i);
             return false;
             }
         }
@@ -109,18 +126,20 @@ public class BattleManager : MonoBehaviour
             // Wait for this fight to finish
             yield return StartCoroutine(Fight(yourCat, enemyCat, i));
         }
-
+        yield return new WaitForSeconds(1);
         inBattle = false; // Battle sequence finished
         if (score > 0)
         {
             // resultUI.Open("")
+            WinPanel.SetActive(true);
         } else if (score < 0)
         {
-            Debug.Log("YOU  Lose");
+            LosePanel.SetActive(true);
+            
         }
         else
         {
-            Debug.Log("YOU  Tie");
+            TiePanel.SetActive(true);
         }
     }
 
