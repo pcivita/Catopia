@@ -109,6 +109,7 @@ public class ConquerArea : AreaController
             clone.Strength = cat.GetStrengthPlusBuffs();
             clone.Health = cat.GetHealthPlusBuffs();
             BattleManager.team.Add(clone);
+            BattleManager.levelNumber = GameManager.gameState.GetDay();
         }
         UpdateTexts();
     }

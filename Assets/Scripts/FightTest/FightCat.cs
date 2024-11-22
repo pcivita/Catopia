@@ -66,8 +66,8 @@ public class FightCat : MonoBehaviour
 
     public void UpdateTexts()
     {
-        attackText.text = "Attack: " + attack;
-        healthText.text = "Health: " + health;
+        attackText.text = attack.ToString();
+        healthText.text = health.ToString();
         
     }
 
@@ -110,7 +110,7 @@ public class FightCat : MonoBehaviour
         {
 
             var hits = Physics2D.OverlapCircleAll(GetMouseWorldPos(), clickRadius, slotMask);
-            if (hits.Length <= 0) return;
+            
 
             foreach (var hit in hits)
             {
@@ -129,9 +129,9 @@ public class FightCat : MonoBehaviour
                     break;
                 }
             }
-
-            BattleManager.instance.CheckButtonCondition();
         }
+            Debug.Log("CHECKING");
+            BattleManager.instance.CheckButtonCondition();
     }
     // Update is called once per frame
     void Update()
