@@ -34,4 +34,15 @@ public class CatSO : ScriptableObject
 
         return newCat;
     }
+
+    public string LogInfo()
+    {
+        string firstLine = "Name:" + CatName;
+        string fullText = firstLine +
+            "\n\nStrength: " + Strength +
+            "\nHealth: " + Health + 
+            "\nHunting: " + Hunting +
+            "\n\nAbility: " + "\n" + Ability.abilityName + "\n\n" + Ability.description;
+        return fullText;
+    }
 }

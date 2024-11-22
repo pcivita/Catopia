@@ -43,7 +43,7 @@ public class BattleManager : MonoBehaviour
     
     [SerializeField] private Button myButton; // Reference to the button
     
-    [SerializeField] private List<RecruitButton> recruitButtons = new List<RecruitButton>();
+    [SerializeField] private List<UICat> recruitButtons = new List<UICat>();
     private bool conditionMet = false; // Your condition to enable the button
 
     private int score;
@@ -56,21 +56,44 @@ public class BattleManager : MonoBehaviour
         string path = $"Level {levelNumber - 1}";
         Debug.Log(path);
         EnemySOs = Resources.LoadAll<CatSO>(path);
-        
-        Debug.Log(EnemySOs.Length);
-        for (int i = 0; i < EnemySOs.Length; i++)
+
+
+
+        //instantiate enemies, populate win UI.
+        for (int i = 0; i < 3; i++)
         {
+            if(i >= EnemySOs.Length)
+            {
+                recruitButtons[i].SetCatSO(null);
+                continue;
+            }
+
+            CatSO cat = EnemySOs[i];
+            recruitButtons[i].SetCatSO(cat);
+
             Vector2 pos = enemySlots[i].transform.position;
             FightCat newCat = Instantiate(fightCatPrefab, pos, quaternion.identity).GetComponent<FightCat>();
-            newCat.Init(EnemySOs[i],false);
+            newCat.Init(cat,false);
             enemyCats.Add(newCat);
-            recruitButtons[i].catSo = (EnemySOs[i]);
-            if (recruitButtons[i].catSo.Cost > GameManager.gameState.GetFood())
+
+
+            //cannot afford cat
+            if (cat.Cost > GameManager.gameState.GetFood())
+                recruitButtons[i].DisableClick();
+
+            recruitButtons[i].SetOnClick(() =>
             {
-                Button recruitButton = recruitButtons[i].GetComponentInParent<Button>();
-                recruitButton.interactable = false;
-            }
+                //Recruit cat and pay food.
+                //Return home.
+                GameManager.gameState.AddCat(cat.Clone(),false);
+                GameManager.gameState.TryConsumeFood(cat.Cost);
+                ReturnToColony();
+            });
         }
+
+
+
+
         myButton.interactable = false;
 
         foreach(CatSO cat in team)
@@ -81,11 +104,6 @@ public class BattleManager : MonoBehaviour
         }
     }
     
-    void Update()
-    {
-        
-       
-    }
     
 
     public void CheckButtonCondition()
