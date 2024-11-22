@@ -5,6 +5,8 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
+using TMPro; 
+
 
 public class BattleManager : MonoBehaviour
 {
@@ -31,6 +33,8 @@ public class BattleManager : MonoBehaviour
     
     [SerializeField] private Button myButton; // Reference to the button
     private bool conditionMet = false; // Your condition to enable the button
+
+    private int score;
 
     
     void Awake()
@@ -99,7 +103,17 @@ public class BattleManager : MonoBehaviour
         }
 
         inBattle = false; // Battle sequence finished
-        // TODO: result = true;
+        if (score > 0)
+        {
+            Debug.Log("YOU Wn");
+        } else if (score < 0)
+        {
+            Debug.Log("YOU  Lose");
+        }
+        else
+        {
+            Debug.Log("YOU  Tie");
+        }
     }
 
     private IEnumerator Fight(FightCat yourCat, FightCat enemyCat, int index)
@@ -129,15 +143,22 @@ public class BattleManager : MonoBehaviour
         // Determine outcome
         if (yourCat.health <= 0 && enemyCat.health <= 0)
         {
+            // Todo: Set Name
             TieSlots[index].SetActive(true);
         }
         else if (yourCat.health > 0)
         {
             WinSlots[index].SetActive(true);
+            TMP_Text displayText = WinSlots[index].GetComponentInChildren<TMP_Text>();
+            displayText.text = yourCat._catSO.CatName + " Wins!";
+            score++;
         }
         else
         {
+            TMP_Text displayText = LoseSlots[index].GetComponentInChildren<TMP_Text>();
+            displayText.text = enemyCat._catSO.CatName + " Wins...";
             LoseSlots[index].SetActive(true);
+            score--;
         }
     }
 
