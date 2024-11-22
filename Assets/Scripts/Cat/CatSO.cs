@@ -7,6 +7,7 @@ public class CatSO : ScriptableObject
     public int Strength;
     public int Health;
     public int Hunting;
+    public int Cost;
     public Ability Ability;
 
     public Sprite Accessory;
@@ -22,6 +23,7 @@ public class CatSO : ScriptableObject
         newCat.Strength = Strength;
         newCat.Health = Health;
         newCat.Hunting = Hunting;
+        newCat.Cost = Cost;
         newCat.Ability = Ability;
 
         newCat.Accessory = Accessory;
