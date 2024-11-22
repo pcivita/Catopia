@@ -154,6 +154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isOccupied: 0
+  fightCat: {fileID: 0}
 --- !u!61 &43175004
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -572,7 +573,9 @@ MonoBehaviour:
   - {fileID: 1921053015}
   EnemySOs:
   - {fileID: 11400000, guid: 9026b9cb0a4a7184780573fdd2ee083a, type: 2}
+  - {fileID: 11400000, guid: 9026b9cb0a4a7184780573fdd2ee083a, type: 2}
   fightCatPrefab: {fileID: 6290521390792540947, guid: b0a61dc7aaf28e6428620a6cd853b2ef, type: 3}
+  inBattle: 0
   myButton: {fileID: 226727671}
 --- !u!212 &413393360
 SpriteRenderer:
@@ -806,6 +809,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isOccupied: 0
+  fightCat: {fileID: 0}
 --- !u!61 &1449332366
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -918,6 +922,63 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1536682363
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4972957127652255492, guid: b0a61dc7aaf28e6428620a6cd853b2ef, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4972957127652255492, guid: b0a61dc7aaf28e6428620a6cd853b2ef, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.03808891
+      objectReference: {fileID: 0}
+    - target: {fileID: 4972957127652255492, guid: b0a61dc7aaf28e6428620a6cd853b2ef, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4972957127652255492, guid: b0a61dc7aaf28e6428620a6cd853b2ef, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4972957127652255492, guid: b0a61dc7aaf28e6428620a6cd853b2ef, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4972957127652255492, guid: b0a61dc7aaf28e6428620a6cd853b2ef, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4972957127652255492, guid: b0a61dc7aaf28e6428620a6cd853b2ef, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4972957127652255492, guid: b0a61dc7aaf28e6428620a6cd853b2ef, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4972957127652255492, guid: b0a61dc7aaf28e6428620a6cd853b2ef, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4972957127652255492, guid: b0a61dc7aaf28e6428620a6cd853b2ef, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6290521390792540947, guid: b0a61dc7aaf28e6428620a6cd853b2ef, type: 3}
+      propertyPath: m_Name
+      value: FightCat (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b0a61dc7aaf28e6428620a6cd853b2ef, type: 3}
 --- !u!1 &1877012082
 GameObject:
   m_ObjectHideFlags: 0
@@ -1087,6 +1148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isOccupied: 0
+  fightCat: {fileID: 0}
 --- !u!61 &1921053016
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1400,5 +1462,6 @@ SceneRoots:
   - {fileID: 1449332368}
   - {fileID: 1921053018}
   - {fileID: 4934529803377428122}
+  - {fileID: 1536682363}
   - {fileID: 300344320}
   - {fileID: 434830008}
