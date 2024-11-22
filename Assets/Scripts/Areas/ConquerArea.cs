@@ -13,7 +13,6 @@ public class ConquerArea : AreaController
     private void Start()
     {
         areaName = "Conquer";
-        DontDestroyOnLoad(gameObject);
         UpdateTexts();
     }
 
@@ -105,6 +104,7 @@ public class ConquerArea : AreaController
         BattleManager.team.Clear();
         foreach(Cat cat in _cats)
         {
+            if (cat == null) continue;
             CatSO clone = cat._catSO.Clone();
             clone.Strength = cat.GetStrengthPlusBuffs();
             clone.Health = cat.GetHealthPlusBuffs();
