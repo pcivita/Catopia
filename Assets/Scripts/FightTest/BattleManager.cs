@@ -172,7 +172,7 @@ public class BattleManager : MonoBehaviour
 
     public void NewGame()
     {
-        GameManager.instance.gameState = GameState.NewGame();
+        GameManager.gameState = GameState.NewGame();
     }
 
     public void ReturnToColony()

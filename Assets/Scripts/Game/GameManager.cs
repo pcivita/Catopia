@@ -9,7 +9,7 @@ using TMPro;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    public GameState gameState;
+    public static GameState gameState;
     [SerializeField] CatSO[] defaultCats;
     [SerializeField] GameObject catPrefab;
     [SerializeField] AreaController[] areas;
@@ -22,27 +22,12 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-
-            // Initialize your game state here
-            catInstances = new List<Cat>();
-            gameState = GameState.NewGame();
-
-            // Construct all cats
-            foreach (var c in gameState.GetCats())
-            {
-                ConstructCat(c);
-            }
-            UpdateFoodText();
-            UpdateConsumptionText();
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        instance = this;
+        catInstances = new List<Cat>();
+        if(gameState == null) gameState = GameState.NewGame();
+        foreach (var c in gameState.GetCats()) ConstructCat(c);
+        UpdateFoodText();
+        UpdateConsumptionText();
     }
 
     public void UpdateFoodText()

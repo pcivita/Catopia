@@ -12,7 +12,6 @@ public class HuntArea : AreaController
     private void Start()
     {
         areaName = "Hunt";
-        DontDestroyOnLoad(gameObject);
         UpdateTexts();
     }
 
@@ -53,7 +52,7 @@ public class HuntArea : AreaController
 
     public override void NewDay()
     {
-        GameManager.instance.gameState.AddFood(GetTotalHuntingPlusBuffs());
+        GameManager.gameState.AddFood(GetTotalHuntingPlusBuffs());
         totalHunting = 0;
         _cats.Clear();
 

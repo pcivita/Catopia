@@ -208,12 +208,12 @@ public class Cat : MonoBehaviour
         {
             _catSO.Strength += trainAmount;
         }
-        GameManager.instance.gameState.TryConsumeFood(1);
+        GameManager.gameState.TryConsumeFood(1);
     }
     
     public void ConsumeFood()
     {
-        if (GameManager.instance.gameState.TryConsumeFood(1))
+        if (GameManager.gameState.TryConsumeFood(1))
         {
             Debug.Log(_catSO.CatName + " consumed food");
         }

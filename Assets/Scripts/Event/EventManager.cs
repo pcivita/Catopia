@@ -123,7 +123,7 @@ public class EventManager : MonoBehaviour
         if(cat == null)
         {
             eventText.text = "Nobody was at home to protect the food! You lost 1 food.";
-            GameManager.instance.gameState.TryConsumeFood(1);
+            GameManager.gameState.TryConsumeFood(1);
             AllowExitEvent();
             return;
         }
@@ -133,7 +133,7 @@ public class EventManager : MonoBehaviour
         CreateChoice(eventChoice1, "try to get honey. success rate: 50%", () => {
             if (Randf(0, 1) < 0.5f){
                 eventText.text = "Success! " + cat._catSO.CatName + "gets the honey. You got 5 food.";
-                GameManager.instance.gameState.AddFood(2);
+                GameManager.gameState.AddFood(2);
                 AllowExitEvent();
             }
             else{
@@ -156,7 +156,7 @@ public class EventManager : MonoBehaviour
         if (cat == null)
         {
             eventText.text = "Nobody was at home to protect the food! You lost 1 food.";
-            GameManager.instance.gameState.TryConsumeFood(1);
+            GameManager.gameState.TryConsumeFood(1);
             AllowExitEvent();
             return;
         }
@@ -166,7 +166,7 @@ public class EventManager : MonoBehaviour
         CreateChoice(eventChoice1, "Approach and try to befriend. Success rate: 33%", () => {
             if (Randf(0, 1) < 0.33f){
                 CatSO newCat = GameManager.GetRandomDefaultCat();
-                GameManager.instance.gameState.AddCat(newCat);
+                GameManager.gameState.AddCat(newCat);
                 eventText.text = "Success! " + cat._catSO.CatName + " befriends the rouge cat. Welcome home, +" +newCat.CatName+"!";
                 AllowExitEvent();
             }

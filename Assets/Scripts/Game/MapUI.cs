@@ -17,6 +17,6 @@ public class MapUI : MonoBehaviour
     }
     private void Update(){
         //do a lil animation for the current node
-        nodes[GameManager.instance.gameState.mapNode].localScale = Vector3.one * (Mathf.Sin(Time.timeSinceLevelLoad) + 1.5f);
+        nodes[GameManager.gameState.mapNode].localScale = Vector3.one * (Mathf.Sin(Time.timeSinceLevelLoad) + 1.5f);
     }
 }

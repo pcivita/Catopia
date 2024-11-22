@@ -21,7 +21,7 @@ public class TrainArea : AreaController
     private void Start()
     {
         areaName = "Train";
-        currentTraining = trainingList[(GameManager.instance.gameState.GetDay() - 1) % trainingList.Length];
+        currentTraining = trainingList[(GameManager.gameState.GetDay() - 1) % trainingList.Length];
         Debug.Log(currentTraining);
         
         // Initialize huntArea before calling SetCapacity
@@ -34,13 +34,12 @@ public class TrainArea : AreaController
                 return;
             }
         }
-        DontDestroyOnLoad(gameObject);
         SetCapacity();
     }
     
     public void SetCapacity() {
-        food = GameManager.instance.gameState.GetFood();
-        numCats = GameManager.instance.gameState.GetCats().Count;
+        food = GameManager.gameState.GetFood();
+        numCats = GameManager.gameState.GetCats().Count;
         hunting = huntArea.totalHunting;
         catCapacity = food + hunting - numCats;
         UpdateTexts();
@@ -75,7 +74,7 @@ public class TrainArea : AreaController
 
         _cats.Clear();
         
-        currentTraining = trainingList[(GameManager.instance.gameState.GetDay() - 1) % trainingList.Length];
+        currentTraining = trainingList[(GameManager.gameState.GetDay() - 1) % trainingList.Length];
         SetCapacity();
         GameManager.instance.UpdateConsumptionText();
     }
