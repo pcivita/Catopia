@@ -28,14 +28,27 @@ public class FightCat : MonoBehaviour
     
     // TODO: setup Friend Logic
     public bool isFriend = true;
-    
-    public void InitEnemy(CatSO catSO)
+
+    public SpriteRenderer bodySR;
+    public SpriteRenderer lineSR;
+    public SpriteRenderer patternSR;
+    public SpriteRenderer accessorySR;
+
+    public void Init(CatSO catSO, bool friend)
     {
         _catSO = catSO;
+
+        patternSR.sprite = _catSO.Pattern;
+        accessorySR.sprite = _catSO.Accessory;
+        patternSR.color = _catSO.patternColor;
+        bodySR.color = _catSO.bodyColor;
+
         attack = _catSO.Strength;
         health = _catSO.Health;
-        isFriend = false;
+        isFriend = friend;
     }
+
+
   
     void Start()
     {

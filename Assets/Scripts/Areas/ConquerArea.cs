@@ -87,7 +87,14 @@ public class ConquerArea : AreaController
 
     public override void NewDay()
     {
-
+        BattleManager.team.Clear();
+        foreach(Cat cat in _cats)
+        {
+            CatSO clone = cat._catSO.Clone();
+            clone.Strength = cat.GetStrengthPlusBuffs();
+            clone.Health = cat.GetHealthPlusBuffs();
+            BattleManager.team.Add(clone);
+        }
         UpdateTexts();
     }
 }

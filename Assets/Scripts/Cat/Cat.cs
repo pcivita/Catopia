@@ -121,13 +121,13 @@ public class Cat : MonoBehaviour
         catText.text = fullText; 
     }
 
-    private int GetStrengthPlusBuffs() {
+    public int GetStrengthPlusBuffs() {
         int baseStrength = _catSO.Strength;
         // Debug.Log($"Strength Buff For {_catSO.CatName} Is {_catSO.Ability.GetStrengthBuff(this)}");
         return baseStrength + _catSO.Ability.GetStrengthBuff(this);
     }
 
-    private int GetHealthPlusBuffs() {
+    public int GetHealthPlusBuffs() {
         int baseHealth = _catSO.Health;
         // Debug.Log($"Health Buff For {_catSO.CatName} Is {_catSO.Ability.GetHealthBuff(this)}");
         return baseHealth + _catSO.Ability.GetHealthBuff(this);

@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
@@ -109,6 +110,8 @@ public class GameManager : MonoBehaviour
             {
                 c.NewDay();
             }
+
+            SceneManager.LoadScene("TestFight");
 
         });
         

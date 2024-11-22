@@ -10,7 +10,7 @@ using TMPro;
 
 public class BattleManager : MonoBehaviour
 {
-    
+    public static List<CatSO> team = new List<CatSO>();
     public static BattleManager instance;
     
     [SerializeField]
@@ -44,11 +44,18 @@ public class BattleManager : MonoBehaviour
         {
             Vector2 pos = enemySlots[i].transform.position;
             FightCat newCat = Instantiate(fightCatPrefab, pos, quaternion.identity).GetComponent<FightCat>();
-            newCat.InitEnemy(EnemySOs[i]);
+            newCat.Init(EnemySOs[i],false);
             enemyCats.Add(newCat);
             
         }
         myButton.interactable = false;
+
+        foreach(CatSO cat in team)
+        {
+            Vector2 pos = new Vector2(-5f, UnityEngine.Random.RandomRange(-3f,3f));
+            FightCat newCat = Instantiate(fightCatPrefab, pos, quaternion.identity).GetComponent<FightCat>();
+            newCat.Init(cat, true);
+        }
     }
     
     void Update()
