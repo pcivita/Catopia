@@ -42,6 +42,8 @@ public class BattleManager : MonoBehaviour
     
     
     [SerializeField] private Button myButton; // Reference to the button
+    
+    [SerializeField] private List<RecruitButton> recruitButtons = new List<RecruitButton>();
     private bool conditionMet = false; // Your condition to enable the button
 
     private int score;
@@ -62,7 +64,12 @@ public class BattleManager : MonoBehaviour
             FightCat newCat = Instantiate(fightCatPrefab, pos, quaternion.identity).GetComponent<FightCat>();
             newCat.Init(EnemySOs[i],false);
             enemyCats.Add(newCat);
-            
+            recruitButtons[i].catSo = (EnemySOs[i]);
+            if (recruitButtons[i].catSo.Cost > GameManager.gameState.GetFood())
+            {
+                Button recruitButton = recruitButtons[i].GetComponentInParent<Button>();
+                recruitButton.interactable = false;
+            }
         }
         myButton.interactable = false;
 
