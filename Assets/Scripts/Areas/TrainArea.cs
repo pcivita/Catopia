@@ -60,6 +60,7 @@ public class TrainArea : AreaController
     public override void UpdateAreaState(Cat cat, bool addingCat)
     {
         UpdateTexts();
+        PlayerLog.instance.AddEvent("TESTING");
         GameManager.instance.UpdateConsumptionText();
     }
 
