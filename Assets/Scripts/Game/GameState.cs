@@ -44,11 +44,11 @@ public class GameState {
         colonyMembers.Remove(c);
     }
 
-    public void AddCat(CatSO c)
+    public void AddCat(CatSO c, bool concstructNow = true)
     {
         Debug.Log("Add cat " + c.CatName);
         colonyMembers.Add(c);
-        GameManager.instance.ConstructCat(c);
+        if(concstructNow)GameManager.instance.ConstructCat(c);
     }
 
     public int GetFood()
