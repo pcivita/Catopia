@@ -77,6 +77,7 @@ public class TrainArea : AreaController
         
         currentTraining = trainingList[(GameManager.instance.gameState.GetDay() - 1) % trainingList.Length];
         UpdateTexts();
+        GameManager.instance.UpdateConsumptionText();
     }
 
 }
