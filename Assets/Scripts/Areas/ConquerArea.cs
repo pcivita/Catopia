@@ -1,6 +1,7 @@
 using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 using System.Linq;
 
 public class ConquerArea : AreaController
@@ -18,9 +19,46 @@ public class ConquerArea : AreaController
 
     public void UpdateTexts()
     {
+        UpdateConquerCapacity();
         int nonNullCatCount = _cats.Count(cat => cat != null);
         statText.text = "Cat: " + nonNullCatCount + "/" + catCapacity;
     }
+
+    public void UpdateNewDayVisibility()
+    {
+        // GameObject newDayButton = GameObject.Find("MainCanvas").transform.Find("newDay").gameObject;
+        GameObject newDayButtonObject = GameObject.Find("newDay");
+        Button newDayButton = newDayButtonObject.GetComponent<Button>();
+        if (newDayButton == null)
+        {
+            return;
+        }
+
+        TMP_Text buttonText = newDayButtonObject.GetComponentInChildren<TMP_Text>();
+        if (buttonText == null) 
+        {
+            return;
+        }
+
+        int nonNullCatCount = _cats.Count(cat => cat != null);
+        if (nonNullCatCount == catCapacity)
+        {
+            newDayButton.interactable = true;
+            buttonText.color = new Color(69f / 255f, 16f / 255f, 25f / 255f, 1f);
+        } else {
+            newDayButton.interactable = false;
+            buttonText.color = new Color(69f / 255f, 16f / 255f, 25f / 255f, 0.4f);
+        }
+    }
+
+    public void UpdateConquerCapacity()
+    {
+        int levelNumber = GameManager.gameState.GetDay();
+        string path = $"Level {levelNumber}";
+        CatSO[] enemySOs = Resources.LoadAll<CatSO>(path);
+        catCapacity = enemySOs.Length;
+    }
+
     public override void AddCat(Cat cat) // This tries first
     {
         int availableSlot = GetFirstAvailableSlot();
@@ -45,6 +83,7 @@ public class ConquerArea : AreaController
             Debug.Log(availableSlot);
             cat.transform.position = catSlots[availableSlot].position;
         }
+        UpdateNewDayVisibility();
         UpdateTexts();
         GameManager.instance.UpdateAbilityIconsVisibility();
 
@@ -55,7 +94,7 @@ public class ConquerArea : AreaController
     {
         for (int i = 0; i < catSlots.Length; i++)
         {
-            if (i >= _cats.Count || _cats[i] == null)
+            if ((i >= _cats.Count || _cats[i] == null) && i < catCapacity)
             {
                 return i;
             }
@@ -88,6 +127,7 @@ public class ConquerArea : AreaController
             cat.currArea = "None";
             Debug.Log($"Cat removed from slot {index}");
         }
+        UpdateNewDayVisibility();
         UpdateTexts();
         GameManager.instance.UpdateAbilityIconsVisibility();
     }
@@ -111,6 +151,7 @@ public class ConquerArea : AreaController
             BattleManager.team.Add(clone);
             BattleManager.levelNumber = GameManager.gameState.GetDay();
         }
+        UpdateNewDayVisibility();
         UpdateTexts();
     }
 }

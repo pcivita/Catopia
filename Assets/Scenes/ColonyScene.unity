@@ -813,9 +813,25 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3175664009987615136, guid: a8f8a77130a7349f1960618664366874, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7276125104057773427, guid: a8f8a77130a7349f1960618664366874, type: 3}
       propertyPath: m_Name
       value: MainCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 7936561935413112209, guid: a8f8a77130a7349f1960618664366874, type: 3}
+      propertyPath: m_fontColor.a
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7936561935413112209, guid: a8f8a77130a7349f1960618664366874, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 1713573957
+      objectReference: {fileID: 0}
+    - target: {fileID: 8595992934415543617, guid: a8f8a77130a7349f1960618664366874, type: 3}
+      propertyPath: m_Interactable
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8595992934415543617, guid: a8f8a77130a7349f1960618664366874, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
