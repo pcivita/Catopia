@@ -41,7 +41,7 @@ public class ConquerArea : AreaController
         }
 
         int nonNullCatCount = _cats.Count(cat => cat != null);
-        if (nonNullCatCount == catCapacity)
+        if (nonNullCatCount == catCapacity && catCapacity > 0)
         {
             newDayButton.interactable = true;
             buttonText.color = new Color(69f / 255f, 16f / 255f, 25f / 255f, 1f);
