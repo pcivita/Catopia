@@ -110,7 +110,14 @@ public class GameManager : MonoBehaviour
             {
                 c.NewDay(true);
             }
-            SceneManager.LoadScene("TestFight");
+            if (gameState.gameLost)
+            {
+                LoseGame("You didn't have enough food to feed your cats, game over!");
+            }
+            else
+            {
+                SceneManager.LoadScene("TestFight");
+            }
 
         });
         
