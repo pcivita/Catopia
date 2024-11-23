@@ -21,7 +21,7 @@ public class EventManager : MonoBehaviour
     {
         possibleEvents = new List<EventFunction>();
         possibleEvents.Add(Bees);
-        possibleEvents.Add(RougeCat);
+        possibleEvents.Add(RogueCat);
         possibleEvents.Add(Uneventful);
         possibleEvents.Add(SunsetFriendship);
         /*
@@ -120,19 +120,16 @@ public class EventManager : MonoBehaviour
 
     void Bees(){
         Cat cat = GetRandomPresentCat();
-        if(cat == null)
+        if (cat == null)
         {
-            eventText.text = "Nobody was at home to protect the food! You lost 1 food.";
-            GameManager.gameState.TryConsumeFood(1);
-            AllowExitEvent();
+            eventText.text = "At home, it's quiet tonight. Everyone is busy.";
             return;
         }
-
         eventText.text = cat._catSO.CatName + " bumped into a bee hive, oh no!";
 
-        CreateChoice(eventChoice1, "try to get honey. success rate: 50%", () => {
-            if (Randf(0, 1) < 0.5f){
-                eventText.text = "Success! " + cat._catSO.CatName + "gets the honey. You got 5 food.";
+        CreateChoice(eventChoice1, "try to get honey. success rate: 70%", () => {
+            if (Randf(0, 1) < 0.7f){
+                eventText.text = "Success! " + cat._catSO.CatName + "gets the honey. You got 15 food.";
                 GameManager.gameState.AddFood(2);
                 AllowExitEvent();
             }
@@ -150,21 +147,19 @@ public class EventManager : MonoBehaviour
     }
 
     //TODO randomly generate and add a cat on success.
-    void RougeCat()
+    void RogueCat()
     {
         Cat cat = GetRandomPresentCat();
         if (cat == null)
         {
-            eventText.text = "Nobody was at home to protect the food! You lost 1 food.";
-            GameManager.gameState.TryConsumeFood(1);
-            AllowExitEvent();
+            eventText.text = "At home, it's quiet tonight. Everyone is busy.";
             return;
         }
 
         eventText.text = cat._catSO.CatName + " crossed paths with a rouge cat! Is it a friend or a foe?";
 
-        CreateChoice(eventChoice1, "Approach and try to befriend. Success rate: 33%", () => {
-            if (Randf(0, 1) < 0.33f){
+        CreateChoice(eventChoice1, "Approach and try to befriend. Success rate: 60%", () => {
+            if (Randf(0, 1) < 0.6f){
                 CatSO newCat = GameManager.GetRandomDefaultCat();
                 GameManager.gameState.AddCat(newCat);
                 eventText.text = "Success! " + cat._catSO.CatName + " befriends the rouge cat. Welcome home, +" +newCat.CatName+"!";
