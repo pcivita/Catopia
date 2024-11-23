@@ -11,8 +11,19 @@ public class GameState {
     public int mapNode = 0;
     public bool gameLost = false;
 
-    //NOT FINAL!
-    //TODO how do we want to seed the colony? could randomize
+    static List<CatSO> InitializeCats()
+    {
+        Debug.Log("Initialize cats");
+        List<CatSO> l = new List<CatSO>();
+        CatSO[] defaultCats = Resources.LoadAll<CatSO>("Default");
+        foreach(CatSO so in defaultCats) {
+            l.Add(so.Clone());
+        }
+        return l;
+    }
+
+    /*
+     * Random ver:
     static List<CatSO> InitalizeCats(int number)
     {
         Debug.Log("Initialize cats");
@@ -23,13 +34,13 @@ public class GameState {
             l.Add(defaultCats[UnityEngine.Random.RandomRange(0, defaultCats.Length)].Clone());
         }
         return l;
-    }
+    }*/
 
     public static GameState NewGame()
     {
         Debug.Log("Call new game");
         GameState state = new GameState();
-        state.colonyMembers = InitalizeCats(4);
+        state.colonyMembers = InitializeCats();
         state.foodCount = 5;
         return state;
     }

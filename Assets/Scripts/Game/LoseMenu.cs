@@ -46,7 +46,7 @@ public class LoseMenu : MonoBehaviour
             GameManager.ResetGame();
             //replace one cat
             GameManager.gameState.AddCat(keep, false);
-            GameManager.gameState.KillCat(GameManager.gameState.GetCats()[0]);
+            //GameManager.gameState.KillCat(GameManager.gameState.GetCats()[0]);
             //load up scene
             SceneManager.LoadScene("ColonyScene");
         });
