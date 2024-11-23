@@ -93,9 +93,7 @@ public class GameManager : MonoBehaviour
         GameObject.FindFirstObjectByType<EventManager>().PlayEvent(() =>
         {
             gameState.NewDay();
-            foreach (var area in areas) area.NewDay();
             Debug.Log("AREAS Have Restarted, Total Food: " + gameState.GetFood());
-            foreach (var c in catInstances) c.NewDay(true);
 
             foreach (var area in areas)
             {
@@ -109,9 +107,8 @@ public class GameManager : MonoBehaviour
 
             Debug.Log("AREAS Have Restarted, Total Food: " + gameState.GetFood());
             foreach (var c in catInstances)
-            else
             {
-                c.NewDay();
+                c.NewDay(true);
             }
             SceneManager.LoadScene("TestFight");
 
