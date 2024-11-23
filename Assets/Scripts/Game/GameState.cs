@@ -64,6 +64,7 @@ public class GameState {
     {
         if (amount > foodCount)
         {
+            GameManager.LooseGame("GAME OVER. You didn't have enough food to feed everyone!");
             Debug.Log("You HAVE LITERALLY LOST THE GAME");
             return false;
         }

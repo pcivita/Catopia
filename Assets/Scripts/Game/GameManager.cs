@@ -94,6 +94,7 @@ public class GameManager : MonoBehaviour
         {
             //all other logic happens once event is over. When event window is closed, this code executes.
             gameState.NewDay();
+            if (gameLost) return;
 
             foreach (var area in areas)
             {
@@ -104,7 +105,6 @@ public class GameManager : MonoBehaviour
             {
                 c.NewDay();
             }
-
             SceneManager.LoadScene("TestFight");
 
         });
@@ -112,8 +112,11 @@ public class GameManager : MonoBehaviour
 
     }
 
+    bool gameLost = false;
+
     public static void LooseGame(string gameOverMessage)
     {
+        instance.gameLost = true;
         Instantiate(instance.LooseScreen).GetComponent<LooseMenu>().SetGameoverMessage(gameOverMessage);
     }
 
