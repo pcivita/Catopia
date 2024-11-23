@@ -221,7 +221,7 @@ public class BattleManager : MonoBehaviour
 
     public void NewGame()
     {
-        GameManager.gameState = GameState.NewGame();
+        GameManager.LoseGame("You lost the befriend... Game over");
     }
 
     public void ReturnToColony()

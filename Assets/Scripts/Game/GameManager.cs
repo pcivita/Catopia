@@ -92,32 +92,27 @@ public class GameManager : MonoBehaviour
         //triggers event
         GameObject.FindFirstObjectByType<EventManager>().PlayEvent(() =>
         {
-            //all other logic happens once event is over. When event window is closed, this code executes.
             gameState.NewDay();
-            if (gameLost) return;
-
-            foreach (var area in areas)
-            {
-                area.NewDay();
-            }
+            foreach (var area in areas) area.NewDay();
             Debug.Log("AREAS Have Restarted, Total Food: " + gameState.GetFood());
-            foreach (var c in catInstances)
+            foreach (var c in catInstances) c.NewDay(true);
+
+            if (gameState.gameLost)
             {
-                c.NewDay();
+                LoseGame("You didn't have enough food for all of your cats. Game over");
             }
-            SceneManager.LoadScene("TestFight");
+            else
+            {
+                SceneManager.LoadScene("TestFight");
+            }
 
         });
         
-
     }
 
-    bool gameLost = false;
-
-    public static void LooseGame(string gameOverMessage)
+    public static void LoseGame(string gameOverMessage)
     {
-        instance.gameLost = true;
-        Instantiate(instance.LooseScreen).GetComponent<LooseMenu>().SetGameoverMessage(gameOverMessage);
+        Instantiate(instance.LooseScreen).GetComponent<LoseMenu>().SetGameoverMessage(gameOverMessage);
     }
 
     public static void ResetGame()
@@ -129,7 +124,7 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyUp(KeyCode.Space))
         {
-            LooseGame("Debug game over!");
+            LoseGame("Debug game over!");
         }
     }
 }
