@@ -10,19 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9bf5b7dc693ddb44ca1fdb898aad37e6, type: 3}
-  m_Name: MrMuffins
+  m_Name: Sol
   m_EditorClassIdentifier: 
-  CatName: Mr McMuffins
-  Strength: 2
-  Health: 2
+  CatName: Luna
+  Strength: 4
+  Health: 4
   Hunting: 1
-  Cost: 2
-  Ability: {fileID: 11400000, guid: 5731d62f86c17604bbe6273aa684d5b5, type: 2}
-  Accessory: {fileID: 21300000, guid: feaa1575616b3446890675e1125d3b6f, type: 3}
+  Cost: 5
+  Ability: {fileID: 11400000, guid: b62a229e2ce65b94989bf4a4aaa51764, type: 2}
+  Accessory: {fileID: 21300000, guid: 6a33720fe28fa40ee8ac10473d16f810, type: 3}
   Pattern: {fileID: 21300000, guid: d7ee451a9c13f4a79b3616e94122c523, type: 3}
   patternColor:
     serializedVersion: 2
-    rgba: 4278274977
+    rgba: 4281940281
   bodyColor:
     serializedVersion: 2
-    rgba: 4282426623
+    rgba: 4285624689

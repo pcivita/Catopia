@@ -15,7 +15,7 @@ public class HuntArea : AreaController
         UpdateTexts();
     }
 
-    public void UpdateTexts()
+    public override void UpdateTexts()
     {
         statText.text = "Cat: " + _cats.Count +"\nHunt: " + GetTotalHuntingPlusBuffs();
     }
@@ -54,7 +54,6 @@ public class HuntArea : AreaController
     {
         GameManager.gameState.AddFood(GetTotalHuntingPlusBuffs());
         totalHunting = 0;
-        _cats.Clear();
 
         UpdateTexts();
     }

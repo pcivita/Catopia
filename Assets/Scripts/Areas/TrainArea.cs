@@ -44,7 +44,7 @@ public class TrainArea : AreaController
         catCapacity = food + hunting - numCats;
         UpdateTexts();
     }
-    public void UpdateTexts()
+    public override void UpdateTexts()
     {
         statText.text = "Train: " + currentTraining;
 
@@ -72,8 +72,6 @@ public class TrainArea : AreaController
             cat.Train(currentTraining, 1);
         }
 
-        _cats.Clear();
-        
         currentTraining = trainingList[(GameManager.gameState.GetDay() - 1) % trainingList.Length];
         SetCapacity();
         GameManager.instance.UpdateConsumptionText();

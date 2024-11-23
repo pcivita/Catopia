@@ -17,7 +17,7 @@ public class ConquerArea : AreaController
         UpdateTexts();
     }
 
-    public void UpdateTexts()
+    public override void UpdateTexts()
     {
         UpdateConquerCapacity();
         int nonNullCatCount = _cats.Count(cat => cat != null);

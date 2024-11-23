@@ -11,6 +11,7 @@ public abstract class AreaController : MonoBehaviour
 
     public List<Cat> _cats = new();
 
+    public abstract void UpdateTexts();
     public abstract void UpdateAreaState(Cat cat, bool addingCat);
 
     public abstract void NewDay();
@@ -37,6 +38,12 @@ public abstract class AreaController : MonoBehaviour
     public List<Cat> GetCats()
     {
         return _cats;
+    }
+
+    public void ClearCats()
+    {
+        _cats.Clear();
+        UpdateTexts();
     }
     
     // Todo: Abstract Deal with New Day

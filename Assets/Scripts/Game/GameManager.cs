@@ -100,6 +100,12 @@ public class GameManager : MonoBehaviour
             {
                 area.NewDay();
             }
+
+            foreach (var area in areas)
+            {
+                area.ClearCats();
+            }
+
             Debug.Log("AREAS Have Restarted, Total Food: " + gameState.GetFood());
             foreach (var c in catInstances)
             {
