@@ -39,6 +39,8 @@ public class UICat : MonoBehaviour
         accessory.sprite = so.Accessory;
         foodCost.text = "cost: "+so.Cost+" food";
         infoText.text = cat.LogInfo();
+        if (so.Pattern == null) pattern.color = Color.clear;
+        if (so.Accessory == null) accessory.color = Color.clear;
     }
 
     public void DisableClick()

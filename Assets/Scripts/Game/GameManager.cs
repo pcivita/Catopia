@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] TMP_Text foodText;
     [SerializeField] TMP_Text consumptionText;
     [SerializeField] SpriteRenderer background;
+    [SerializeField] GameObject LooseScreen;
 
 
     public List<Cat> catInstances;
@@ -93,6 +94,7 @@ public class GameManager : MonoBehaviour
         {
             //all other logic happens once event is over. When event window is closed, this code executes.
             gameState.NewDay();
+            if (gameLost) return;
 
             foreach (var area in areas)
             {
@@ -103,11 +105,31 @@ public class GameManager : MonoBehaviour
             {
                 c.NewDay();
             }
-
             SceneManager.LoadScene("TestFight");
 
         });
         
 
+    }
+
+    bool gameLost = false;
+
+    public static void LooseGame(string gameOverMessage)
+    {
+        instance.gameLost = true;
+        Instantiate(instance.LooseScreen).GetComponent<LooseMenu>().SetGameoverMessage(gameOverMessage);
+    }
+
+    public static void ResetGame()
+    {
+        gameState = GameState.NewGame();
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            LooseGame("Debug game over!");
+        }
     }
 }
