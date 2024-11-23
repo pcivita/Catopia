@@ -123,6 +123,7 @@ public class EventManager : MonoBehaviour
         if (cat == null)
         {
             eventText.text = "At home, it's quiet tonight. Everyone is busy.";
+            AllowExitEvent();
             return;
         }
         eventText.text = cat._catSO.CatName + " bumped into a bee hive, oh no!";
@@ -153,6 +154,7 @@ public class EventManager : MonoBehaviour
         if (cat == null)
         {
             eventText.text = "At home, it's quiet tonight. Everyone is busy.";
+            AllowExitEvent();
             return;
         }
 
