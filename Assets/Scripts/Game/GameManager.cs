@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] TMP_Text foodText;
     [SerializeField] TMP_Text consumptionText;
     [SerializeField] SpriteRenderer background;
+    [SerializeField] GameObject LooseScreen;
 
 
     public List<Cat> catInstances;
@@ -109,5 +110,23 @@ public class GameManager : MonoBehaviour
         });
         
 
+    }
+
+    public static void LooseGame(string gameOverMessage)
+    {
+        Instantiate(instance.LooseScreen).GetComponent<LooseMenu>().SetGameoverMessage(gameOverMessage);
+    }
+
+    public static void ResetGame()
+    {
+        gameState = GameState.NewGame();
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            LooseGame("Debug game over!");
+        }
     }
 }
