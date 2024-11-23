@@ -389,13 +389,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 590098488}
+  - component: {fileID: 590098489}
   m_Layer: 0
   m_Name: PanelController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &590098488
 Transform:
   m_ObjectHideFlags: 0
@@ -411,6 +412,56 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &590098489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 590098487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5a78a0c8be04b44b405ed7cc3f014e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contentText: {fileID: 1088087237}
+  contentImage: {fileID: 1493378562}
+  nextButtonText: {fileID: 1653248195}
+  texts:
+  - ' Expand your cat colony and befriend the world!'
+  - "Don't Worry teaching team! An interactive tutorial will be a part of p4! In
+    the meantime, here's a little bit of info on how our game works!\r"
+  - "Every day, you have the option to assign Cats different tasks by dragging them
+    into unique areas.  \nThey can Train, Hunt, or Befriend other Cats!"
+  - "The Train area increases your cat's stats in different ways every day... \nBut
+    beware: training costs food!\r\n"
+  - 'To ensure you have enough food, you can use the Hunt area.
+
+    Some cats might
+    hunt better than others...
+
+'
+  - "\rRemember! each cat needs to "
+  - "To expand your cat colony, drag cats into the Befriend Area! \nIf you're strong
+    enough to befriend your enemies, you can recruit them by giving them food. \r"
+  - 'Don''t want to drag your cats anywhere? No worries - something special might
+    happen if you leave a cat at home!
+
+'
+  - "If You ever run out of food, or you aren't strong enough to befriend your other
+    cats... You must restart\n(sad meow)\r"
+  - "Win by Befriending, which expands your cat colony to the borders of the map!
+    If you lose a Befriend or run out of food to feed your cats, you lose!\r"
+  images:
+  - {fileID: 21300000, guid: e1bfd99eab83a7949b8c457938db6fa8, type: 3}
+  - {fileID: 21300000, guid: 7a6341b340acb4de79ae79bcd0928347, type: 3}
+  - {fileID: 21300000, guid: ac3088636b42b044dbd709c05a05ada6, type: 3}
+  - {fileID: 21300000, guid: 778e9d017136e9f4b975d0624b237ac3, type: 3}
+  - {fileID: 21300000, guid: d9d29ff2acf47a84da403c3f62c0fbfa, type: 3}
+  - {fileID: 21300000, guid: 43575a05b8ffb3e4abfe28e3e8dc4e27, type: 3}
+  - {fileID: 21300000, guid: d9d29ff2acf47a84da403c3f62c0fbfa, type: 3}
+  - {fileID: 21300000, guid: 01d2c363c9d68fe4987cd7b7def4b6dd, type: 3}
+  sceneToLoad: ColonyScene
 --- !u!1 &766607161
 GameObject:
   m_ObjectHideFlags: 0
@@ -442,8 +493,9 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1854798896}
-  - {fileID: 1090181008}
+  - {fileID: 1088087236}
   - {fileID: 1493378561}
+  - {fileID: 1090181008}
   m_Father: {fileID: 2144505643}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -501,7 +553,7 @@ GameObject:
   - component: {fileID: 1088087238}
   - component: {fileID: 1088087237}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Content
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -519,12 +571,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1090181008}
+  m_Father: {fileID: 766607162}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -397, y: 320}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 0.00027466, y: 44.27359}
+  m_SizeDelta: {x: 886.12, y: 229.0959}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1088087237
 MonoBehaviour:
@@ -573,14 +625,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 54.2
-  m_fontSizeBase: 36
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -655,13 +707,12 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1653248194}
-  - {fileID: 1088087236}
   m_Father: {fileID: 766607162}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 422, y: -224}
-  m_SizeDelta: {x: 319.2275, y: 66.3645}
+  m_AnchoredPosition: {x: 446, y: -250}
+  m_SizeDelta: {x: 272.5848, y: 56.6679}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1090181009
 MonoBehaviour:
@@ -706,7 +757,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1090181010}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 590098489}
+        m_TargetAssemblyTypeName: PanelController, Assembly-CSharp
+        m_MethodName: ClickButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1090181010
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -854,8 +917,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0000081062, y: -57}
-  m_SizeDelta: {x: 725.469, y: 220.8806}
+  m_AnchoredPosition: {x: 0.0000082254, y: -167.89}
+  m_SizeDelta: {x: 215.9914, y: 220.8806}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1493378562
 MonoBehaviour:
@@ -979,7 +1042,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 37.6
+  m_fontSize: 28.4
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1

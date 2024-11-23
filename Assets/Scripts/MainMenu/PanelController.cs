@@ -8,8 +8,9 @@ public class PanelController : MonoBehaviour
     // UI Components
     public TMP_Text contentText;      // Assign in Inspector
     public Image contentImage;        // Assign in Inspector
-    public Button nextButton;         // Assign in Inspector
-    public TMP_Text nextButtonText;   // Assign in Inspector
+    
+    public TMP_Text nextButtonText;
+   // Assign in Inspector
 
     // Arrays of texts and sprites
     [TextArea(3, 10)]
@@ -25,9 +26,6 @@ public class PanelController : MonoBehaviour
     {
         // Initialize UI with the first state
         UpdateContent();
-
-        // Add listener to the button
-        nextButton.onClick.AddListener(OnNextButtonClick);
     }
 
     void UpdateContent()
@@ -46,12 +44,11 @@ public class PanelController : MonoBehaviour
         // Check if this is the last state
         if (currentIndex == texts.Length - 1 || currentIndex == images.Length - 1)
         {
-            // Change button text to "Get Started"
-            nextButtonText.text = "Get Started";
+            nextButtonText.text = "Get Started!";
         }
     }
 
-    void OnNextButtonClick()
+    public void ClickButton()
     {
         currentIndex++;
 
