@@ -112,7 +112,7 @@ public class GameManager : MonoBehaviour
 
     public static void LoseGame(string gameOverMessage)
     {
-        Instantiate(instance.LooseScreen).GetComponent<LooseMenu>().SetGameoverMessage(gameOverMessage);
+        Instantiate(instance.LooseScreen).GetComponent<LoseMenu>().SetGameoverMessage(gameOverMessage);
     }
 
     public static void ResetGame()
