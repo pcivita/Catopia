@@ -430,7 +430,7 @@ MonoBehaviour:
   texts:
   - ' Expand your cat colony and befriend the world!'
   - "Don't Worry teaching team! An interactive tutorial will be a part of p4! In
-    the meantime, here's a little bit of info on how our game works!\r"
+    the meantime, here's some info on how our game works!\r"
   - "Every day, you have the option to assign Cats different tasks by dragging them
     into unique areas.  \nThey can Train, Hunt, or Befriend other Cats!"
   - "The Train area increases your cat's stats in different ways every day... \nBut
@@ -441,26 +441,29 @@ MonoBehaviour:
     hunt better than others...
 
 '
-  - "\rRemember! each cat needs to "
   - "To expand your cat colony, drag cats into the Befriend Area! \nIf you're strong
-    enough to befriend your enemies, you can recruit them by giving them food. \r"
+    enough to befriend your enemies, you can recruit them by giving them food! \r"
+  - "\rRemember! each cat needs to eat every day, so you must balance this resource
+    wisely. "
   - 'Don''t want to drag your cats anywhere? No worries - something special might
     happen if you leave a cat at home!
 
 '
   - "If You ever run out of food, or you aren't strong enough to befriend your other
-    cats... You must restart\n(sad meow)\r"
-  - "Win by Befriending, which expands your cat colony to the borders of the map!
-    If you lose a Befriend or run out of food to feed your cats, you lose!\r"
+    cats... You must restart your colony from scratch.\n(sad meow)\r"
+  - "You win by befriending the world: Expanding your cat colony to the borders of
+    the map!\r"
   images:
-  - {fileID: 21300000, guid: e1bfd99eab83a7949b8c457938db6fa8, type: 3}
+  - {fileID: 21300000, guid: 7a6341b340acb4de79ae79bcd0928347, type: 3}
   - {fileID: 21300000, guid: 7a6341b340acb4de79ae79bcd0928347, type: 3}
   - {fileID: 21300000, guid: ac3088636b42b044dbd709c05a05ada6, type: 3}
   - {fileID: 21300000, guid: 778e9d017136e9f4b975d0624b237ac3, type: 3}
-  - {fileID: 21300000, guid: d9d29ff2acf47a84da403c3f62c0fbfa, type: 3}
   - {fileID: 21300000, guid: 43575a05b8ffb3e4abfe28e3e8dc4e27, type: 3}
-  - {fileID: 21300000, guid: d9d29ff2acf47a84da403c3f62c0fbfa, type: 3}
-  - {fileID: 21300000, guid: 01d2c363c9d68fe4987cd7b7def4b6dd, type: 3}
+  - {fileID: 21300000, guid: a55ff43fea104fd4a90799189b4d9dd9, type: 3}
+  - {fileID: 21300000, guid: 310097e3909661b4d9201b44ad5d8f2b, type: 3}
+  - {fileID: 21300000, guid: 9d6fc33eae7870c4b838569904fc0b22, type: 3}
+  - {fileID: 21300000, guid: 310097e3909661b4d9201b44ad5d8f2b, type: 3}
+  - {fileID: 21300000, guid: a55ff43fea104fd4a90799189b4d9dd9, type: 3}
   sceneToLoad: ColonyScene
 --- !u!1 &766607161
 GameObject:
