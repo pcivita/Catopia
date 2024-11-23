@@ -223,11 +223,15 @@ public class Cat : MonoBehaviour
             // TODO: Should Cat die?
         }
     }
-    public void NewDay()
+    public void NewDay(bool fight)
     {
-        this.ResetPosition();
         this.ConsumeFood();
-        GameManager.instance.CatDefaultWander(this);
+
+        if (!fight)
+        {
+            this.ResetPosition();
+            GameManager.instance.CatDefaultWander(this);
+        }
     }
     //TODO: implement. this will be used at the start of a new day.
     public void ResetPosition()

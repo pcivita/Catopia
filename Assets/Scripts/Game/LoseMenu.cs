@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
 
-public class LooseMenu : MonoBehaviour
+public class LoseMenu : MonoBehaviour
 {
     public UICat template;
     public TMP_Text chooseButtonText;

@@ -9,6 +9,7 @@ public class GameState {
     protected int foodCount;
     protected int dayCount = 1;
     public int mapNode = 0;
+    public bool gameLost = false;
 
     //NOT FINAL!
     //TODO how do we want to seed the colony? could randomize
@@ -64,7 +65,7 @@ public class GameState {
     {
         if (amount > foodCount)
         {
-            GameManager.LooseGame("GAME OVER. You didn't have enough food to feed everyone!");
+            gameLost = true;
             Debug.Log("You HAVE LITERALLY LOST THE GAME");
             return false;
         }
