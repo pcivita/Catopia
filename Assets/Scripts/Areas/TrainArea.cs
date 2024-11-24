@@ -46,7 +46,7 @@ public class TrainArea : AreaController
     }
     public override void UpdateTexts()
     {
-        statText.text = "Train: " + currentTraining;
+        statText.text = "+4 " + currentTraining;
 
         if (_cats.Count > catCapacity) {
             warning.SetActive(true);
@@ -69,7 +69,7 @@ public class TrainArea : AreaController
         foreach (var cat in _cats)
         {
             Debug.Log(cat._catSO.CatName);
-            cat.Train(currentTraining, 1);
+            cat.Train(currentTraining, 4);
         }
 
         currentTraining = trainingList[(GameManager.gameState.GetDay() - 1) % trainingList.Length];
