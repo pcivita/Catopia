@@ -123,7 +123,7 @@ public class Cat : MonoBehaviour
         string fullText = firstLine + 
             "\n\nStrength: " + GetStrengthPlusBuffs() +
             "\nHealth: " + GetHealthPlusBuffs() +
-            "\nHunting: " + _catSO.Hunting + 
+            "\nHunting: " + GetHuntingPlusBuffs() + 
             "\n\nAbility: " + "\n" + _catSO.Ability.abilityName + "\n\n" + _catSO.Ability.description;
 
         catText.text = fullText; 
@@ -139,6 +139,11 @@ public class Cat : MonoBehaviour
         int baseHealth = _catSO.Health;
         // Debug.Log($"Health Buff For {_catSO.CatName} Is {_catSO.Ability.GetHealthBuff(this)}");
         return baseHealth + _catSO.Ability.GetHealthBuff(this);
+    }
+
+    public int GetHuntingPlusBuffs() {
+        int baseHunting = _catSO.Hunting;
+        return baseHunting + _catSO.Ability.GetHuntingBuff(this);
     }
 
     // Doesn't deal with overlapping Cats
@@ -194,9 +199,29 @@ public class Cat : MonoBehaviour
     {
         transform.position = position;
     }
-    public void Train(string trainType, int trainAmount) 
+    public void Train() 
     {
-     
+        GameObject trainObject = GameObject.Find("Train");
+        TrainArea trainArea = trainObject.GetComponent<TrainArea>();
+
+        IncreaseStat(trainArea.getCurrentTraining(), 4);
+    
+        GameObject conquerObject = GameObject.Find("Conquer");
+        ConquerArea conquerArea = conquerObject.GetComponent<ConquerArea>();
+        foreach (var cat in conquerArea.GetCats()) 
+        {
+            if (cat.GetAbility().GetName() == "Pillar Of Strength" && cat.GetAbility().IsActive(cat))
+            {
+                IncreaseStat("Health", trainArea.GetNumCats());
+                IncreaseStat("Hunting", trainArea.GetNumCats());
+                IncreaseStat("Strength", trainArea.GetNumCats());
+            }
+        }
+        GameManager.gameState.TryConsumeFood(1);
+    }
+
+    public void IncreaseStat(string trainType, int trainAmount) 
+    {
         if (trainType == "Health")
         {
             _catSO.Health += trainAmount;
@@ -208,7 +233,6 @@ public class Cat : MonoBehaviour
         {
             _catSO.Strength += trainAmount;
         }
-        GameManager.gameState.TryConsumeFood(1);
     }
     
     public void ConsumeFood()

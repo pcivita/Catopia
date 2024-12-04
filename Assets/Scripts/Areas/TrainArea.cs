@@ -69,12 +69,17 @@ public class TrainArea : AreaController
         foreach (var cat in _cats)
         {
             Debug.Log(cat._catSO.CatName);
-            cat.Train(currentTraining, 4);
+            cat.Train();
         }
 
         currentTraining = trainingList[(GameManager.gameState.GetDay() - 1) % trainingList.Length];
         SetCapacity();
         GameManager.instance.UpdateConsumptionText();
+    }
+
+    public string getCurrentTraining()
+    {
+        return currentTraining;
     }
 
 }

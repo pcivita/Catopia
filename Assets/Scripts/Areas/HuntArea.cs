@@ -37,11 +37,11 @@ public class HuntArea : AreaController
     {
         if (addingCat)
         {
-            totalHunting += cat._catSO.Hunting;  
+            totalHunting += cat.GetHuntingPlusBuffs();  
         }
         else
         {
-            totalHunting -= cat._catSO.Hunting;
+            totalHunting -= cat.GetHuntingPlusBuffs();
         }
 
         Debug.Log("RUNNING AFTER RESET");

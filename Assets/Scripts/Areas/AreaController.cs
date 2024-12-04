@@ -39,6 +39,11 @@ public abstract class AreaController : MonoBehaviour
     {
         return _cats;
     }
+    
+    public virtual int GetNumCats()
+    {
+        return _cats.Count;
+    }
 
     public void ClearCats()
     {

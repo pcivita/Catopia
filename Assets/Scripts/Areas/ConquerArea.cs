@@ -102,7 +102,7 @@ public class ConquerArea : AreaController
         return -1; // No available slots
     }
     
-    public int GetNumCats()
+    public override int GetNumCats()
     {
         int count = 0;
         for (int i = 0; i < _cats.Count; i++)

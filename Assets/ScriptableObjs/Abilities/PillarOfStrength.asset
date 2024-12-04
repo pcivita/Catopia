@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb205487f00e34b44a4602ec89c48fb8, type: 3}
+  m_Name: PillarOfStrength
+  m_EditorClassIdentifier: 
+  abilityName: Pillar Of Strength
+  description: If this cat is in Conquer, all cats that train will permanently gain
+    +X to all stats, where X is the number of cats in Train.
+  icon: {fileID: 21300000, guid: b4515106ede9f8843ab9a1b9fb4faef4, type: 3}
