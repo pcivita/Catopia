@@ -45,7 +45,6 @@ public class HuntArea : AreaController
         }
 
         Debug.Log("RUNNING AFTER RESET");
-        trainArea.SetCapacity();
         trainArea.UpdateTexts();
         UpdateTexts();
     }

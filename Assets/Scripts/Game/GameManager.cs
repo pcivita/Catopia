@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
     
     public void UpdateConsumptionText()
     {
-        consumptionText.text = "Consumption: " + (catInstances.Count + areas[1]._cats.Count);
+        consumptionText.text = "Consumption: " + (catInstances.Count);
     }
 
     public CatSO[] GetDefaultCats()
