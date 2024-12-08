@@ -14,4 +14,5 @@ public abstract class Ability : ScriptableObject
     public virtual bool IsActive(Cat cat) { return false; }
 
     public string GetName() { return abilityName; }
+    public string GetDescription() { return description; }
 }

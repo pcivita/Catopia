@@ -7,7 +7,7 @@ public class PillarOfStrength : Ability
     private void OnEnable() 
     {
         abilityName = "Pillar Of Strength";
-        description = "If this cat is in Conquer, all cats that train will permanently gain +X to all stats, where X is the number of cats in Train.";
+        description = "If this cat is in Befriend, all cats that train will permanently gain +X to all stats, where X is the number of cats in Train.";
     }
 
     public override bool IsActive(Cat cat)

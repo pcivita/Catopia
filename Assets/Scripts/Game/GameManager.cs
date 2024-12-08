@@ -67,6 +67,14 @@ public class GameManager : MonoBehaviour
         return instance.defaultCats[UnityEngine.Random.RandomRange(0, instance.defaultCats.Length)].Clone();
     }
 
+    public void UpdateAllStats()
+    {
+        foreach (Cat catInstance in catInstances)
+        {
+            catInstance.UpdateStats();
+        }
+    }
+
     public void UpdateAbilityIconsVisibility()
     {
         foreach (Cat catInstance in catInstances)

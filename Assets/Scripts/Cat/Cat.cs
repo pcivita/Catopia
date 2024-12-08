@@ -2,7 +2,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Image = UnityEngine.UI.Image;
 using TMPro;
+using Microsoft.Unity.VisualStudio.Editor;
 
 // TODO: Investigate bug where a cat seems to be locked in the slot. 
 public class Cat : MonoBehaviour
@@ -23,9 +25,21 @@ public class Cat : MonoBehaviour
     public SpriteRenderer accessorySR;
     
     public GameObject abilityIcon;
+    public GameObject visibleAbilityIcon;
+    public GameObject hoverAbilityIcon;
     Squishable squishable;
     public TMP_Text catText;
     public Canvas uiCanvas;
+    public Canvas statsCanvas;
+    public TMP_Text strengthText;
+    public TMP_Text healthText;
+    public TMP_Text huntingText;
+    public TMP_Text abilityText;
+    public TMP_Text abilityNameText;
+    public TMP_Text nameText;
+    public TMP_Text hoverStrengthText;
+    public TMP_Text hoverHealthText;
+    public TMP_Text hoverHuntingText;
 
 
     private AreaController area;
@@ -47,12 +61,19 @@ public class Cat : MonoBehaviour
         // For visual purposes
         uiCanvas.worldCamera = Camera.main;
         uiCanvas.gameObject.SetActive(false);
+        statsCanvas.gameObject.SetActive(true);
         patternSR.sprite = _catSO.Pattern;
         accessorySR.sprite = _catSO.Accessory;
         patternSR.color = _catSO.patternColor;
         bodySR.color = _catSO.bodyColor;
 
         abilityIcon.GetComponent<SpriteRenderer>().sprite = GetAbility().icon;
+        visibleAbilityIcon.GetComponent<SpriteRenderer>().sprite = GetAbility().icon;
+        hoverAbilityIcon.GetComponent<Image>().sprite = GetAbility().icon;
+        abilityNameText.text = GetAbility().GetName();
+        abilityText.text = GetAbility().GetDescription();
+        nameText.text = _catSO.CatName;
+        UpdateStats();
         // DontDestroyOnLoad(gameObject);
     }
 
@@ -102,7 +123,7 @@ public class Cat : MonoBehaviour
     {
         hovering = true;
         squishable.OnMouseEnter();
-        if (!dragging) DisplayStats();
+        if (!dragging) DisplayFullStats();
         
     }
 
@@ -110,23 +131,28 @@ public class Cat : MonoBehaviour
     {
         hovering = false;
         uiCanvas.gameObject.SetActive(false);
+        statsCanvas.gameObject.SetActive(true);
+    }
+
+    public void UpdateStats()
+    {
+        strengthText.text = GetStrengthPlusBuffs().ToString();
+        healthText.text = GetHealthPlusBuffs().ToString();
+        huntingText.text = GetHuntingPlusBuffs().ToString();
     }
 
 
-    private void DisplayStats(){
+    private void DisplayFullStats(){
+        statsCanvas.gameObject.SetActive(false);
         uiCanvas.gameObject.SetActive(true);
 
-        catText.fontSize = 36;
-        catText.enableWordWrapping = true;
+        strengthText.text = GetStrengthPlusBuffs().ToString();
+        healthText.text = GetHealthPlusBuffs().ToString();
+        huntingText.text = GetHuntingPlusBuffs().ToString();
 
-        string firstLine = "Name:" + _catSO.CatName;
-        string fullText = firstLine + 
-            "\n\nStrength: " + GetStrengthPlusBuffs() +
-            "\nHealth: " + GetHealthPlusBuffs() +
-            "\nHunting: " + GetHuntingPlusBuffs() + 
-            "\n\nAbility: " + "\n" + _catSO.Ability.abilityName + "\n\n" + _catSO.Ability.description;
-
-        catText.text = fullText; 
+        hoverStrengthText.text = GetStrengthPlusBuffs().ToString();
+        hoverHealthText.text = GetHealthPlusBuffs().ToString();
+        hoverHuntingText.text = GetHuntingPlusBuffs().ToString();
     }
 
     public int GetStrengthPlusBuffs() {
@@ -151,6 +177,7 @@ public class Cat : MonoBehaviour
     {
         squishable.OnMouseDown();
         dragging = true;
+        statsCanvas.gameObject.SetActive(true);
         uiCanvas.gameObject.SetActive(false);
         Debug.Log(_catSO.CatName);
         offset = (Vector2)transform.position - GetMouseWorldPos();

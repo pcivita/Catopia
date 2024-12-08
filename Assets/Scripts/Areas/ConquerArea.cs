@@ -86,7 +86,7 @@ public class ConquerArea : AreaController
         UpdateNewDayVisibility();
         UpdateTexts();
         GameManager.instance.UpdateAbilityIconsVisibility();
-
+        GameManager.instance.UpdateAllStats();
         
     }
 
@@ -130,6 +130,7 @@ public class ConquerArea : AreaController
         UpdateNewDayVisibility();
         UpdateTexts();
         GameManager.instance.UpdateAbilityIconsVisibility();
+        GameManager.instance.UpdateAllStats();
     }
     
     public override void UpdateAreaState(Cat cat, bool addingCat)
