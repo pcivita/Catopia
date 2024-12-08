@@ -244,7 +244,6 @@ public class Cat : MonoBehaviour
                 IncreaseStat("Strength", trainArea.GetNumCats());
             }
         }
-        GameManager.gameState.TryConsumeFood(1);
     }
 
     public void IncreaseStat(string trainType, int trainAmount) 

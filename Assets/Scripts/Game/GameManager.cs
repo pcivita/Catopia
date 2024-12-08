@@ -33,12 +33,12 @@ public class GameManager : MonoBehaviour
 
     public void UpdateFoodText()
     {
-        foodText.text = "Food: " + gameState.GetFood();
+        foodText.text = gameState.GetFood().ToString();
     }
     
     public void UpdateConsumptionText()
     {
-        consumptionText.text = "Consumption: " + (catInstances.Count + areas[1]._cats.Count);
+        consumptionText.text = catInstances.Count.ToString();
     }
 
     public CatSO[] GetDefaultCats()
