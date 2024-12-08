@@ -46,7 +46,10 @@ public class HuntArea : AreaController
 
         Debug.Log("RUNNING AFTER RESET");
         trainArea.UpdateTexts();
+        GameManager.instance.UpdateFoodText();
+        GameManager.instance.CheckWarning();
         UpdateTexts();
+
     }
 
     public override void NewDay()

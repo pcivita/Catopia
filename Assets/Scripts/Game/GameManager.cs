@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] SpriteRenderer background;
     [SerializeField] GameObject LooseScreen;
 
+    public GameObject warning;
+
 
     public List<Cat> catInstances;
 
@@ -29,16 +31,58 @@ public class GameManager : MonoBehaviour
         foreach (var c in gameState.GetCats()) ConstructCat(c);
         UpdateFoodText();
         UpdateConsumptionText();
+        CheckWarning();
+        Debug.Log("CHECKED WARNING");
     }
+
+
+    private int previousFoodValue = 0; // Keep track of the last food value
 
     public void UpdateFoodText()
     {
-        foodText.text = gameState.GetFood().ToString();
+         HuntArea huntArea = (HuntArea)areas[0];
+        // Calculate the difference
+        int newFoodValue = gameState.GetFood() + huntArea.GetTotalHuntingPlusBuffs();
+        int difference = newFoodValue - previousFoodValue;
+
+        // Update the text
+        foodText.text = newFoodValue.ToString();
+
+        // Determine the color and start the coroutine
+        if (difference > 0)
+        {
+            StartCoroutine(FlashTextColor(Color.green, 2f));
+        }
+        else if (difference < 0)
+        {
+            StartCoroutine(FlashTextColor(Color.red, 2f));
+        }
+
+        // Update the previous value
+        previousFoodValue = newFoodValue;
     }
-    
+
+    private IEnumerator FlashTextColor(Color color, float duration)
+    {
+        Color originalColor = foodText.color; // Store the original color
+        foodText.color = color; // Change to the temporary color
+
+        yield return new WaitForSeconds(duration); // Wait for the specified time
+
+        foodText.color = Color.white; // Revert back to the original color
+    }
     public void UpdateConsumptionText()
     {
         consumptionText.text = catInstances.Count.ToString();
+    }
+
+
+    public void CheckWarning() {
+        if (gameState.GetFood() < catInstances.Count) {
+            warning.gameObject.SetActive(true);
+        } else {
+            warning.gameObject.SetActive(false);
+        }
     }
 
     public CatSO[] GetDefaultCats()
@@ -74,7 +118,6 @@ public class GameManager : MonoBehaviour
             catInstance.UpdateStats();
         }
     }
-
     public void UpdateAbilityIconsVisibility()
     {
         foreach (Cat catInstance in catInstances)

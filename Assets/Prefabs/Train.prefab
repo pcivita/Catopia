@@ -155,7 +155,6 @@ MonoBehaviour:
   - Health
   currentTraining: 
   huntArea: {fileID: 0}
-  warning: {fileID: 0}
 --- !u!1 &2100546842471380064
 GameObject:
   m_ObjectHideFlags: 0
