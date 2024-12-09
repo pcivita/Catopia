@@ -39,7 +39,7 @@ public class CatShop : MonoBehaviour
 
     public void ConfirmBuy()
     {
-        GameManager.gameState.AddCat(selected.Clone(), false);
+        GameManager.gameState.AddCat(selected.Clone(), true);
         GameManager.gameState.TryConsumeFood(selected.Cost);
         confirmation.SetActive(false);
         window.SetActive(false);
