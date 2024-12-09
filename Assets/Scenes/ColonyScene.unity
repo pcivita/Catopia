@@ -721,6 +721,17 @@ MonoBehaviour:
   position: {x: 100, y: 800}
   size: {x: 200, y: 400}
   opacity: 1
+--- !u!114 &949324193 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2555249315343265241, guid: a8f8a77130a7349f1960618664366874, type: 3}
+  m_PrefabInstance: {fileID: 1149680910}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1149680910
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -813,6 +824,23 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1020097874845626933, guid: a8f8a77130a7349f1960618664366874, type: 3}
+      propertyPath: dialogue.name
+      value: Dwane
+      objectReference: {fileID: 0}
+    - target: {fileID: 1020097874845626933, guid: a8f8a77130a7349f1960618664366874, type: 3}
+      propertyPath: dialogue.sentences.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1020097874845626933, guid: a8f8a77130a7349f1960618664366874, type: 3}
+      propertyPath: dialogue.sentences.Array.data[0]
+      value: 'Among AmongAmong Among Among Among Among Among Among Among Among Among
+        Among  '
+      objectReference: {fileID: 0}
+    - target: {fileID: 1020097874845626933, guid: a8f8a77130a7349f1960618664366874, type: 3}
+      propertyPath: dialogue.sentences.Array.data[1]
+      value: 'Part trwo is das djnska haskjhdghaskjun dfvhbqasdjfnb  szhnkvhjqwesadv '
+      objectReference: {fileID: 0}
     - target: {fileID: 3175664009987615136, guid: a8f8a77130a7349f1960618664366874, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -821,9 +849,21 @@ PrefabInstance:
       propertyPath: m_margin.z
       value: 640.3073
       objectReference: {fileID: 0}
+    - target: {fileID: 4879075984101410480, guid: a8f8a77130a7349f1960618664366874, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.78
+      objectReference: {fileID: 0}
+    - target: {fileID: 4879075984101410480, guid: a8f8a77130a7349f1960618664366874, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.000005722046
+      objectReference: {fileID: 0}
     - target: {fileID: 5480977254752596631, guid: a8f8a77130a7349f1960618664366874, type: 3}
       propertyPath: m_SizeDelta.x
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6588838846314253349, guid: a8f8a77130a7349f1960618664366874, type: 3}
+      propertyPath: m_Name
+      value: dialogue
       objectReference: {fileID: 0}
     - target: {fileID: 7276125104057773427, guid: a8f8a77130a7349f1960618664366874, type: 3}
       propertyPath: m_Name
@@ -856,6 +896,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 800541254219611636, guid: a8f8a77130a7349f1960618664366874, type: 3}
+    - {fileID: 3368785940209346285, guid: a8f8a77130a7349f1960618664366874, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a8f8a77130a7349f1960618664366874, type: 3}
@@ -870,6 +911,53 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1434691159
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1434691160}
+  - component: {fileID: 1434691161}
+  m_Layer: 0
+  m_Name: DialogueManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1434691160
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1434691159}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 498.1746, y: 410.66428, z: -1.108781}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1434691161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1434691159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5325edf7fbcd3d43966017508607362, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameText: {fileID: 949324193}
+  dialogueText: {fileID: 1941536221}
+  speed: 0
 --- !u!1 &1572324331 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2630898378660694342, guid: a8f8a77130a7349f1960618664366874, type: 3}
@@ -1043,6 +1131,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1941536221 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6814938988423656793, guid: a8f8a77130a7349f1960618664366874, type: 3}
+  m_PrefabInstance: {fileID: 1149680910}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2022416943 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1433183560788539154, guid: a8f8a77130a7349f1960618664366874, type: 3}
@@ -1270,3 +1369,4 @@ SceneRoots:
   - {fileID: 390769038}
   - {fileID: 1686569209}
   - {fileID: 748471601}
+  - {fileID: 1434691160}

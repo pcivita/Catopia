@@ -112,7 +112,6 @@ public class ConquerArea : AreaController
                 count++;
             }
         }
-        Debug.Log("COUNT" + count);
         return count; 
     }
     

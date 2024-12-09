@@ -99,7 +99,7 @@ public class GameManager : MonoBehaviour
     public void ConstructCat(CatSO c)
     {
         //TODO randomize position of spawn.
-        Vector2 pos = Vector2.left * UnityEngine.Random.Range(-2f, 2f) + Vector2.right * UnityEngine.Random.Range(-2f, 2f);
+        Vector2 pos = Vector2.left * UnityEngine.Random.Range(1f, 5f);
         Cat newCat = Instantiate(catPrefab, pos, quaternion.identity).GetComponent<Cat>();
         newCat.Init(c);
         catInstances.Add(newCat);
@@ -186,9 +186,9 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyUp(KeyCode.Space))
-        {
-            LoseGame("Debug game over!");
-        }
+        // if (Input.GetKeyUp(KeyCode.Space))
+        // {
+        //     LoseGame("Debug game over!");
+        // }
     }
 }
