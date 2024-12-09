@@ -60,6 +60,11 @@ public class TrainArea : AreaController
     {
         UpdateTexts();
         // PlayerLog.instance.AddEvent("TESTING");
+        GameObject huntObject = GameObject.Find("Hunt");
+        if (huntObject == null) { return; }
+        HuntArea huntArea = huntObject.GetComponent<HuntArea>();
+        if (huntArea == null) { return; }
+        huntArea.UpdateTotalHunting();
         GameManager.instance.UpdateConsumptionText();
     }
 

@@ -85,6 +85,11 @@ public class ConquerArea : AreaController
         }
         UpdateNewDayVisibility();
         UpdateTexts();
+        GameObject huntObject = GameObject.Find("Hunt");
+        if (huntObject == null) { return; }
+        HuntArea huntArea = huntObject.GetComponent<HuntArea>();
+        if (huntArea == null) { return; }
+        huntArea.UpdateTotalHunting();
         GameManager.instance.UpdateAbilityIconsVisibility();
         GameManager.instance.UpdateAllStats();
         
@@ -127,6 +132,11 @@ public class ConquerArea : AreaController
             cat.currArea = "None";
             Debug.Log($"Cat removed from slot {index}");
         }
+        GameObject huntObject = GameObject.Find("Hunt");
+        if (huntObject == null) { return; }
+        HuntArea huntArea = huntObject.GetComponent<HuntArea>();
+        if (huntArea == null) { return; }
+        huntArea.UpdateTotalHunting();
         UpdateNewDayVisibility();
         UpdateTexts();
         GameManager.instance.UpdateAbilityIconsVisibility();

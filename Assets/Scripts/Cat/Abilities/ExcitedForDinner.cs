@@ -12,31 +12,28 @@ public class ExcitedForDinner : Ability
 
     public override int GetHealthBuff(Cat cat)
     {
-        GameObject huntObject = GameObject.Find("Hunt");
-        if (huntObject == null)
+        int buff = ReceiveHealthBuff(cat);
+        if (IsActive(cat))
         {
-            Debug.Log("Could not find object.");
-            return 0;
+            GameObject huntObject = GameObject.Find("Hunt");
+            HuntArea huntArea = huntObject.GetComponent<HuntArea>();
+            buff += huntArea.GetCats().Count;
         }
 
-        HuntArea huntArea = huntObject.GetComponent<HuntArea>();
-        if (huntArea == null) 
-        { 
-            Debug.Log("Could not find area.");
-            return 0;
-        }
-
-        if (cat.currArea.Equals("Conquer"))
-        {
-            return huntArea.GetCats().Count;
-        }
-
-        return 0;
+        return buff;
     }
 
     public override int GetStrengthBuff(Cat cat)
     {
-        return GetHealthBuff(cat);
+        int buff = ReceiveStrengthBuff(cat);
+        if (IsActive(cat))
+        {
+            GameObject huntObject = GameObject.Find("Hunt");
+            HuntArea huntArea = huntObject.GetComponent<HuntArea>();
+            buff += huntArea.GetCats().Count;
+        }
+
+        return buff;
     }
 
     public override bool IsActive(Cat cat)

@@ -237,11 +237,14 @@ public class Cat : MonoBehaviour
         ConquerArea conquerArea = conquerObject.GetComponent<ConquerArea>();
         foreach (var cat in conquerArea.GetCats()) 
         {
-            if (cat.GetAbility().GetName() == "Pillar Of Strength" && cat.GetAbility().IsActive(cat))
+            if (cat.GetAbility().IsActive(cat)) 
             {
-                IncreaseStat("Health", trainArea.GetNumCats());
-                IncreaseStat("Hunting", trainArea.GetNumCats());
-                IncreaseStat("Strength", trainArea.GetNumCats());
+                if (cat.GetAbility().GetName() == "Pillar Of Strength")
+                {
+                    IncreaseStat("Health", trainArea.GetNumCats());
+                    IncreaseStat("Hunting", trainArea.GetNumCats());
+                    IncreaseStat("Strength", trainArea.GetNumCats());
+                }
             }
         }
         GameManager.gameState.TryConsumeFood(1);
@@ -249,16 +252,22 @@ public class Cat : MonoBehaviour
 
     public void IncreaseStat(string trainType, int trainAmount) 
     {
+        int mult = 1;
+        if (GetAbility().GetName() == "I Go To The Gym By Myself" && GetAbility().IsActive(this))
+        {
+            mult = 3;
+        }
+
         if (trainType == "Health")
         {
-            _catSO.Health += trainAmount;
+            _catSO.Health += trainAmount * mult;
         } else if (trainType == "Hunting")
         {
-            _catSO.Hunting += trainAmount;
+            _catSO.Hunting += trainAmount * mult;
         }
         else if (trainType == "Strength")
         {
-            _catSO.Strength += trainAmount;
+            _catSO.Strength += trainAmount * mult;
         }
     }
     
@@ -301,6 +310,16 @@ public class Cat : MonoBehaviour
     public string GetName()
     {
         return _catSO.CatName;
+    }
+
+    public CatSO GetCatSO()
+    {
+        return _catSO;
+    }
+
+    public string GetCurrArea()
+    {
+        return currArea;
     }
 }
 
