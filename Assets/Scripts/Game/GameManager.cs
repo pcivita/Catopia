@@ -8,6 +8,7 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
+    public static List<Furniture> furniture = new List<Furniture>();
     public static GameManager instance;
     public static GameState gameState;
     [SerializeField] CatSO[] defaultCats;
@@ -23,6 +24,8 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        foreach (Furniture f in furniture) f.Construct();
+
         instance = this;
         catInstances = new List<Cat>();
         if(gameState == null) gameState = GameState.NewGame();
