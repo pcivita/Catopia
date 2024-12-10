@@ -157,19 +157,45 @@ public class Cat : MonoBehaviour
 
     public int GetStrengthPlusBuffs() {
         int baseStrength = _catSO.Strength;
-        // Debug.Log($"Strength Buff For {_catSO.CatName} Is {_catSO.Ability.GetStrengthBuff(this)}");
-        return baseStrength + _catSO.Ability.GetStrengthBuff(this);
+        int strengthPlusBuffs = baseStrength + _catSO.Ability.GetStrengthBuff(this);
+        foreach (Cat cat in GameManager.instance.GetCatInstances())
+        {
+            if (this != cat && cat.GetAbility().GetName().Equals("My Face Is Scary") && cat.GetAbility().IsActive(cat) && GetCurrArea().Equals("Conquer"))
+            {
+                strengthPlusBuffs /= 2;
+                break;
+            }
+        }
+
+        return strengthPlusBuffs;
     }
 
     public int GetHealthPlusBuffs() {
         int baseHealth = _catSO.Health;
-        // Debug.Log($"Health Buff For {_catSO.CatName} Is {_catSO.Ability.GetHealthBuff(this)}");
-        return baseHealth + _catSO.Ability.GetHealthBuff(this);
+        int healthPlusBuffs = baseHealth + _catSO.Ability.GetHealthBuff(this);
+        foreach (Cat cat in GameManager.instance.GetCatInstances())
+        {
+            if (this != cat && cat.GetAbility().GetName().Equals("My Face Is Scary") && cat.GetAbility().IsActive(cat) && GetCurrArea().Equals("Conquer"))
+            {
+                healthPlusBuffs /= 2;
+                break;
+            }
+        }
+        return healthPlusBuffs;
     }
 
     public int GetHuntingPlusBuffs() {
         int baseHunting = _catSO.Hunting;
-        return baseHunting + _catSO.Ability.GetHuntingBuff(this);
+        int huntingPlusBuffs = baseHunting + _catSO.Ability.GetHuntingBuff(this);
+        foreach (Cat cat in GameManager.instance.GetCatInstances())
+        {
+            if (this != cat && cat.GetAbility().GetName().Equals("My Face Is Scary") && cat.GetAbility().IsActive(cat) && GetCurrArea().Equals("Conquer"))
+            {
+                huntingPlusBuffs /= 2;
+                break;
+            }
+        }
+        return huntingPlusBuffs;
     }
 
     // Doesn't deal with overlapping Cats
