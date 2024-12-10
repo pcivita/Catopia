@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e19e9def36d28b4b901e3e508dba352, type: 3}
   m_Name: RemembersEveryonesBirthday
   m_EditorClassIdentifier: 
-  abilityName: 
-  description: 
-  icon: {fileID: 0}
+  abilityName: Remembers Everyone's Birthday
+  description: All other cats gain +2 to all stats.
+  icon: {fileID: 21300000, guid: 93ff21f36be0ca74793d39cdd26948c9, type: 3}

@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b34ca6e642258a4a93d7c4c367e0842, type: 3}
   m_Name: SmellsGood
   m_EditorClassIdentifier: 
-  abilityName: 
-  description: 
-  icon: {fileID: 0}
+  abilityName: Smells Good
+  description: All other cats in the same area as this cat gain +3 to all stats.
+  icon: {fileID: 21300000, guid: 93ff21f36be0ca74793d39cdd26948c9, type: 3}
