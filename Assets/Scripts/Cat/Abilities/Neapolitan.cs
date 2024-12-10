@@ -12,7 +12,7 @@ public class Neapolitan : Ability
 
     public override int GetHealthBuff(Cat cat)
     {
-        int buff = 0;
+        int buff = ReceiveHealthBuff(cat);
         if (IsActive(cat)) {
             buff += 5;
         }
@@ -22,12 +22,22 @@ public class Neapolitan : Ability
 
     public override int GetStrengthBuff(Cat cat)
     {
-        return GetHealthBuff(cat);
+        int buff = ReceiveStrengthBuff(cat);
+        if (IsActive(cat)) {
+            buff += 5;
+        }
+
+        return buff;
     }
 
     public override int GetHuntingBuff(Cat cat)
     {
-        return GetHealthBuff(cat);
+        int buff = ReceiveHuntingBuff(cat);
+        if (IsActive(cat)) {
+            buff += 5;
+        }
+
+        return buff;
     }
 
     public override bool IsActive(Cat cat)

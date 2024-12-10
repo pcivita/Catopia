@@ -35,17 +35,20 @@ public class HuntArea : AreaController
 
     public override void UpdateAreaState(Cat cat, bool addingCat)
     {
-        if (addingCat)
-        {
-            totalHunting += cat.GetHuntingPlusBuffs();  
-        }
-        else
-        {
-            totalHunting -= cat.GetHuntingPlusBuffs();
-        }
-
+        UpdateTotalHunting();
         Debug.Log("RUNNING AFTER RESET");
         trainArea.UpdateTexts();
+        UpdateTexts();
+    }
+
+    public void UpdateTotalHunting()
+    {
+        totalHunting = 0;
+        foreach (Cat cat in _cats)
+        {
+            totalHunting += cat.GetHuntingPlusBuffs();
+        }
+
         UpdateTexts();
     }
 

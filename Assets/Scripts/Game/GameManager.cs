@@ -63,6 +63,7 @@ public class GameManager : MonoBehaviour
         newCat.Init(c);
         catInstances.Add(newCat);
         CatDefaultWander(newCat);
+        GameManager.instance.UpdateAbilityIconsVisibility();
     }
 
     public static CatSO GetRandomDefaultCat()
@@ -76,6 +77,11 @@ public class GameManager : MonoBehaviour
         {
             catInstance.UpdateStats();
         }
+    }
+
+    public List<Cat> GetCatInstances()
+    {
+        return catInstances;
     }
 
     public void UpdateAbilityIconsVisibility()

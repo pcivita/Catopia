@@ -157,19 +157,45 @@ public class Cat : MonoBehaviour
 
     public int GetStrengthPlusBuffs() {
         int baseStrength = _catSO.Strength;
-        // Debug.Log($"Strength Buff For {_catSO.CatName} Is {_catSO.Ability.GetStrengthBuff(this)}");
-        return baseStrength + _catSO.Ability.GetStrengthBuff(this);
+        int strengthPlusBuffs = baseStrength + _catSO.Ability.GetStrengthBuff(this);
+        foreach (Cat cat in GameManager.instance.GetCatInstances())
+        {
+            if (this != cat && cat.GetAbility().GetName().Equals("My Face Is Scary") && cat.GetAbility().IsActive(cat) && GetCurrArea().Equals("Conquer"))
+            {
+                strengthPlusBuffs /= 2;
+                break;
+            }
+        }
+
+        return strengthPlusBuffs;
     }
 
     public int GetHealthPlusBuffs() {
         int baseHealth = _catSO.Health;
-        // Debug.Log($"Health Buff For {_catSO.CatName} Is {_catSO.Ability.GetHealthBuff(this)}");
-        return baseHealth + _catSO.Ability.GetHealthBuff(this);
+        int healthPlusBuffs = baseHealth + _catSO.Ability.GetHealthBuff(this);
+        foreach (Cat cat in GameManager.instance.GetCatInstances())
+        {
+            if (this != cat && cat.GetAbility().GetName().Equals("My Face Is Scary") && cat.GetAbility().IsActive(cat) && GetCurrArea().Equals("Conquer"))
+            {
+                healthPlusBuffs /= 2;
+                break;
+            }
+        }
+        return healthPlusBuffs;
     }
 
     public int GetHuntingPlusBuffs() {
         int baseHunting = _catSO.Hunting;
-        return baseHunting + _catSO.Ability.GetHuntingBuff(this);
+        int huntingPlusBuffs = baseHunting + _catSO.Ability.GetHuntingBuff(this);
+        foreach (Cat cat in GameManager.instance.GetCatInstances())
+        {
+            if (this != cat && cat.GetAbility().GetName().Equals("My Face Is Scary") && cat.GetAbility().IsActive(cat) && GetCurrArea().Equals("Conquer"))
+            {
+                huntingPlusBuffs /= 2;
+                break;
+            }
+        }
+        return huntingPlusBuffs;
     }
 
     // Doesn't deal with overlapping Cats
@@ -237,27 +263,36 @@ public class Cat : MonoBehaviour
         ConquerArea conquerArea = conquerObject.GetComponent<ConquerArea>();
         foreach (var cat in conquerArea.GetCats()) 
         {
-            if (cat.GetAbility().GetName() == "Pillar Of Strength" && cat.GetAbility().IsActive(cat))
+            if (cat.GetAbility().IsActive(cat)) 
             {
-                IncreaseStat("Health", trainArea.GetNumCats());
-                IncreaseStat("Hunting", trainArea.GetNumCats());
-                IncreaseStat("Strength", trainArea.GetNumCats());
+                if (cat.GetAbility().GetName() == "Pillar Of Strength")
+                {
+                    IncreaseStat("Health", trainArea.GetNumCats());
+                    IncreaseStat("Hunting", trainArea.GetNumCats());
+                    IncreaseStat("Strength", trainArea.GetNumCats());
+                }
             }
         }
     }
 
     public void IncreaseStat(string trainType, int trainAmount) 
     {
+        int mult = 1;
+        if (GetAbility().GetName() == "I Go To The Gym By Myself" && GetAbility().IsActive(this))
+        {
+            mult = 3;
+        }
+
         if (trainType == "Health")
         {
-            _catSO.Health += trainAmount;
+            _catSO.Health += trainAmount * mult;
         } else if (trainType == "Hunting")
         {
-            _catSO.Hunting += trainAmount;
+            _catSO.Hunting += trainAmount * mult;
         }
         else if (trainType == "Strength")
         {
-            _catSO.Strength += trainAmount;
+            _catSO.Strength += trainAmount * mult;
         }
     }
     
@@ -300,6 +335,16 @@ public class Cat : MonoBehaviour
     public string GetName()
     {
         return _catSO.CatName;
+    }
+
+    public CatSO GetCatSO()
+    {
+        return _catSO;
+    }
+
+    public string GetCurrArea()
+    {
+        return currArea;
     }
 }
 

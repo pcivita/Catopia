@@ -42,6 +42,12 @@ public class TrainArea : AreaController
     public override void UpdateAreaState(Cat cat, bool addingCat)
     {
         UpdateTexts();
+        GameObject huntObject = GameObject.Find("Hunt");
+        if (huntObject == null) { return; }
+        HuntArea huntArea = huntObject.GetComponent<HuntArea>();
+        if (huntArea == null) { return; }
+        huntArea.UpdateTotalHunting();
+        GameManager.instance.UpdateConsumptionText();
     }
 
     public override void NewDay()

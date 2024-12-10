@@ -13,31 +13,24 @@ public class IFightForMyFriends : Ability
 
     public override int GetHealthBuff(Cat cat)
     {
-        GameObject conquerObject = GameObject.Find("Conquer");
-        if (conquerObject == null)
+        int buff = ReceiveHealthBuff(cat);
+        if (IsActive(cat))
         {
-            Debug.Log("Could not find object.");
-            return 0;
+            buff += 3;
         }
 
-        ConquerArea conquerArea = conquerObject.GetComponent<ConquerArea>();
-        if (conquerArea == null) 
-        { 
-            Debug.Log("Could not find area.");
-            return 0;
-        }
-
-        if (cat.currArea.Equals("Conquer") && conquerArea.GetNumCats() >= 2)
-        {
-            return 3;
-        }
-
-        return 0;
+        return buff;
     }
 
     public override int GetStrengthBuff(Cat cat)
     {
-        return GetHealthBuff(cat);
+        int buff = ReceiveStrengthBuff(cat);
+        if (IsActive(cat))
+        {
+            buff += 3;
+        }
+
+        return buff;
     }
 
     public override bool IsActive(Cat cat)

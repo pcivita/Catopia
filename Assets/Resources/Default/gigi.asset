@@ -17,7 +17,7 @@ MonoBehaviour:
   Health: 3
   Hunting: 2
   Cost: 0
-  Ability: {fileID: 11400000, guid: 5731d62f86c17604bbe6273aa684d5b5, type: 2}
+  Ability: {fileID: 11400000, guid: b62a229e2ce65b94989bf4a4aaa51764, type: 2}
   Accessory: {fileID: 0}
   Pattern: {fileID: 0}
   patternColor:
