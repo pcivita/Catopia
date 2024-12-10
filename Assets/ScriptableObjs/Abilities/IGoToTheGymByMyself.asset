@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15e4b082a7c87634e9c836a02ca29da3, type: 3}
   m_Name: IGoToTheGymByMyself
   m_EditorClassIdentifier: 
-  abilityName: 
-  description: 
-  icon: {fileID: 21300000, guid: 93ff21f36be0ca74793d39cdd26948c9, type: 3}
+  abilityName: I Go To The Gym By Myself
+  description: If this cat is in Train by itself, triple any stat gains it receives
+    on Train.
+  icon: {fileID: 21300000, guid: 4a64dc8b1decb344fb4843ffbfa61f05, type: 3}

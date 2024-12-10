@@ -15,4 +15,4 @@ MonoBehaviour:
   abilityName: All For One
   description: If this cat is in Befriend, gain +10 Strength and +10 Health. All
     other cats in Befriend gain -5 Strength and -5 Health.
-  icon: {fileID: 21300000, guid: 93ff21f36be0ca74793d39cdd26948c9, type: 3}
+  icon: {fileID: 21300000, guid: ca267f27fd897da48b9ad379d1d075bd, type: 3}

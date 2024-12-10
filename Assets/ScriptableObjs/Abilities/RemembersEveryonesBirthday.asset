@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   abilityName: Remembers Everyone's Birthday
   description: All other cats gain +2 to all stats.
-  icon: {fileID: 21300000, guid: 93ff21f36be0ca74793d39cdd26948c9, type: 3}
+  icon: {fileID: 21300000, guid: 25e02e222ed03d247ab64a09a4fe589d, type: 3}

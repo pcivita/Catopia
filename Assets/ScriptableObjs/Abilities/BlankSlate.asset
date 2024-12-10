@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   abilityName: Blank Slate
   description: This ability does nothing.
-  icon: {fileID: 21300000, guid: 02b259fadc8b74f48bc0893a2bb9baba, type: 3}
+  icon: {fileID: 21300000, guid: 93ff21f36be0ca74793d39cdd26948c9, type: 3}

@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   abilityName: I Brought Spears
   description: If this cat is in Hunt, all other cats in Hunt gain +5 Hunting.
-  icon: {fileID: 21300000, guid: 93ff21f36be0ca74793d39cdd26948c9, type: 3}
+  icon: {fileID: 21300000, guid: ecb5d099be5f13a429c7611c96e5c624, type: 3}

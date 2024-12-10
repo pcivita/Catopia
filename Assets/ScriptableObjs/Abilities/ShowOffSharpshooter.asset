@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02c73ca50d9568d46a25362dc69e3535, type: 3}
   m_Name: ShowOffSharpshooter
   m_EditorClassIdentifier: 
-  abilityName: 
-  description: 
-  icon: {fileID: 0}
+  abilityName: Showoff Sharpshooter
+  description: If this cat is in Hunt and the colony contains more than 10 cats,
+    triple this cat's hunting stat.
+  icon: {fileID: 21300000, guid: 0cb26b6c581995943b326a5f6ffaf5f5, type: 3}

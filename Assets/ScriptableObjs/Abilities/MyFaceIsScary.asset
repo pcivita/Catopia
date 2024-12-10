@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12a4701abf0c21b43a0259a25931fa50, type: 3}
   m_Name: MyFaceIsScary
   m_EditorClassIdentifier: 
-  abilityName: 
-  description: 
-  icon: {fileID: 0}
+  abilityName: My Face Is Scary
+  description: If this cat is in Befriend, halve the stats of all other friendly
+    cats in Befriend.
+  icon: {fileID: 21300000, guid: d3273454ab0c65749b664fbaf564d115, type: 3}

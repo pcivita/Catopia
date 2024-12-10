@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: CatsOfALitterMeowTogether
   m_EditorClassIdentifier: 
   abilityName: Cats Of A Litter, Meow Together
-  description: If this cat is in the same area as another cat with Cats Of A Litter,
-    Meow Together, double this cat's stats.
-  icon: {fileID: 21300000, guid: 93ff21f36be0ca74793d39cdd26948c9, type: 3}
+  description: If this cat is in the same area as another cat with the ability 'Cats
+    Of A Litter, Meow Together', double this cat's stats.
+  icon: {fileID: 21300000, guid: ef554b2aaf5bcb94eabaec39186fe1a2, type: 3}

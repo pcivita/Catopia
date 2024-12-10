@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0c8d5c311ac41940b4a46a4a939c26d, type: 3}
   m_Name: BodyImprovementClub
   m_EditorClassIdentifier: 
-  abilityName: 
-  description: 
-  icon: {fileID: 0}
+  abilityName: Body Improvement Club
+  description: This cat gains +X to all stats, where X is the number of cats in Train.
+  icon: {fileID: 21300000, guid: 6cf85c2a14374df4697a74d10d8da79d, type: 3}
