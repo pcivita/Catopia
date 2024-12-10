@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd9be219acaf142cdb96ac7bd3d4e3ea, type: 3}
+  m_Name: starPillow
+  m_EditorClassIdentifier: 
+  Name: star pillow
+  Sprite: {fileID: 21300000, guid: c049d5bc0e7934cfd90e749504460a9f, type: 3}
+  Prefab: {fileID: 2037545719183322755, guid: 9d676d46786b847838f9d411e88d03aa, type: 3}
+  Cost: 125

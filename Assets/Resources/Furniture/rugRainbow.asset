@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd9be219acaf142cdb96ac7bd3d4e3ea, type: 3}
+  m_Name: rugRainbow
+  m_EditorClassIdentifier: 
+  Name: rainbow rug
+  Sprite: {fileID: 21300000, guid: 69ee7748ea33c486c83b235c731859c5, type: 3}
+  Prefab: {fileID: 3191215914865784798, guid: d20480248d78642119b1a24eb51c8149, type: 3}
+  Cost: 30

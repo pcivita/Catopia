@@ -99,11 +99,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    //TODO stub
-    //do whatever happens at the end of a turn
-    //notify the areas
-    //consume food....
-    //kill cats accordingly?
     public void NewDay()
     {
         //triggers event
@@ -149,12 +144,16 @@ public class GameManager : MonoBehaviour
     {
         gameState = GameState.NewGame();
     }
+#if UNITY_EDITOR
 
     private void Update()
     {
         if (Input.GetKeyUp(KeyCode.Space))
         {
-            LoseGame("Debug game over!");
+            Debug.Log("debug get 100 food");
+            gameState.AddFood(100);
         }
     }
+#endif
+
 }

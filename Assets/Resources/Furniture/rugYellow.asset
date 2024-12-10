@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dd9be219acaf142cdb96ac7bd3d4e3ea, type: 3}
-  m_Name: Test1
+  m_Name: rugYellow
   m_EditorClassIdentifier: 
-  Name: big heart
-  Sprite: {fileID: 21300000, guid: e029655ae6dda4242825e8aa23173a8a, type: 3}
-  Prefab: {fileID: 2009046596473150884, guid: 3c7dd11aaa9724b658b80eb09ad6edd2, type: 3}
-  Cost: 1
+  Name: yellow rug
+  Sprite: {fileID: 21300000, guid: 7cbae1dc089e64afa93365ff250630ad, type: 3}
+  Prefab: {fileID: 6484060579874671526, guid: 36ec25e089335465b9e6c43dbe8e0dd4, type: 3}
+  Cost: 30
