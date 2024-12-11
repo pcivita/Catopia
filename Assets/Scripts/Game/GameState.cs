@@ -97,5 +97,6 @@ public class GameState {
     public void NewDay()
     {
         dayCount++;
+        mapNode++;
     }
 }
