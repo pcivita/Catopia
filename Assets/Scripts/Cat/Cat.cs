@@ -132,6 +132,7 @@ public class Cat : MonoBehaviour
         hovering = false;
         uiCanvas.gameObject.SetActive(false);
         statsCanvas.gameObject.SetActive(true);
+        visibleAbilityIcon.SetActive(true);
     }
 
     public void UpdateStats()
@@ -147,8 +148,22 @@ public class Cat : MonoBehaviour
 
 
     private void DisplayFullStats(){
+        Vector3 mousePosition = Input.mousePosition;
+        float screenHeight = Screen.height;
+        RectTransform uiCanvasRectTransform = uiCanvas.GetComponent<RectTransform>();
+        Vector3 position = uiCanvasRectTransform.localPosition;
+        if (mousePosition.y <= screenHeight / 2)
+        {
+            position.y = 1.78f;
+            // Change uiCanvas, a Canvas object, to have y position of -1.78
+        } else {
+            position.y = -1.78f;
+        }
+        uiCanvasRectTransform.localPosition = position;
+
         statsCanvas.gameObject.SetActive(false);
         uiCanvas.gameObject.SetActive(true);
+        visibleAbilityIcon.SetActive(false);
         UpdateStats();
     }
 
