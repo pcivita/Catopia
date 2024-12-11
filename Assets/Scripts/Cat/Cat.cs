@@ -139,20 +139,17 @@ public class Cat : MonoBehaviour
         strengthText.text = GetStrengthPlusBuffs().ToString();
         healthText.text = GetHealthPlusBuffs().ToString();
         huntingText.text = GetHuntingPlusBuffs().ToString();
+
+        hoverStrengthText.text = GetStrengthPlusBuffs().ToString();
+        hoverHealthText.text = GetHealthPlusBuffs().ToString();
+        hoverHuntingText.text = GetHuntingPlusBuffs().ToString();
     }
 
 
     private void DisplayFullStats(){
         statsCanvas.gameObject.SetActive(false);
         uiCanvas.gameObject.SetActive(true);
-
-        strengthText.text = GetStrengthPlusBuffs().ToString();
-        healthText.text = GetHealthPlusBuffs().ToString();
-        huntingText.text = GetHuntingPlusBuffs().ToString();
-
-        hoverStrengthText.text = GetStrengthPlusBuffs().ToString();
-        hoverHealthText.text = GetHealthPlusBuffs().ToString();
-        hoverHuntingText.text = GetHuntingPlusBuffs().ToString();
+        UpdateStats();
     }
 
     public int GetStrengthPlusBuffs() {
