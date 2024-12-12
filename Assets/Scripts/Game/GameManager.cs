@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -17,13 +18,13 @@ public class GameManager : MonoBehaviour
     [SerializeField] TMP_Text foodText;
     [SerializeField] TMP_Text consumptionText;
     [SerializeField] SpriteRenderer background;
-    [SerializeField] GameObject LooseScreen;
-
+    [SerializeField] GameObject LoseScreen;
 
     public List<Cat> catInstances;
 
     private void Awake()
     {
+        
         foreach (Furniture f in furniture) f.Construct();
 
         instance = this;
@@ -32,6 +33,11 @@ public class GameManager : MonoBehaviour
         foreach (var c in gameState.GetCats()) ConstructCat(c);
         UpdateFoodText();
         UpdateConsumptionText();
+
+        if (gameState.GetDay() == 5)
+        {
+            WinGame();
+        }
     }
 
     public void UpdateFoodText()
@@ -130,14 +136,15 @@ public class GameManager : MonoBehaviour
         {
             SceneManager.LoadScene("TestFight");
         }
+    }
 
-        // });
-        
+    public static void WinGame(){
+        SceneManager.LoadScene("WinScene");
     }
 
     public static void LoseGame(string gameOverMessage)
     {
-        Instantiate(instance.LooseScreen).GetComponent<LoseMenu>().SetGameoverMessage(gameOverMessage);
+        Instantiate(instance.LoseScreen).GetComponent<LoseMenu>().SetGameoverMessage(gameOverMessage);
     }
 
     public static void ResetGame()
@@ -152,6 +159,11 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("debug get 100 food");
             gameState.AddFood(100);
+        }
+
+        if (Input.GetKeyUp(KeyCode.W))
+        {
+            WinGame();
         }
     }
 #endif
