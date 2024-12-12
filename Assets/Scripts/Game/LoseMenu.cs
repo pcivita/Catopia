@@ -18,6 +18,7 @@ public class LoseMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GetComponentInChildren<Canvas>().worldCamera = Camera.main;
         //create grid of cats to choose to keep
         foreach(CatSO cat in GameManager.gameState.GetCats())
         {
