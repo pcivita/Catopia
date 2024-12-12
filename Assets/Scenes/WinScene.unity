@@ -397,14 +397,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 7685200611663419565, guid: b0c1bad88693b4da7a0bc293294628b4, type: 3}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 1761754975}
-    - target: {fileID: 7685200611663419565, guid: b0c1bad88693b4da7a0bc293294628b4, type: 3}
-      propertyPath: m_RenderMode
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8006835867168380853, guid: b0c1bad88693b4da7a0bc293294628b4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
