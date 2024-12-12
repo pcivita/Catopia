@@ -27,7 +27,7 @@ public class ConquerArea : AreaController
     public void UpdateNewDayVisibility()
     {
         // GameObject newDayButton = GameObject.Find("MainCanvas").transform.Find("newDay").gameObject;
-        GameObject newDayButtonObject = GameObject.Find("newDay");
+        GameObject newDayButtonObject = GameObject.Find("Befriend");
         Button newDayButton = newDayButtonObject.GetComponent<Button>();
         if (newDayButton == null)
         {

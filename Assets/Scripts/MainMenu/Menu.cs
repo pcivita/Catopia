@@ -8,6 +8,6 @@ public class Menu : MonoBehaviour
 
     public void OnMouseUp()
     {
-        SceneManager.LoadScene("Tutorial");
+        SceneManager.LoadScene("ColonyScene");
     }
 }

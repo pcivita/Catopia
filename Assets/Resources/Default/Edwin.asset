@@ -14,15 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CatName: Electric Edwin
   Strength: 1
-  Health: 2
-  Hunting: 1
+  Health: 1
+  Hunting: 4
   Cost: 0
-  Ability: {fileID: 11400000, guid: 5731d62f86c17604bbe6273aa684d5b5, type: 2}
-  Accessory: {fileID: 21300000, guid: feaa1575616b3446890675e1125d3b6f, type: 3}
-  Pattern: {fileID: 21300000, guid: d7ee451a9c13f4a79b3616e94122c523, type: 3}
+  Ability: {fileID: 11400000, guid: 9b94d090b7a7f4b48904ed59ff8d9942, type: 2}
+  Accessory: {fileID: 0}
+  Pattern: {fileID: 0}
   patternColor:
     serializedVersion: 2
-    rgba: 4278274977
+    rgba: 4294967295
   bodyColor:
     serializedVersion: 2
-    rgba: 4282426623
+    rgba: 4281511145
