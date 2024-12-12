@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class TrainArea : AreaController
 {
-    public string[] trainingList = { "Health", "Strength", "Hunting"};
+    public string[] trainingList = new string[5];
     public string currentTraining;
 
     public HuntArea huntArea;
@@ -19,6 +19,9 @@ public class TrainArea : AreaController
     private void Start()
     {
         areaName = "Train";
+        trainingList[0] = "Health";
+        trainingList[1] = "Strength";
+        trainingList[2] = "Hunting";
         currentTraining = trainingList[(GameManager.gameState.GetDay() - 1) % trainingList.Length];
         
         // Initialize huntArea before calling SetCapacity
