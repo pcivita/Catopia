@@ -41,4 +41,22 @@ public class FurnitureStore : MonoBehaviour
             }
         }
     }
+
+    public void ResetInteractables() 
+    {
+        int i = 0;
+        if (buyable == null)
+        {
+            Start();
+        }
+        foreach(FurnitureSlot f in GetComponentsInChildren<FurnitureSlot>())
+        {
+            if (i < buyable.Length) {
+                f.button.interactable = buyable[i].Cost <= GameManager.gameState.GetFood();
+                i++;
+            } else {
+                break;
+            }
+        }
+    }
 }

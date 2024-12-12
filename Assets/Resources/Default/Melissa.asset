@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bf5b7dc693ddb44ca1fdb898aad37e6, type: 3}
   m_Name: Melissa
   m_EditorClassIdentifier: 
-  CatName: Melissa McMuffin
+  CatName: Malice Saran
   Strength: 1
   Health: 2
   Hunting: 1

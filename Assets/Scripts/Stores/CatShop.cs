@@ -36,6 +36,7 @@ public class CatShop : MonoBehaviour
                 slots[i].DisableClick();
             }
         }
+        GameManager.instance.UpdateAllStats();
     }
 
     public void ConfirmBuy()

@@ -10,7 +10,7 @@ public class FurnitureSlot : MonoBehaviour
     public Image image;
     public TMP_Text costText;
     public Button button;
-    Furniture furniture;
+    public Furniture furniture;
     public void SetFurniture(bool interactable, Furniture f, Action a)
     {
         button.interactable = interactable;
