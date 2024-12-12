@@ -10,19 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9bf5b7dc693ddb44ca1fdb898aad37e6, type: 3}
-  m_Name: Oscar
+  m_Name: Cole
   m_EditorClassIdentifier: 
-  CatName: Oscar
-  Strength: 3
-  Health: 15
-  Hunting: 1
-  Cost: 8
-  Ability: {fileID: 11400000, guid: 5731d62f86c17604bbe6273aa684d5b5, type: 2}
-  Accessory: {fileID: 21300000, guid: 0cb26bc50ad414ee0a75b34a8789eb29, type: 3}
-  Pattern: {fileID: 21300000, guid: 7feef536d6fd14fdb8dd24e5abea345e, type: 3}
+  CatName: Cole Cuddlebug
+  Strength: 1
+  Health: 1
+  Hunting: 4
+  Cost: 0
+  Ability: {fileID: 11400000, guid: 9b94d090b7a7f4b48904ed59ff8d9942, type: 2}
+  Accessory: {fileID: 0}
+  Pattern: {fileID: 0}
   patternColor:
     serializedVersion: 2
-    rgba: 4285905407
+    rgba: 4294967295
   bodyColor:
     serializedVersion: 2
-    rgba: 4278222064
+    rgba: 4281511145

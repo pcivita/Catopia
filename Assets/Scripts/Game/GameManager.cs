@@ -102,36 +102,36 @@ public class GameManager : MonoBehaviour
     public void NewDay()
     {
         //triggers event
-        GameObject.FindFirstObjectByType<EventManager>().PlayEvent(() =>
+        // GameObject.FindFirstObjectByType<EventManager>().PlayEvent(() =>
+        // {
+        gameState.NewDay();
+        Debug.Log("AREAS Have Restarted, Total Food: " + gameState.GetFood());
+
+        foreach (var area in areas)
         {
-            gameState.NewDay();
-            Debug.Log("AREAS Have Restarted, Total Food: " + gameState.GetFood());
+            area.NewDay();
+        }
 
-            foreach (var area in areas)
-            {
-                area.NewDay();
-            }
+        foreach (var area in areas)
+        {
+            area.ClearCats();
+        }
 
-            foreach (var area in areas)
-            {
-                area.ClearCats();
-            }
+        Debug.Log("AREAS Have Restarted, Total Food: " + gameState.GetFood());
+        foreach (var c in catInstances)
+        {
+            c.NewDay(true);
+        }
+        if (gameState.gameLost)
+        {
+            LoseGame("You didn't have enough food to feed your cats, game over!");
+        }
+        else
+        {
+            SceneManager.LoadScene("TestFight");
+        }
 
-            Debug.Log("AREAS Have Restarted, Total Food: " + gameState.GetFood());
-            foreach (var c in catInstances)
-            {
-                c.NewDay(true);
-            }
-            if (gameState.gameLost)
-            {
-                LoseGame("You didn't have enough food to feed your cats, game over!");
-            }
-            else
-            {
-                SceneManager.LoadScene("TestFight");
-            }
-
-        });
+        // });
         
     }
 

@@ -19,9 +19,10 @@ public class CatShop : MonoBehaviour
 
     public void Refresh()
     {
+        allCats = Resources.LoadAll<CatSO>($"Shop {GameManager.gameState.GetDay()}");
         for (int i = 0; i < slots.Length; i++)
         {
-            CatSO cat = allCats[Random.RandomRange(0, allCats.Length)];
+            CatSO cat = allCats[i];
             slots[i].SetCatSO(cat);
             slots[i].SetOnClick(() =>
             {
@@ -43,6 +44,7 @@ public class CatShop : MonoBehaviour
         GameManager.gameState.TryConsumeFood(selected.Cost);
         confirmation.SetActive(false);
         window.SetActive(false);
+        Refresh();
     }
 
 }

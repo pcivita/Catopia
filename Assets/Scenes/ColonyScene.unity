@@ -122,6 +122,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &127317880 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8698438164424563103, guid: a8f8a77130a7349f1960618664366874, type: 3}
+  m_PrefabInstance: {fileID: 1149680910}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65e5e0b8f9c0e45ad8b3a1956ed730ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &297624830 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8581625419414943176, guid: a1e1c566d2508a047b44300d687d7a03, type: 3}
@@ -808,9 +819,45 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2832854979298258661, guid: a8f8a77130a7349f1960618664366874, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3508681075805023233, guid: a8f8a77130a7349f1960618664366874, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 15.099976
+      objectReference: {fileID: 0}
+    - target: {fileID: 5844782487806831237, guid: a8f8a77130a7349f1960618664366874, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5844782487806831237, guid: a8f8a77130a7349f1960618664366874, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5844782487806831237, guid: a8f8a77130a7349f1960618664366874, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 127317880}
+    - target: {fileID: 5844782487806831237, guid: a8f8a77130a7349f1960618664366874, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5844782487806831237, guid: a8f8a77130a7349f1960618664366874, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: Refresh
+      objectReference: {fileID: 0}
+    - target: {fileID: 5844782487806831237, guid: a8f8a77130a7349f1960618664366874, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: CatShop, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5844782487806831237, guid: a8f8a77130a7349f1960618664366874, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5844782487806831237, guid: a8f8a77130a7349f1960618664366874, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7276125104057773427, guid: a8f8a77130a7349f1960618664366874, type: 3}
       propertyPath: m_Name

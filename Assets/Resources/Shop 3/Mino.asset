@@ -10,19 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9bf5b7dc693ddb44ca1fdb898aad37e6, type: 3}
-  m_Name: gigi
+  m_Name: Mino
   m_EditorClassIdentifier: 
-  CatName: Gigi
-  Strength: 2
-  Health: 3
+  CatName: Mino Paladino
+  Strength: 6
+  Health: 6
   Hunting: 2
-  Cost: 0
-  Ability: {fileID: 11400000, guid: b62a229e2ce65b94989bf4a4aaa51764, type: 2}
-  Accessory: {fileID: 0}
-  Pattern: {fileID: 0}
+  Cost: 5
+  Ability: {fileID: 11400000, guid: 114f23ccfa24bc6468b4c45fbdad0f6b, type: 2}
+  Accessory: {fileID: 21300000, guid: 6a33720fe28fa40ee8ac10473d16f810, type: 3}
+  Pattern: {fileID: 21300000, guid: 5d4ba1a9cb955479484a2664b6864e4d, type: 3}
   patternColor:
     serializedVersion: 2
-    rgba: 4278190080
+    rgba: 4286171391
   bodyColor:
     serializedVersion: 2
-    rgba: 4281347629
+    rgba: 4294967295
