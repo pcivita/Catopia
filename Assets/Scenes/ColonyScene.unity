@@ -201,7 +201,7 @@ MonoBehaviour:
   foodText: {fileID: 1149680912}
   consumptionText: {fileID: 1149680913}
   background: {fileID: 1841870733}
-  LoseScreen: {fileID: 0}
+  LoseScreen: {fileID: 246690788571606384, guid: b0c1bad88693b4da7a0bc293294628b4, type: 3}
   catInstances: []
 --- !u!4 &316486528
 Transform:

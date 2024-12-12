@@ -21,6 +21,7 @@ public class UICat : MonoBehaviour
     public TMP_Text hoverHealthText;
     public TMP_Text hoverHuntingText;
     public GameObject hoverAbilityIcon;
+    public Canvas uiCanvas;
     // Start is called before the first frame update
 
     public void SetOnClick(Action onclick)

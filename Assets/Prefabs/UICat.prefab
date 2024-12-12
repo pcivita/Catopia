@@ -1695,6 +1695,7 @@ MonoBehaviour:
   hoverHealthText: {fileID: 7623324233226310242}
   hoverHuntingText: {fileID: 5470778815951842531}
   hoverAbilityIcon: {fileID: 6064996683883921384}
+  uiCanvas: {fileID: 9150994190333207556}
 --- !u!114 &8365529501156807380
 MonoBehaviour:
   m_ObjectHideFlags: 0

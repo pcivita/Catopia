@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour
         UpdateFoodText();
         UpdateConsumptionText();
 
-        if (gameState.GetDay() == 5)
+        if (gameState.GetDay() == 6)
         {
             WinGame();
         }

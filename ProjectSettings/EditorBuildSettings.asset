@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SplashScene.unity
-    guid: f149037aa25844342b0c6adf1bc12e70
+    path: Assets/Scenes/Menu.unity
+    guid: 376646d2a26c6a741a5960d01ada9ee0
   - enabled: 1
     path: Assets/Scenes/ColonyScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
@@ -15,12 +15,12 @@ EditorBuildSettings:
     path: Assets/Scenes/TestFight.unity
     guid: f52c67be7da352840a61f1fd34f444e4
   - enabled: 1
-    path: Assets/Scenes/Menu.unity
-    guid: 376646d2a26c6a741a5960d01ada9ee0
-  - enabled: 1
     path: Assets/Scenes/Tutorial.unity
     guid: d69e32a4d9a711045baa7a26616e0786
   - enabled: 1
     path: Assets/Scenes/WinScene.unity
     guid: 4271306136be749868616fe19a7ce30c
+  - enabled: 0
+    path: Assets/Scenes/SplashScene.unity
+    guid: f149037aa25844342b0c6adf1bc12e70
   m_configObjects: {}
