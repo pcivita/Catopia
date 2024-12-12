@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CatName: Caleb Cuddlebug
   Strength: 1
-  Health: 1
+  Health: 2
   Hunting: 1
   Cost: 1
   Ability: {fileID: 11400000, guid: c3fa3bfb4f309e2419062003ff4209aa, type: 2}

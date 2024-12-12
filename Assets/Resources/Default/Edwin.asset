@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CatName: Electric Edwin
   Strength: 1
-  Health: 1
+  Health: 2
   Hunting: 4
   Cost: 0
   Ability: {fileID: 11400000, guid: 9b94d090b7a7f4b48904ed59ff8d9942, type: 2}
