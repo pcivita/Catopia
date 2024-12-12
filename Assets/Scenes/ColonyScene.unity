@@ -201,7 +201,7 @@ MonoBehaviour:
   foodText: {fileID: 1149680912}
   consumptionText: {fileID: 1149680913}
   background: {fileID: 1841870733}
-  LoseScreen: {fileID: 246690788571606384, guid: b0c1bad88693b4da7a0bc293294628b4, type: 3}
+  LoseScreen: {fileID: 0}
   catInstances: []
 --- !u!4 &316486528
 Transform:
@@ -890,10 +890,6 @@ PrefabInstance:
     - target: {fileID: 539805673872730228, guid: a8f8a77130a7349f1960618664366874, type: 3}
       propertyPath: m_IsActive
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4922406393280318087, guid: a8f8a77130a7349f1960618664366874, type: 3}
-      propertyPath: m_SortingOrder
-      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 5844782487806831237, guid: a8f8a77130a7349f1960618664366874, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode

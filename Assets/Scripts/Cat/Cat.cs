@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Image = UnityEngine.UI.Image;
 using TMPro;
+using Microsoft.Unity.VisualStudio.Editor;
 
 // TODO: Investigate bug where a cat seems to be locked in the slot. 
 public class Cat : MonoBehaviour
