@@ -122,6 +122,16 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &153408410 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 539805673872730228, guid: a8f8a77130a7349f1960618664366874, type: 3}
+  m_PrefabInstance: {fileID: 1149680910}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &224593925 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7303910129729176139, guid: b63d3eb98383c7346b93a00ad6f0820f, type: 3}
+  m_PrefabInstance: {fileID: 598018626182748328}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &297624830 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8581625419414943176, guid: a1e1c566d2508a047b44300d687d7a03, type: 3}
@@ -281,7 +291,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 584972705816347220, guid: e5a2925cb3d0704469911bd5b3bf3993, type: 3}
   m_PrefabInstance: {fileID: 5588621792388185516}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 579090813}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 33890a66cce1eb247b88fb16308e9d1d, type: 3}
@@ -424,6 +434,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &579090813 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2086668100242631021, guid: e5a2925cb3d0704469911bd5b3bf3993, type: 3}
+  m_PrefabInstance: {fileID: 5588621792388185516}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &579090817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 579090813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61240e39b70cdde49982ccdcdc1551e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tooltip: {fileID: 153408410}
 --- !u!1 &579542338
 GameObject:
   m_ObjectHideFlags: 0
@@ -663,12 +691,25 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2782268131118852171, guid: b63d3eb98383c7346b93a00ad6f0820f, type: 3}
   m_PrefabInstance: {fileID: 598018626182748328}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 224593925}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3c220d273dc1e7d4d9883e974b931fc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &697321649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 224593925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61240e39b70cdde49982ccdcdc1551e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tooltip: {fileID: 1221451006}
 --- !u!1 &748471600
 GameObject:
   m_ObjectHideFlags: 0
@@ -737,7 +778,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61240e39b70cdde49982ccdcdc1551e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tooltip: {fileID: 1221451006}
+  tooltip: {fileID: 2014250866}
 --- !u!1001 &1149680910
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -746,6 +787,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 222756728812823843, guid: a8f8a77130a7349f1960618664366874, type: 3}
+      propertyPath: m_text
+      value: after you befriend, All cats here will receive a permanent stat increase!
+      objectReference: {fileID: 0}
     - target: {fileID: 300147344613367400, guid: a8f8a77130a7349f1960618664366874, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -826,9 +871,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 539805673872730228, guid: a8f8a77130a7349f1960618664366874, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7276125104057773427, guid: a8f8a77130a7349f1960618664366874, type: 3}
       propertyPath: m_Name
       value: MainCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 7620924854891678909, guid: a8f8a77130a7349f1960618664366874, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8595992934415543617, guid: a8f8a77130a7349f1960618664366874, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1034,6 +1087,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2014250866 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7238144260402346741, guid: a8f8a77130a7349f1960618664366874, type: 3}
+  m_PrefabInstance: {fileID: 1149680910}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &598018626182748328
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1113,7 +1171,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7303910129729176139, guid: b63d3eb98383c7346b93a00ad6f0820f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 697321649}
   m_SourcePrefab: {fileID: 100100000, guid: b63d3eb98383c7346b93a00ad6f0820f, type: 3}
 --- !u!1001 &2553724603755167309
 PrefabInstance:
@@ -1254,7 +1315,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2086668100242631021, guid: e5a2925cb3d0704469911bd5b3bf3993, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 579090817}
   m_SourcePrefab: {fileID: 100100000, guid: e5a2925cb3d0704469911bd5b3bf3993, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
