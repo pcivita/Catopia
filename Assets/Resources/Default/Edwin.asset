@@ -18,11 +18,11 @@ MonoBehaviour:
   Hunting: 4
   Cost: 0
   Ability: {fileID: 11400000, guid: 9b94d090b7a7f4b48904ed59ff8d9942, type: 2}
-  Accessory: {fileID: 0}
-  Pattern: {fileID: 0}
+  Accessory: {fileID: 21300000, guid: 0cb26bc50ad414ee0a75b34a8789eb29, type: 3}
+  Pattern: {fileID: 21300000, guid: 3c41213756a154318aff4d18cc666ad3, type: 3}
   patternColor:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4282137660
   bodyColor:
     serializedVersion: 2
-    rgba: 4281511145
+    rgba: 4287532686

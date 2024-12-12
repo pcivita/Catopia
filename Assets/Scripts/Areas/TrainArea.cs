@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class TrainArea : AreaController
 {
-    public string[] trainingList = { "Hunting", "Strength", "Health" };
+    public string[] trainingList = { "Health", "Strength", "Hunting"};
     public string currentTraining;
 
     public HuntArea huntArea;
