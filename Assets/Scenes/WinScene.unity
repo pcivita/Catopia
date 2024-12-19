@@ -277,6 +277,18 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1429360409097524783, guid: b0c1bad88693b4da7a0bc293294628b4, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1568661613936420042, guid: b0c1bad88693b4da7a0bc293294628b4, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 18.100006
+      objectReference: {fileID: 0}
+    - target: {fileID: 2635889522503907166, guid: b0c1bad88693b4da7a0bc293294628b4, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -162
+      objectReference: {fileID: 0}
     - target: {fileID: 2786117629367311436, guid: b0c1bad88693b4da7a0bc293294628b4, type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
@@ -397,6 +409,62 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6704016223939586340, guid: b0c1bad88693b4da7a0bc293294628b4, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6704016223939586340, guid: b0c1bad88693b4da7a0bc293294628b4, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6704016223939586340, guid: b0c1bad88693b4da7a0bc293294628b4, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6704016223939586340, guid: b0c1bad88693b4da7a0bc293294628b4, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6704016223939586340, guid: b0c1bad88693b4da7a0bc293294628b4, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6704016223939586340, guid: b0c1bad88693b4da7a0bc293294628b4, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6704016223939586340, guid: b0c1bad88693b4da7a0bc293294628b4, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6704016223939586340, guid: b0c1bad88693b4da7a0bc293294628b4, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6704016223939586340, guid: b0c1bad88693b4da7a0bc293294628b4, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6704016223939586340, guid: b0c1bad88693b4da7a0bc293294628b4, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6704016223939586340, guid: b0c1bad88693b4da7a0bc293294628b4, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6704016223939586340, guid: b0c1bad88693b4da7a0bc293294628b4, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7685200611663419565, guid: b0c1bad88693b4da7a0bc293294628b4, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1761754975}
+    - target: {fileID: 7685200611663419565, guid: b0c1bad88693b4da7a0bc293294628b4, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8006835867168380853, guid: b0c1bad88693b4da7a0bc293294628b4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -460,6 +528,10 @@ PrefabInstance:
     - target: {fileID: 8024605102323195083, guid: b0c1bad88693b4da7a0bc293294628b4, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 9.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 8481456778743928039, guid: b0c1bad88693b4da7a0bc293294628b4, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 3.6399994
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
